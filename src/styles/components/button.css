@@ -1,0 +1,91 @@
+%base-button {
+  --background-color: light-dark(#000000, #ffffff);
+  --foreground-color: light-dark(#000000, #ffffff);
+  --outline-color: light-dark(#000000, #ffffff);
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5em;
+
+  outline-style: solid;
+  outline-width: 0.8px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: var(--medium);
+  font-weight: 500;
+
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  outline-color: var(--outline-color);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.btn-filled-primary {
+  @extend %base-button;
+  --background-color: light-dark(var(--neutral-50), var(--primary-900));
+  --foreground-color: light-dark(var(--neutral-50), var(--primary-100));
+  --outline-color: light-dark(var(--neutral-50), transparent);
+
+  &:hover {
+    --background-color: light-dark(var(--neutral-50), var(--neutral-800));
+    --foreground-color: light-dark(var(--neutral-50), var(--neutral-50));
+  }
+}
+
+.btn-filled-secondary {
+  @extend %base-button;
+  --background-color: light-dark(var(--neutral-50), var(--neutral-900));
+  --outline-color: light-dark(var(--neutral-50), var(--neutral-600));
+  --foreground-color: light-dark(var(--neutral-50), var(--neutral-300));
+
+  &:hover {
+    --background-color: light-dark(var(--neutral-50), var(--neutral-800));
+    --foreground-color: light-dark(var(--neutral-50), var(--neutral-50));
+  }
+}
+
+.btn-outlined-primary {
+  @extend %base-button;
+  --background-color: light-dark(transparent, transparent);
+  --foreground-color: light-dark(var(--neutral-50), var(--neutral-300));
+  --outline-color: light-dark(var(--neutral-50), var(--neutral-700));
+
+  &:hover {
+    --background-color: light-dark(var(--neutral-50), var(--neutral-900));
+    --foreground-color: light-dark(var(--neutral-50), var(--neutral-50));
+    --outline-color: light-dark(var(--neutral-50), var(--neutral-500));
+  }
+}
+
+.btn-outlined-secondary {
+  @extend %base-button;
+  --background-color: light-dark(var(--neutral-50), var(--neutral-900));
+  --outline-color: light-dark(var(--neutral-50), var(--neutral-600));
+  --foreground-color: light-dark(var(--neutral-50), var(--neutral-300));
+
+  &:hover {
+    --background-color: light-dark(var(--neutral-50), var(--neutral-800));
+    --foreground-color: light-dark(var(--neutral-50), var(--neutral-50));
+  }
+}
+
+
+/* Convert them to rem */
+.rounded {
+  border-radius: 1000px;
+}
+
+.bp-r-1 {
+  padding-inline: 10px;
+  padding-block: 5px;
+}
+
+.bp-s-1 {
+  padding-inline: 10px;
+  padding-block: 10px;
+}
+
+

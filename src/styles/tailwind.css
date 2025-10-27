@@ -1,2 +1,16 @@
 /* Tailwindcss Configs */
-@import "tailwindcss";
+@layer theme, base, components, utilities;
+
+@layer theme {
+  @theme default {
+    --spacing: 0.25rem;
+  }
+}
+
+@layer base {
+  @import "tailwindcss/preflight";
+}
+
+@layer utilities {
+  @tailwind utilities;
+}

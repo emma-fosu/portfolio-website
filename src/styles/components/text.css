@@ -1,0 +1,12 @@
+%text-sm {
+    font-size: var(--medium);
+}
+
+.text-sm-1 {
+    @extend %text-sm;
+}
+
+.text-sm-2 {
+     @extend %text-sm;
+     color: light-dark(var(--neutral-100), var(--neutral-400));
+}

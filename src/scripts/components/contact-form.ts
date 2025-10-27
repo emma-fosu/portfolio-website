@@ -1,5 +1,7 @@
 import { politeAnnounce } from "../services/live-announcer";
-import initEmailService, { sendEmail as sendFormEmail } from "../services/email-service";
+import initEmailService, {
+  sendEmail as sendFormEmail,
+} from "../services/email-service";
 /**
  *
  * @param form The form element to check for validation
@@ -35,21 +37,30 @@ export function initForm(form: HTMLFormElement) {
 }
 
 function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
-  const errorDisplay = field.parentElement!.querySelector(
+  const errorDisplayDIV = field.parentElement!.querySelector(
     '[id*="error"]'
   ) as HTMLElement;
   const name = field.name || "this field";
   const example = field.dataset.example || "";
 
   if (field.validity.valid) {
-    if (errorDisplay) setErrorDisplay(errorDisplay);
+    if (errorDisplayDIV)
+      setErrorDisplay(
+        errorDisplayDIV!.querySelector(".error")!,
+        errorDisplayDIV
+      );
     politeAnnounce();
     return true;
   }
 
+  const errorSpan = document.createElement("span");
+  errorSpan.classList.add("error");
+
   if (field.validity.valueMissing) {
     const msg = `${name} is required.`;
-    if (errorDisplay) setErrorDisplay(errorDisplay, msg);
+    if (errorDisplayDIV) {
+      setErrorDisplay(errorSpan, errorDisplayDIV, msg);
+    }
     politeAnnounce(msg);
     return false;
   }
@@ -58,7 +69,9 @@ function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
     const msg = `${name} does not match the required pattern${
       example ? ` (${example})` : ""
     }.`;
-    if (errorDisplay) setErrorDisplay(errorDisplay, msg);
+    if (errorDisplayDIV) {
+      setErrorDisplay(errorSpan, errorDisplayDIV, msg);
+    }
     politeAnnounce(msg);
     return false;
   }
@@ -70,6 +83,16 @@ function sendEmail(form: HTMLFormElement) {
   sendFormEmail(form);
 }
 
-function setErrorDisplay(errorDisplay: HTMLElement, msg = "") {
+function setErrorDisplay(
+  errorDisplay: HTMLElement,
+  errorDisplayDiv: HTMLElement,
+  msg = ""
+) {
+  if (!msg) {
+    if (errorDisplay) errorDisplayDiv.removeChild(errorDisplay);
+    return;
+  }
+
   errorDisplay.textContent = msg;
+  errorDisplayDiv.appendChild(errorDisplay);
 }

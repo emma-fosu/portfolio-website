@@ -1,0 +1,38 @@
+input,
+textarea {
+  border: 1px solid light-dark(var(--neutral-100), var(--neutral-700));
+  border-radius: 0.5rem;
+  color: light-dark(var(--neutal-100), var(--neutral-300));
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem;
+  background-color: light-dark(var(--neutral-100), var(--neutral-900));
+  outline-width: 4px;
+  outline-style: solid;
+  outline-color: transparent;
+  line-height: 24px;
+
+  &:focus-visible {
+    outline-color: light-dark(var(--neutral-100), var(--neutral-600));
+
+    &:user-invalid {
+      outline-color: light-dark(var(--neutral-100), color-mix(in oklch, var(--danger-50) 40%, transparent));
+    }
+  }
+
+  &:user-valid {
+    background-color: light-dark(var(--neutral-100), var(--neutral-800));
+  }
+
+  &:user-invalid {
+    border-color: light-dark(var(--neutral-100), var(--danger-50));
+  }
+
+  &::placeholder {
+    font-size: var(--medium);
+    color: light-dark(var(--neutral-100), var(--neutral-500));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

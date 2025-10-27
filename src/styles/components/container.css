@@ -1,0 +1,7 @@
+.container-1 {
+    border-radius: 10px;
+    border-color: light-dark(var(--neutral-100), var(--neutral-700));
+    border-style: solid;
+    border-width: 1px;
+    padding: clamp(10px, 5vw, 30px);
+}

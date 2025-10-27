@@ -11,6 +11,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
     "postcss": "^8.5.6",
+    "postcss-extend": "^1.0.5",
     "postcss-preset-env": "^10.4.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.7"

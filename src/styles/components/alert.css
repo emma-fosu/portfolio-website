@@ -1,0 +1,15 @@
+.error {
+  color: light-dark(var(--danger-500), var(--danger-100));
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    aspect-ratio: 1 / 1;
+    background-color: light-dark(var(--danger-500), var(--danger-100));
+    mask: url("/error-icon.svg") no-repeat;
+    mask-size: contain;
+    vertical-align: middle;
+    margin-right: 0.25em;
+  }
+}

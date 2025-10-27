@@ -1,0 +1,9 @@
+@import "../config.css";
+@import "../global.css";
+@import "../components/button.css";
+@import "../components/label.css";
+@import "../components/input.css";
+@import "../components/alert.css";
+@import "../components/icon.css";
+@import "../components/text.css";
+@import "../components/container.css";

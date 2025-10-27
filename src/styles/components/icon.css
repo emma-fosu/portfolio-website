@@ -1,0 +1,18 @@
+.icon-sm {
+    width: 16px;
+    aspect-ratio: 1 / 1;
+}
+
+%ic-base {
+    width: fit-content;
+}
+
+.ic-outlined-primary {
+    background-color: light-dark(var(--neutral-100), var(--primary-100));
+}
+
+.ic-filled-primary {
+    @extend %ic-base;
+     background-color: light-dark(var(--neutral-100), var(--neutral-900));
+     color: light-dark(var(--neutral-100), var(--primary-600));
+}
