@@ -27,30 +27,125 @@
     </style>
   </head>
   <body>
-    <!-- <div class="component-preview">
-      <button type="button" class="btn-outlined-primary rounded">
-        Elementary
-      </button>
-      <button type="button" class="btn-filled-secondary">Elementary</button>
-    </div> -->
     <span class="sr-only" id="polite-live-announcer" aria-live="polite"></span>
     <span
       class="sr-only"
       id="assertive-live-announcer"
       aria-live="assertive"
     ></span>
-    <div class="w-[90vw] max-w-[1100px] mx-auto">
-      <nav id="primary-nav" aria-label="primary navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Résumé</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <div>
+      <nav
+        class="primary-nav "
+        id="primary-nav"
+        aria-label="primary navigation"
+      >
+        <div class="w-[90vw] max-w-[1100px] mx-auto flex gap-5 items-center">
+          <div>
+            <svg
+              width="469"
+              height="469"
+              viewBox="0 0 469 469"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-lg"
+            >
+              <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
+              <circle
+                cx="233.999"
+                cy="234.999"
+                r="62.0555"
+                transform="rotate(-2.78704 233.999 234.999)"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <div class="grow">
+            <ul class="flex mx-auto w-fit gap-2">
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <a class="link" href="#resume" target="_blank" rel="noopener">Résumé</a>
+        </div>
       </nav>
       <header></header>
-      <main>
-        <section id="home"></section>
+      <main class="w-[90vw] max-w-[1100px] mx-auto">
+        <section class="grid gap-10 grid-cols-[1fr_1fr]" id="home">
+          <header class="grid items-center">
+            <span>Hello, I'm</span>
+            <h1>
+              Fosu Emmanuel
+            </h1>
+            <span id="job-title">Data Analyst</span>
+            <p>I help managers, directors, and business stakeholders to make strategic decisions supported by insights from their data.</p>
+            <div class="flex gap-2 mt-8">
+              <a
+                class="btn-outlined-secondary rounded bp-s-1"
+                href="https://x.com/emman_fosu"
+                target="_blank"
+                rel="noopener"
+                aria-label="X (formerly Twitter)"
+              >
+                <div>
+                  <svg
+                    class="icon-sm"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+              <a
+                class="btn-outlined-secondary rounded bp-s-1"
+                href="https://www.linkedin.com/in/emma-fosu"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <div>
+                  <svg
+                    class="icon-sm"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+              <a
+                href="https://github.com/emma-fosu"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                class="btn-outlined-secondary rounded bp-s-1"
+              >
+                <div>
+                  <svg
+                    class="icon-sm"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </header>
+          <div>
+            <img class="aspect-square object-center object-cover " src="/EF-avatariz-4-min.png" alt="">
+          </div>
+        </section>
         <section id="about">
           <h2>About me</h2>
           <p>
@@ -62,229 +157,579 @@
             turning complex ideas into simple, well-informed stories that
             connect with both technical and non-technical audiences.
           </p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id explicabo veritatis repudiandae! Fuga, possimus nam exercitationem ab assumenda pariatur maxime repudiandae! Dolorem qui laboriosam molestiae, dignissimos suscipit assumenda perferendis odio?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere vel at laboriosam ullam amet eveniet eaque blanditiis eius possimus, officiis odit voluptates vitae dignissimos magnam, atque perspiciatis dolores, maiores porro.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit blanditiis quo voluptas magnam illo qui, dicta minus atque quas deleniti quaerat ex unde quae consectetur soluta eligendi fugiat distinctio.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maiores repudiandae corporis eligendi dignissimos fugiat quam porro earum, veritatis illum quibusdam ab repellendus? Perspiciatis cum sit tenetur? Perspiciatis, esse nemo!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id explicabo veritatis repudiandae! Fuga, possimus nam exercitationem ab assumenda pariatur maxime repudiandae! Dolorem qui laboriosam molestiae, dignissimos suscipit assumenda perferendis odio?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere vel at laboriosam ullam amet eveniet eaque blanditiis eius possimus, officiis odit voluptates vitae dignissimos magnam, atque perspiciatis dolores, maiores porro.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit blanditiis quo voluptas magnam illo qui, dicta minus atque quas deleniti quaerat ex unde quae consectetur soluta eligendi fugiat distinctio.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni maiores repudiandae corporis eligendi dignissimos fugiat quam porro earum, veritatis illum quibusdam ab repellendus? Perspiciatis cum sit tenetur? Perspiciatis, esse nemo!
         </section>
         <section id="projects">
-          <h2></h2>
+          <h2>Featured Projects</h2>
+          <div class="projects">
+            <div class="project">
+              <img class="aspect-16/9 object-contain object-center"  src="/electricity_consumption_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
+               <section>
+                <header>
+                  <h3>CoSSMic Household Electricity Consumption Analysis</h3>
+                  <p>A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
+                </header>
+                <ul>
+                  <li>Solar generation is insufficient in winter but exceeds demand by <b>46%</b> from summer to mid-autumn.</li>
+                  <li>Electricity consumption drops by <b>66%</b> from summer to autumn after rising by <b>75%</b> during winter.</li>
+                  <li>Heat pumps account for only a small share in summer and autumn but consume <b>67-72%</b> of total electricity in winter.</li>
+                </ul>
+                <footer>
+                  <div class="project-tools">
+                     <svg class="icon-md" version="1.1" id="Livello_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2289.75 2130"
+                          enable-background="new 0 0 2289.75 2130" xml:space="preserve">
+                          <metadata>
+                            <sfw  xmlns="&ns_sfw;">
+                              <slices></slices>
+                              <sliceSourceBounds  bottomLeftOrigin="true" height="2130" width="2289.75" x="-1147.5" y="-1041"></sliceSourceBounds>
+                            </sfw>
+                          </metadata>
+                          <path fill="#185C37" d="M1437.75,1011.75L532.5,852v1180.393c0,53.907,43.7,97.607,97.607,97.607l0,0h1562.036
+                            c53.907,0,97.607-43.7,97.607-97.607l0,0V1597.5L1437.75,1011.75z"/>
+                          <path fill="#21A366" d="M1437.75,0H630.107C576.2,0,532.5,43.7,532.5,97.607c0,0,0,0,0,0V532.5l905.25,532.5L1917,1224.75
+                            L2289.75,1065V532.5L1437.75,0z"/>
+                          <path fill="#107C41" d="M532.5,532.5h905.25V1065H532.5V532.5z"/>
+                          <path opacity="0.1" enable-background="new    " d="M1180.393,426H532.5v1331.25h647.893c53.834-0.175,97.432-43.773,97.607-97.607
+                            V523.607C1277.825,469.773,1234.227,426.175,1180.393,426z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1127.143,479.25H532.5V1810.5h594.643
+                            c53.834-0.175,97.432-43.773,97.607-97.607V576.857C1224.575,523.023,1180.977,479.425,1127.143,479.25z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1127.143,479.25H532.5V1704h594.643c53.834-0.175,97.432-43.773,97.607-97.607
+                            V576.857C1224.575,523.023,1180.977,479.425,1127.143,479.25z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1073.893,479.25H532.5V1704h541.393c53.834-0.175,97.432-43.773,97.607-97.607
+                            V576.857C1171.325,523.023,1127.727,479.425,1073.893,479.25z"/>
+                          <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="203.5132" y1="1729.0183" x2="967.9868" y2="404.9817" gradientTransform="matrix(1 0 0 -1 0 2132)">
+                            <stop  offset="0" style="stop-color:#18884F"/>
+                            <stop  offset="0.5" style="stop-color:#117E43"/>
+                            <stop  offset="1" style="stop-color:#0B6631"/>
+                          </linearGradient>
+                          <path fill="url(#SVGID_1_)" d="M97.607,479.25h976.285c53.907,0,97.607,43.7,97.607,97.607v976.285
+                            c0,53.907-43.7,97.607-97.607,97.607H97.607C43.7,1650.75,0,1607.05,0,1553.143V576.857C0,522.95,43.7,479.25,97.607,479.25z"/>
+                          <path fill="#FFFFFF" d="M302.3,1382.264l205.332-318.169L319.5,747.683h151.336l102.666,202.35
+                            c9.479,19.223,15.975,33.494,19.49,42.919h1.331c6.745-15.336,13.845-30.228,21.3-44.677L725.371,747.79h138.929l-192.925,314.548
+                            L869.2,1382.263H721.378L602.79,1160.158c-5.586-9.45-10.326-19.376-14.164-29.66h-1.757c-3.474,10.075-8.083,19.722-13.739,28.755
+                            l-122.102,223.011H302.3z"/>
+                          <path fill="#33C481" d="M2192.143,0H1437.75v532.5h852V97.607C2289.75,43.7,2246.05,0,2192.143,0L2192.143,0z"/>
+                          <path fill="#107C41" d="M1437.75,1065h852v532.5h-852V1065z"/>
+                      </svg>
+                  </div>
+                  <a href="#" class="btn-filled-primary bp-r-1" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
+                </footer>
+               </section>
+            </div>
+          </div>
         </section>
         <section id="tools">
-          <h2></h2>
+          <h2>Skills and Tools</h2>
+          <div class="@container/table-cont">
+            <table class="w-full border-collapse">
+              <tbody class="grid gap-y-7 @[760px]/table-cont:grid-cols-[auto_1fr] @[760px]:gap-y-0">
+                <tr class="grid gap-y-3 @[760px]/table-cont:grid-cols-subgrid col-span-full">
+                  <th class="text-left @[760px]/table-cont:text-left">Data Collection and Storage</th>
+                  <td>
+                    <div class=" tools flex gap-4 flex-wrap">
+                      <div class="postgresql tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" width="432.071pt" height="445.383pt" viewBox="0 0 432.071 445.383" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                          <g id="orginal" style="fill-rule:nonzero;clip-rule:nonzero;stroke:#000000;stroke-miterlimit:4;"></g>
+                          <g id="Layer_x0020_3" style="fill-rule:nonzero;clip-rule:nonzero;fill:none;stroke:#FFFFFF;stroke-width:12.4651;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;">
+                          <path style="fill:#000000;stroke:#000000;stroke-width:37.3953;stroke-linecap:butt;stroke-linejoin:miter;" d="M323.205,324.227c2.833-23.601,1.984-27.062,19.563-23.239l4.463,0.392c13.517,0.615,31.199-2.174,41.587-7c22.362-10.376,35.622-27.7,13.572-23.148c-50.297,10.376-53.755-6.655-53.755-6.655c53.111-78.803,75.313-178.836,56.149-203.322    C352.514-5.534,262.036,26.049,260.522,26.869l-0.482,0.089c-9.938-2.062-21.06-3.294-33.554-3.496c-22.761-0.374-40.032,5.967-53.133,15.904c0,0-161.408-66.498-153.899,83.628c1.597,31.936,45.777,241.655,98.47,178.31    c19.259-23.163,37.871-42.748,37.871-42.748c9.242,6.14,20.307,9.272,31.912,8.147l0.897-0.765c-0.281,2.876-0.157,5.689,0.359,9.019c-13.572,15.167-9.584,17.83-36.723,23.416c-27.457,5.659-11.326,15.734-0.797,18.367c12.768,3.193,42.305,7.716,62.268-20.224    l-0.795,3.188c5.325,4.26,4.965,30.619,5.72,49.452c0.756,18.834,2.017,36.409,5.856,46.771c3.839,10.36,8.369,37.05,44.036,29.406c29.809-6.388,52.6-15.582,54.677-101.107"/>
+                          <path style="fill:#336791;stroke:none;" d="M402.395,271.23c-50.302,10.376-53.76-6.655-53.76-6.655c53.111-78.808,75.313-178.843,56.153-203.326c-52.27-66.785-142.752-35.2-144.262-34.38l-0.486,0.087c-9.938-2.063-21.06-3.292-33.56-3.496c-22.761-0.373-40.026,5.967-53.127,15.902    c0,0-161.411-66.495-153.904,83.63c1.597,31.938,45.776,241.657,98.471,178.312c19.26-23.163,37.869-42.748,37.869-42.748c9.243,6.14,20.308,9.272,31.908,8.147l0.901-0.765c-0.28,2.876-0.152,5.689,0.361,9.019c-13.575,15.167-9.586,17.83-36.723,23.416    c-27.459,5.659-11.328,15.734-0.796,18.367c12.768,3.193,42.307,7.716,62.266-20.224l-0.796,3.188c5.319,4.26,9.054,27.711,8.428,48.969c-0.626,21.259-1.044,35.854,3.147,47.254c4.191,11.4,8.368,37.05,44.042,29.406c29.809-6.388,45.256-22.942,47.405-50.555    c1.525-19.631,4.976-16.729,5.194-34.28l2.768-8.309c3.192-26.611,0.507-35.196,18.872-31.203l4.463,0.392c13.517,0.615,31.208-2.174,41.591-7c22.358-10.376,35.618-27.7,13.573-23.148z"/>
+                          <path d="M215.866,286.484c-1.385,49.516,0.348,99.377,5.193,111.495c4.848,12.118,15.223,35.688,50.9,28.045c29.806-6.39,40.651-18.756,45.357-46.051c3.466-20.082,10.148-75.854,11.005-87.281"/>
+                          <path d="M173.104,38.256c0,0-161.521-66.016-154.012,84.109c1.597,31.938,45.779,241.664,98.473,178.316c19.256-23.166,36.671-41.335,36.671-41.335"/>
+                          <path d="M260.349,26.207c-5.591,1.753,89.848-34.889,144.087,34.417c19.159,24.484-3.043,124.519-56.153,203.329"/>
+                          <path style="stroke-linejoin:bevel;" d="M348.282,263.953c0,0,3.461,17.036,53.764,6.653c22.04-4.552,8.776,12.774-13.577,23.155c-18.345,8.514-59.474,10.696-60.146-1.069c-1.729-30.355,21.647-21.133,19.96-28.739c-1.525-6.85-11.979-13.573-18.894-30.338    c-6.037-14.633-82.796-126.849,21.287-110.183c3.813-0.789-27.146-99.002-124.553-100.599c-97.385-1.597-94.19,119.762-94.19,119.762"/>
+                          <path d="M188.604,274.334c-13.577,15.166-9.584,17.829-36.723,23.417c-27.459,5.66-11.326,15.733-0.797,18.365c12.768,3.195,42.307,7.718,62.266-20.229c6.078-8.509-0.036-22.086-8.385-25.547c-4.034-1.671-9.428-3.765-16.361,3.994z"/>
+                          <path d="M187.715,274.069c-1.368-8.917,2.93-19.528,7.536-31.942c6.922-18.626,22.893-37.255,10.117-96.339c-9.523-44.029-73.396-9.163-73.436-3.193c-0.039,5.968,2.889,30.26-1.067,58.548c-5.162,36.913,23.488,68.132,56.479,64.938"/>
+                          <path style="fill:#FFFFFF;stroke-width:4.155;stroke-linecap:butt;stroke-linejoin:miter;" d="M172.517,141.7c-0.288,2.039,3.733,7.48,8.976,8.207c5.234,0.73,9.714-3.522,9.998-5.559c0.284-2.039-3.732-4.285-8.977-5.015c-5.237-0.731-9.719,0.333-9.996,2.367z"/>
+                          <path style="fill:#FFFFFF;stroke-width:2.0775;stroke-linecap:butt;stroke-linejoin:miter;" d="M331.941,137.543c0.284,2.039-3.732,7.48-8.976,8.207c-5.238,0.73-9.718-3.522-10.005-5.559c-0.277-2.039,3.74-4.285,8.979-5.015c5.239-0.73,9.718,0.333,10.002,2.368z"/>
+                          <path d="M350.676,123.432c0.863,15.994-3.445,26.888-3.988,43.914c-0.804,24.748,11.799,53.074-7.191,81.435"/>
+                          <path style="stroke-width:3;" d="M0,60.232"/>
+                          </g>
+                        </svg>
+                        <span class="text-xs-1">Postgresql</span>
+                      </div>
+                      <div class="tool databricks grid justify-items-center gap-2">
+                        <svg class="icon-xl" version="1.1" id="Layer_1" xmlns:x="ns_extend;" xmlns:i="ns_ai;" xmlns:graph="ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40.1 42" style="enable-background:new 0 0 40.1 42;" xml:space="preserve">
+                          <style type="text/css">
+                            .st0{fill:#FF3621;}
+                          </style>
+                          <metadata>
+                            <sfw xmlns="ns_sfw;">
+                            <slices>
+                            </slices>
+                            <sliceSourceBounds bottomLeftOrigin="true" height="42" width="40.1" x="-69.1" y="-10.5">
+                            </sliceSourceBounds>
+                            </sfw>
+                          </metadata>
+                          <g>
+                            <path class="st0" d="M40.1,31.1v-7.4l-0.8-0.5L20.1,33.7l-18.2-10l0-4.3l18.2,9.9l20.1-10.9v-7.3l-0.8-0.5L20.1,21.2L2.6,11.6
+                              L20.1,2l14.1,7.7l1.1-0.6V8.3L20.1,0L0,10.9V12L20.1,23l18.2-10v4.4l-18.2,10L0.8,16.8L0,17.3v7.4l20.1,10.9l18.2-9.9v4.3l-18.2,10
+                              L0.8,29.5L0,30v1.1L20.1,42L40.1,31.1z">
+                            </path>
+                          </g>
+                        </svg>
+                        <span class="text-xs-1">Databricks</span>
+                      </div>
+                      <div class="snowflakes tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146.36 139.16" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs>
+                            <style>
+                            .cls-1{fill:#29b5e8;fill-rule:evenodd;}
+                            </style>
+                          </defs>
+                          <path class="cls-1" d="M134.81,60.1l-16.47,9.49L134.81,79a8.65,8.65,0,1,1-8.67,15l-29.51-17a8.68,8.68,0,0,1-4.33-7.75,8.48,8.48,0,0,1,.31-2,8.68,8.68,0,0,1,4-5.19l29.51-16.94A8.69,8.69,0,0,1,138,48.31,8.58,8.58,0,0,1,134.81,60.1Zm-15.59,46L89.72,89.13a8.72,8.72,0,0,0-13.06,7.48v33.9a8.69,8.69,0,0,0,17.37,0v-19L110.54,121a8.66,8.66,0,1,0,8.68-15Zm-34-33.16L72.92,85.09a2.44,2.44,0,0,1-1.54.65H67.77a2.51,2.51,0,0,1-1.54-.65L54,72.9a2.45,2.45,0,0,1-.64-1.52v-3.6A2.5,2.5,0,0,1,54,66.25L66.23,54.06a2.5,2.5,0,0,1,1.54-.64h3.61a2.45,2.45,0,0,1,1.54.64L85.18,66.25a2.49,2.49,0,0,1,.63,1.53v3.6A2.44,2.44,0,0,1,85.18,72.9Zm-9.8-3.38A2.59,2.59,0,0,0,74.73,68l-3.55-3.51a2.51,2.51,0,0,0-1.54-.64h-.13a2.46,2.46,0,0,0-1.53.64L64.43,68a2.51,2.51,0,0,0-.63,1.55v.13a2.41,2.41,0,0,0,.63,1.52L68,74.7a2.48,2.48,0,0,0,1.53.64h.13a2.51,2.51,0,0,0,1.54-.64l3.55-3.53a2.49,2.49,0,0,0,.65-1.52ZM19.93,33.08,49.44,50a8.73,8.73,0,0,0,13.07-7.49V8.64a8.69,8.69,0,0,0-17.37,0v19l-16.53-9.5a8.65,8.65,0,1,0-8.68,15ZM84.69,51.16a8.64,8.64,0,0,0,5-1.13l29.5-17a8.65,8.65,0,1,0-8.68-15L94,27.61v-19a8.69,8.69,0,0,0-17.37,0v33.9A8.66,8.66,0,0,0,84.69,51.16ZM54.48,88a8.58,8.58,0,0,0-5,1.13L19.93,106.06a8.66,8.66,0,1,0,8.68,15l16.53-9.49v19a8.69,8.69,0,0,0,17.37,0V96.61A8.65,8.65,0,0,0,54.48,88Zm-8-15.87a8.61,8.61,0,0,0-4-10L13,45.14A8.69,8.69,0,0,0,1.17,48.31,8.59,8.59,0,0,0,4.35,60.1l16.47,9.49L4.35,79A8.65,8.65,0,1,0,13,94l29.48-17A8.59,8.59,0,0,0,46.47,72.13Zm93.15-56.22H138.3v1.63h1.32c.61,0,1-.28,1-.8S140.26,15.91,139.62,15.91Zm-2.94-1.5h3c1.62,0,2.7.89,2.7,2.27a2.16,2.16,0,0,1-1.08,1.9l1.17,1.68v.34h-1.69L139.62,19H138.3V20.6h-1.62Zm8.3,3.22a5.48,5.48,0,0,0-5.58-5.83c-3.31,0-5.51,2.39-5.51,5.83,0,3.28,2.2,5.82,5.51,5.82A5.47,5.47,0,0,0,145,17.63Zm1.38,0c0,3.89-2.6,7.14-7,7.14s-6.89-3.28-6.89-7.14,2.57-7.14,6.89-7.14S146.36,13.73,146.36,17.63Z">
+                          </path>
+                        </svg>
+                        <span class="text-xs-1">Snowflakes</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="grid gap-y-3 @[760px]/table-cont:grid-cols-subgrid col-span-full">
+                  <th class="text-left @[760px]/table-cont:text-left">Data Transformation and Modeling</th>
+                  <td>
+                    <div class="tools flex gap-4 flex-wrap">
+                      <div class="dbt tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                            <g>
+                                <path d="M245.121138,10.6473813 C251.139129,16.4340053 255.074133,24.0723342 256,32.4050489 C256,35.8769778 255.074133,38.1917867 252.990862,42.5895822 C250.907876,46.9873778 225.215147,91.4286933 217.57696,103.696213 C213.179164,110.871609 210.864356,119.435947 210.864356,127.768462 C210.864356,136.3328 213.179164,144.6656 217.57696,151.840996 C225.215147,164.108516 250.907876,208.781084 252.990862,213.179164 C255.074133,217.57696 256,219.659947 256,223.131876 C255.074133,231.464676 251.370667,239.103147 245.352676,244.658347 C239.565938,250.676338 231.927751,254.611342 223.826489,255.305671 C220.35456,255.305671 218.039751,254.379804 213.873493,252.296533 C209.706951,250.213262 164.340053,225.215147 152.072249,217.57696 C151.146382,217.113884 150.220516,216.419556 149.063396,215.95648 L88.4195556,180.079502 C89.8082133,191.652693 94.9006222,202.763093 103.233138,210.864356 C104.853618,212.484551 106.473813,213.873493 108.325547,215.262151 C106.936604,215.95648 105.316409,216.651093 103.927751,217.57696 C91.6599467,225.215147 46.9873778,250.907876 42.5895822,252.990862 C38.1917867,255.074133 36.1085156,256 32.4050489,256 C24.0723342,255.074133 16.4340053,251.370667 10.8788338,245.352676 C4.86075733,239.565938 0.925858133,231.927751 0,223.594951 C0.231464676,220.123022 1.1573248,216.651093 3.00905244,213.641956 C5.09223822,209.24416 30.7848533,164.571307 38.42304,152.303787 C42.82112,145.128391 45.1356444,136.795591 45.1356444,128.231538 C45.1356444,119.6672 42.82112,111.3344 38.42304,104.159004 C30.7848533,91.4286933 4.86075733,46.75584 3.00905244,42.3580444 C1.1573248,39.3489067 0.231464676,35.8769778 0,32.4050489 C0.925858133,24.0723342 4.62930489,16.4340053 10.6473813,10.6473813 C16.4340053,4.62930489 24.0723342,0.925858133 32.4050489,0 C35.8769778,0.231464676 39.3489067,1.1573248 42.5895822,3.00905244 C46.2930489,4.62930489 78.9293511,23.6094009 96.28928,33.7939911 L100.224284,36.1085156 C101.612942,37.0343822 102.770347,37.7287111 103.696213,38.1917867 L105.547947,39.3489067 L167.348907,75.9204978 C165.960249,62.0324978 158.784853,49.3019022 147.674453,40.7378489 C149.063396,40.04352 150.683591,39.3489067 152.072249,38.42304 C164.340053,30.7848533 209.012622,4.86075733 213.410418,3.00905244 C216.419556,1.1573248 219.891484,0.231464676 223.594951,0 C231.696213,0.925858133 239.334684,4.62930489 245.121138,10.6473813 Z M131.240391,144.434062 L144.434062,131.240391 C146.285796,129.388658 146.285796,126.611342 144.434062,124.759609 L131.240391,111.565938 C129.388658,109.714204 126.611342,109.714204 124.759609,111.565938 L111.565938,124.759609 C109.714204,126.611342 109.714204,129.388658 111.565938,131.240391 L124.759609,144.434062 C126.379804,146.054258 129.388658,146.054258 131.240391,144.434062 Z" fill="#FF694A"></path>
+                            </g>
+                        </svg>
+                        <span class="text-xs-1">dbt</span>
+                      </div>
+                      <div class="python tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="110px" height="110px" viewBox="0.21 -0.077 110 110" enable-background="new 0.21 -0.077 110 110" xml:space="preserve"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="63.8159" y1="56.6829" x2="118.4934" y2="1.8225" gradientTransform="matrix(1 0 0 -1 -53.2974 66.4321)"> <stop offset="0" style="stop-color:#387EB8"/> <stop offset="1" style="stop-color:#366994"/></linearGradient><path fill="url(#SVGID_1_)" d="M55.023-0.077c-25.971,0-26.25,10.081-26.25,12.156c0,3.148,0,12.594,0,12.594h26.75v3.781 c0,0-27.852,0-37.375,0c-7.949,0-17.938,4.833-17.938,26.25c0,19.673,7.792,27.281,15.656,27.281c2.335,0,9.344,0,9.344,0 s0-9.765,0-13.125c0-5.491,2.721-15.656,15.406-15.656c15.91,0,19.971,0,26.531,0c3.902,0,14.906-1.696,14.906-14.406 c0-13.452,0-17.89,0-24.219C82.054,11.426,81.515-0.077,55.023-0.077z M40.273,8.392c2.662,0,4.813,2.15,4.813,4.813 c0,2.661-2.151,4.813-4.813,4.813s-4.813-2.151-4.813-4.813C35.46,10.542,37.611,8.392,40.273,8.392z"/><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="97.0444" y1="21.6321" x2="155.6665" y2="-34.5308" gradientTransform="matrix(1 0 0 -1 -53.2974 66.4321)"> <stop offset="0" style="stop-color:#FFE052"/> <stop offset="1" style="stop-color:#FFC331"/></linearGradient><path fill="url(#SVGID_2_)" d="M55.397,109.923c25.959,0,26.282-10.271,26.282-12.156c0-3.148,0-12.594,0-12.594H54.897v-3.781 c0,0,28.032,0,37.375,0c8.009,0,17.938-4.954,17.938-26.25c0-23.322-10.538-27.281-15.656-27.281c-2.336,0-9.344,0-9.344,0 s0,10.216,0,13.125c0,5.491-2.631,15.656-15.406,15.656c-15.91,0-19.476,0-26.532,0c-3.892,0-14.906,1.896-14.906,14.406 c0,14.475,0,18.265,0,24.219C28.366,100.497,31.562,109.923,55.397,109.923z M70.148,101.454c-2.662,0-4.813-2.151-4.813-4.813 s2.15-4.813,4.813-4.813c2.661,0,4.813,2.151,4.813,4.813S72.809,101.454,70.148,101.454z"/></svg>
+                        <span class="text-xs-1">Python</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="grid gap-y-3 @[760px]/table-cont:grid-cols-subgrid col-span-full">
+                  <th class="text-left @[760px]/table-cont:text-left">Data Analysis and visualization</th>
+                  <td>
+                    <div class="tools flex gap-4 flex-wrap">
+                      <div class="powerbi tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" width="630px" height="630px" viewBox="0 0 630 630" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs>
+                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+                                  <stop stop-color="#EBBB14" offset="0%"></stop>
+                                  <stop stop-color="#B25400" offset="100%"></stop>
+                              </linearGradient>
+                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+                                  <stop stop-color="#F9E583" offset="0%"></stop>
+                                  <stop stop-color="#DE9800" offset="100%"></stop>
+                              </linearGradient>
+                              <path d="M346,604 L346,630 L320,630 L153,630 C138.640597,630 127,618.359403 127,604 L127,183 C127,168.640597 138.640597,157 153,157 L320,157 C334.359403,157 346,168.640597 346,183 L346,604 Z" id="path-3"></path>
+                              <filter x="-9.1%" y="-6.3%" width="136.5%" height="116.9%" filterUnits="objectBoundingBox" id="filter-4">
+                                  <feOffset dx="20" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                  <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                  <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0530211976 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                              </filter>
+                              <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+                                  <stop stop-color="#F9E68B" offset="0%"></stop>
+                                  <stop stop-color="#F3CD32" offset="100%"></stop>
+                              </linearGradient>
+                          </defs>
+                          <g id="PBI-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Group" transform="translate(77.500000, 0.000000)">
+                                  <rect id="Rectangle" fill="url(#linearGradient-1)" x="256" y="0" width="219" height="630" rx="26"></rect>
+                                  <g id="Combined-Shape">
+                                      <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                      <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                  </g>
+                                  <path d="M219,604 L219,630 L193,630 L26,630 C11.6405965,630 1.75851975e-15,618.359403 0,604 L0,341 C-1.75851975e-15,326.640597 11.6405965,315 26,315 L193,315 C207.359403,315 219,326.640597 219,341 L219,604 Z" id="Combined-Shape" fill="url(#linearGradient-5)"></path>
+                              </g>
+                          </g>
+                        </svg>
+                        <span class="text-xs-1">Power BI</span>
+                      </div>
+                      <div class="excel tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" version="1.1" id="Livello_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2289.75 2130"
+                          enable-background="new 0 0 2289.75 2130" xml:space="preserve">
+                          <metadata>
+                            <sfw  xmlns="&ns_sfw;">
+                              <slices></slices>
+                              <sliceSourceBounds  bottomLeftOrigin="true" height="2130" width="2289.75" x="-1147.5" y="-1041"></sliceSourceBounds>
+                            </sfw>
+                          </metadata>
+                          <path fill="#185C37" d="M1437.75,1011.75L532.5,852v1180.393c0,53.907,43.7,97.607,97.607,97.607l0,0h1562.036
+                            c53.907,0,97.607-43.7,97.607-97.607l0,0V1597.5L1437.75,1011.75z"/>
+                          <path fill="#21A366" d="M1437.75,0H630.107C576.2,0,532.5,43.7,532.5,97.607c0,0,0,0,0,0V532.5l905.25,532.5L1917,1224.75
+                            L2289.75,1065V532.5L1437.75,0z"/>
+                          <path fill="#107C41" d="M532.5,532.5h905.25V1065H532.5V532.5z"/>
+                          <path opacity="0.1" enable-background="new    " d="M1180.393,426H532.5v1331.25h647.893c53.834-0.175,97.432-43.773,97.607-97.607
+                            V523.607C1277.825,469.773,1234.227,426.175,1180.393,426z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1127.143,479.25H532.5V1810.5h594.643
+                            c53.834-0.175,97.432-43.773,97.607-97.607V576.857C1224.575,523.023,1180.977,479.425,1127.143,479.25z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1127.143,479.25H532.5V1704h594.643c53.834-0.175,97.432-43.773,97.607-97.607
+                            V576.857C1224.575,523.023,1180.977,479.425,1127.143,479.25z"/>
+                          <path opacity="0.2" enable-background="new    " d="M1073.893,479.25H532.5V1704h541.393c53.834-0.175,97.432-43.773,97.607-97.607
+                            V576.857C1171.325,523.023,1127.727,479.425,1073.893,479.25z"/>
+                          <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="203.5132" y1="1729.0183" x2="967.9868" y2="404.9817" gradientTransform="matrix(1 0 0 -1 0 2132)">
+                            <stop  offset="0" style="stop-color:#18884F"/>
+                            <stop  offset="0.5" style="stop-color:#117E43"/>
+                            <stop  offset="1" style="stop-color:#0B6631"/>
+                          </linearGradient>
+                          <path fill="url(#SVGID_1_)" d="M97.607,479.25h976.285c53.907,0,97.607,43.7,97.607,97.607v976.285
+                            c0,53.907-43.7,97.607-97.607,97.607H97.607C43.7,1650.75,0,1607.05,0,1553.143V576.857C0,522.95,43.7,479.25,97.607,479.25z"/>
+                          <path fill="#FFFFFF" d="M302.3,1382.264l205.332-318.169L319.5,747.683h151.336l102.666,202.35
+                            c9.479,19.223,15.975,33.494,19.49,42.919h1.331c6.745-15.336,13.845-30.228,21.3-44.677L725.371,747.79h138.929l-192.925,314.548
+                            L869.2,1382.263H721.378L602.79,1160.158c-5.586-9.45-10.326-19.376-14.164-29.66h-1.757c-3.474,10.075-8.083,19.722-13.739,28.755
+                            l-122.102,223.011H302.3z"/>
+                          <path fill="#33C481" d="M2192.143,0H1437.75v532.5h852V97.607C2289.75,43.7,2246.05,0,2192.143,0L2192.143,0z"/>
+                          <path fill="#107C41" d="M1437.75,1065h852v532.5h-852V1065z"/>
+                        </svg>
+                        <span class=" text-xs-1">Microsoft Excel</span>
+                      </div>
+                      <div class="sheet tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" width="49px" height="67px" viewBox="0 0 49 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <defs>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-1"></path>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-3"></path>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-5"></path>
+                              <linearGradient x1="50.0053945%" y1="8.58610612%" x2="50.0053945%" y2="100.013939%" id="linearGradient-7">
+                                  <stop stop-color="#263238" stop-opacity="0.2" offset="0%"></stop>
+                                  <stop stop-color="#263238" stop-opacity="0.02" offset="100%"></stop>
+                              </linearGradient>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-8"></path>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-10"></path>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-12"></path>
+                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="path-14"></path>
+                              <radialGradient cx="3.16804688%" cy="2.71744318%" fx="3.16804688%" fy="2.71744318%" r="161.248516%" gradientTransform="translate(0.031680,0.027174),scale(1.000000,0.727273),translate(-0.031680,-0.027174)" id="radialGradient-16">
+                                  <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="0%"></stop>
+                                  <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+                              </radialGradient>
+                          </defs>
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Consumer-Apps-Sheets-Large-VD-R8-" transform="translate(-451.000000, -451.000000)">
+                                  <g id="Hero" transform="translate(0.000000, 63.000000)">
+                                      <g id="Personal" transform="translate(277.000000, 299.000000)">
+                                          <g id="Sheets-icon" transform="translate(174.833333, 89.958333)">
+                                              <g id="Group">
+                                                  <g id="Clipped">
+                                                      <mask id="mask-2" fill="white">
+                                                          <use xlink:href="#path-1"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L36.9791667,10.3541667 L29.5833333,0 Z" id="Path" fill="#0F9D58" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-4" fill="white">
+                                                          <use xlink:href="#path-3"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <path d="M11.8333333,31.8020833 L11.8333333,53.25 L35.5,53.25 L35.5,31.8020833 L11.8333333,31.8020833 Z M22.1875,50.2916667 L14.7916667,50.2916667 L14.7916667,46.59375 L22.1875,46.59375 L22.1875,50.2916667 Z M22.1875,44.375 L14.7916667,44.375 L14.7916667,40.6770833 L22.1875,40.6770833 L22.1875,44.375 Z M22.1875,38.4583333 L14.7916667,38.4583333 L14.7916667,34.7604167 L22.1875,34.7604167 L22.1875,38.4583333 Z M32.5416667,50.2916667 L25.1458333,50.2916667 L25.1458333,46.59375 L32.5416667,46.59375 L32.5416667,50.2916667 Z M32.5416667,44.375 L25.1458333,44.375 L25.1458333,40.6770833 L32.5416667,40.6770833 L32.5416667,44.375 Z M32.5416667,38.4583333 L25.1458333,38.4583333 L25.1458333,34.7604167 L32.5416667,34.7604167 L32.5416667,38.4583333 Z" id="Shape" fill="#F1F1F1" fill-rule="nonzero" mask="url(#mask-4)"></path>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-6" fill="white">
+                                                          <use xlink:href="#path-5"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <polygon id="Path" fill="url(#linearGradient-7)" fill-rule="nonzero" mask="url(#mask-6)" points="30.8813021 16.4520313 47.3333333 32.9003646 47.3333333 17.75"></polygon>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-9" fill="white">
+                                                          <use xlink:href="#path-8"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <g id="Group" mask="url(#mask-9)">
+                                                          <g transform="translate(26.625000, -2.958333)">
+                                                              <path d="M2.95833333,2.95833333 L2.95833333,16.2708333 C2.95833333,18.7225521 4.94411458,20.7083333 7.39583333,20.7083333 L20.7083333,20.7083333 L2.95833333,2.95833333 Z" id="Path" fill="#87CEAC" fill-rule="nonzero"></path>
+                                                          </g>
+                                                      </g>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-11" fill="white">
+                                                          <use xlink:href="#path-10"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <path d="M4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,4.80729167 C0,2.36666667 1.996875,0.369791667 4.4375,0.369791667 L29.5833333,0.369791667 L29.5833333,0 L4.4375,0 Z" id="Path" fill-opacity="0.2" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-11)"></path>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-13" fill="white">
+                                                          <use xlink:href="#path-12"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <path d="M42.8958333,64.7135417 L4.4375,64.7135417 C1.996875,64.7135417 0,62.7166667 0,60.2760417 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,60.2760417 C47.3333333,62.7166667 45.3364583,64.7135417 42.8958333,64.7135417 Z" id="Path" fill-opacity="0.2" fill="#263238" fill-rule="nonzero" mask="url(#mask-13)"></path>
+                                                  </g>
+                                                  <g id="Clipped">
+                                                      <mask id="mask-15" fill="white">
+                                                          <use xlink:href="#path-14"></use>
+                                                      </mask>
+                                                      <g id="SVGID_1_"></g>
+                                                      <path d="M34.0208333,17.75 C31.5691146,17.75 29.5833333,15.7642188 29.5833333,13.3125 L29.5833333,13.6822917 C29.5833333,16.1340104 31.5691146,18.1197917 34.0208333,18.1197917 L47.3333333,18.1197917 L47.3333333,17.75 L34.0208333,17.75 Z" id="Path" fill-opacity="0.1" fill="#263238" fill-rule="nonzero" mask="url(#mask-15)"></path>
+                                                  </g>
+                                              </g>
+                                              <path d="M29.5833333,0 L4.4375,0 C1.996875,0 0,1.996875 0,4.4375 L0,60.6458333 C0,63.0864583 1.996875,65.0833333 4.4375,65.0833333 L42.8958333,65.0833333 C45.3364583,65.0833333 47.3333333,63.0864583 47.3333333,60.6458333 L47.3333333,17.75 L29.5833333,0 Z" id="Path" fill="url(#radialGradient-16)" fill-rule="nonzero"></path>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </g>
+                          </g>
+                        </svg>
+                        <span class="text-xs-1">Google Sheets</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="grid gap-y-3 @[760px]/table-cont:grid-cols-subgrid col-span-full">
+                  <th class="text-left @[760px]/table-cont:text-left">Version Control and Collaboration</th>
+                  <td>
+                    <div class="tools flex gap-4 flex-wrap">
+                      <div class="tool grid justify-items-center gap-2">
+                        <svg class="icon-xl" viewBox="0 0 98 96" width="98" height="96" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/></svg>
+                        <span class="text-xs-1">GitHub</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <section id="more brand">
+          <h2 class="sr-only">
+            <!-- something about yourself and brand -->
+          </h2>
         </section>
-        <section id="resume">
-          <h2></h2>
-        </section>
-        <section id="appreciation">
-          <h2></h2>
-        </section>
-        <section id="contact">
+        <section id="contact" class="@container/contact-section">
           <header>
             <h2></h2>
           </header>
-          <div class="grid gap-10 grid-cols-[30%_1fr]">
-            <section social-handles>
-              <h3 class="sr-only">Social Media Handles</h3>
-              <div class="grid gap-6">
-                <div>
-                  <a
-                    href="mailto:emmanuel.fosuduffour@gmail.com"
-                    aria-label="Mail me"
-                    class="flex gap-3 items-start"
-                  >
-                    <div class="ic-filled-primary rounded bp-s-1">
-                      <svg
-                        class="icon-sm"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="grid">
-                      <span>Email</span>
-                      <span class="text-sm-2"
-                        >emmanuel.fosuduffour@gmail.com</span
-                      >
-                    </p>
-                  </a>
+          <div class="grid gap-10 @[760px]:grid-cols-[minmax(300px,30%)_1fr]">
+            <section
+              social-handles
+              class="order-2 @[760px]:order-none @container/social-handles"
+            >
+              <div
+                class="grid gap-y-4 gap-x-15 grid-cols-[auto] @[480px]/social-handles:grid-cols-[min-content_1fr]"
+              >
+                <h3 class="sr-only">Social Media Handles</h3>
+                <div class="grid gap-5">
+                  <div>
+                    <a
+                      href="mailto:emmanuel.fosuduffour@gmail.com"
+                      aria-label="Mail me"
+                      class="flex gap-3 items-start"
+                    >
+                      <div class="ic-filled-primary rounded bp-s-1">
+                        <svg
+                          class="icon-sm"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="grid">
+                        <span>Email</span>
+                        <span class="text-sm-2"
+                          >emmanuel.fosuduffour@gmail.com</span
+                        >
+                      </p>
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.google.com/maps?q=Accra+Ghana"
+                      target="_blank"
+                      rel="noopener"
+                      class="flex gap-3 items-start"
+                    >
+                      <div class="ic-filled-primary rounded bp-s-1">
+                        <svg
+                          class="icon-sm"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <p class="grid">
+                        <span>Location</span>
+                        <span class="text-sm-2">Accra, Ghana</span>
+                      </p>
+                    </a>
+                  </div>
                 </div>
                 <div>
-                  <a
-                    href="https://www.google.com/maps?q=Accra+Ghana"
-                    target="_blank"
-                    rel="noopener"
-                    class="flex gap-3 items-start"
-                  >
-                    <div class="ic-filled-primary rounded bp-s-1">
-                      <svg
-                        class="icon-sm"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="grid">
-                      <span>Location</span>
-                      <span class="text-sm-2">Accra, Ghana</span>
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <div class="mt-10">
-                <p>Connect with me</p>
-                <div class="flex gap-4 mt-2">
-                  <a
-                    class="btn-outlined-secondary rounded bp-s-1"
-                    href="https://x.com/emman_fosu"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="X (formerly Twitter)"
-                  >
-                    <div>
-                      <svg
-                        class="icon-sm"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                  <a
-                    class="btn-outlined-secondary rounded bp-s-1"
-                    href="https://www.linkedin.com/in/emma-fosu"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="LinkedIn"
-                  >
-                    <div>
-                      <svg
-                        class="icon-sm"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
-                  <a
-                    href="https://github.com/emma-fosu"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="GitHub"
-                    class="btn-outlined-secondary rounded bp-s-1"
-                  >
-                    <div>
-                      <svg
-                        class="icon-sm"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </a>
+                  <p class="sr-only">Connect with me</p>
+                  <div class="flex gap-2 mt-2">
+                    <a
+                      class="btn-outlined-secondary rounded bp-s-1"
+                      href="https://x.com/emman_fosu"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="X (formerly Twitter)"
+                    >
+                      <div>
+                        <svg
+                          class="icon-sm"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </a>
+                    <a
+                      class="btn-outlined-secondary rounded bp-s-1"
+                      href="https://www.linkedin.com/in/emma-fosu"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="LinkedIn"
+                    >
+                      <div>
+                        <svg
+                          class="icon-sm"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </a>
+                    <a
+                      href="https://github.com/emma-fosu"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="GitHub"
+                      class="btn-outlined-secondary rounded bp-s-1"
+                    >
+                      <div>
+                        <svg
+                          class="icon-sm"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
-            <section contact-form>
+            <section contact-form class="order-1 @[760px]:order-none">
               <h3 class="sr-only">Contact Form</h3>
-              <form novalidate class="grid gap-x-4 gap-y-5 grid-cols-[1fr_1fr] container-1">
-                <div class="grid gap-1.5">
-                  <label for="name">Name</label>
-                  <div>
-                    <input
-                      class="w-full"
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Enter your name"
-                      required
-                    />
-                    <div id="name-error"></div>
-                  </div>
-                </div>
-                <div class="grid gap-1.5">
-                  <label for="email">Email</label>
-                  <div>
-                    <input
-                      class="w-full"
-                      type="text"
-                      name="email"
-                      id="email"
-                      placeholder="Enter your email"
-                      required
-                      pattern="^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
-                    />
-                    <div id="email-error"></div>
-                  </div>
-                </div>
-                <div class="col-span-full grid gap-1.5">
-                  <label for="subject">Subject</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    placeholder="Enter your subject"
-                    class="w-full"
-                  />
-                </div>
-                <div class="col-span-full grid gap-1.5">
-                  <label for="message">Message</label>
-                  <div>
-                    <textarea
-                      class="w-full"
-                      name="message"
-                      id="message"
-                      rows="7"
-                      placeholder="Type here..."
-                      required
-                    ></textarea>
-                    <div id="message-error"></div>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="btn-outlined-secondary bp-r-1 w-fit"
+              <div class="@container">
+                <form
+                  novalidate
+                  class="container-1 grid gap-x-4 gap-y-5.5 @[500px]:grid-cols-[1fr_1fr]"
                 >
-                  <span class="flex items-center gap-[6px]">
-                    <svg
-                      class="icon-sm"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"
-                      ></path>
-                    </svg>
-                    Send
-                  </span>
-                </button>
-              </form>
+                  <div class="grid gap-1.5">
+                    <label for="name">Name</label>
+                    <div class="relative">
+                      <input
+                        class="w-full"
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                      />
+                      <span
+                        id="name-error"
+                        class="text-xs error invisible absolute -bottom-5 left-0"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="grid gap-1.5">
+                    <label for="email">Email</label>
+                    <div class="relative">
+                      <input
+                        class="w-full"
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                        pattern="^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
+                      />
+                      <span
+                        id="email-error"
+                        class="text-xs error invisible absolute -bottom-5 left-0"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="col-span-full grid gap-1.5">
+                    <label for="subject">Subject</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      id="subject"
+                      placeholder="Enter your subject"
+                      class="w-full"
+                    />
+                  </div>
+                  <div class="col-span-full grid gap-1.5">
+                    <label for="message">Message</label>
+                    <div class="relative">
+                      <textarea
+                        class="w-full h-full"
+                        name="message"
+                        id="message"
+                        rows="7"
+                        placeholder="Type here..."
+                        required
+                      ></textarea>
+                      <span
+                        id="message-error"
+                        class="text-xs error invisible absolute -bottom-5 left-0"
+                      ></span>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn-filled-primary bp-r-1 col-span-full w-fit justify-self-end"
+                  >
+                    <span class="flex items-center gap-[6px]">
+                      <svg
+                        class="icon-sm"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"
+                        ></path>
+                      </svg>
+                      Send
+                    </span>
+                  </button>
+                </form>
+              </div>
             </section>
           </div>
         </section>
       </main>
-      <footer>
+      <footer class="w-[90vw] max-w-[1100px] mx-auto mt-[60px] mb-[20px]">
         <!-- personal avater svg -->
-        <p>
-          &copy;
-          <span id="current-year"></span>
+        <p class="copyright">
+          &copy;<span id="current-year"></span>
+          Emmanuel Fosu
         </p>
       </footer>
     </div>
@@ -298,6 +743,6 @@
         );
       }
     </script>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/scripts/pages/index.ts"></script>
   </body>
 </html>

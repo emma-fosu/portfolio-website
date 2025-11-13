@@ -1,10 +1,25 @@
-.icon-sm {
-    width: 16px;
-    aspect-ratio: 1 / 1;
-}
-
 %ic-base {
     width: fit-content;
+}
+
+.icon-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-md {
+    width: 26px;
+    height: 26px;
+}
+
+.icon-lg {
+    width: 32px;
+    height: 32px;
+}
+
+.icon-xl {
+    width: 40px;
+    height: 40px;
 }
 
 .ic-outlined-primary {

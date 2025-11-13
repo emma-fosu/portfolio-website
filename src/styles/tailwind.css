@@ -1,6 +1,4 @@
 /* Tailwindcss Configs */
-@layer theme, base, components, utilities;
-
 @layer theme {
   @theme default {
     --spacing: 0.25rem;

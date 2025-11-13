@@ -1,0 +1,100 @@
+.primary-nav {
+  padding-block: 20px;
+  background-color: light-dark(var(--neutral-100), var(--neutral-950));
+  will-change: transform;
+
+  a {
+    outline-width: 4px;
+    outline-style: solid;
+    outline-color: transparent;
+    border-radius: 1000px;
+    padding-block: 0.4em;
+    padding-inline: 0.7em;
+
+    &:focus-visible {
+      outline-color: light-dark(var(--neutral-100), var(--neutral-600));
+    }
+
+    &:hover {
+      color: light-dark(var(--neutral-100), var(--neutral-300));
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  ul {
+    position: relative;
+    isolation: isolate;
+
+    li {
+      position: relative;
+      padding-block: 0.4em;
+      outline-width: 4px;
+      outline-style: solid;
+      outline-color: transparent;
+      border-radius: 1000px;
+
+      &:hover {
+        border-radius: 1000px;
+        color: light-dark(var(--neutral-100), var(--neutral-300));
+      }
+
+      &:focus-within {
+        outline-color: light-dark(var(--neutral-100), var(--neutral-600));
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: var(--left, 0);
+      width: var(--width, 0);
+      height: 100%;
+      background-color: light-dark(var(--neutral-100), var(--primary-900));
+      border-radius: 1000px;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    a {
+      padding-inline: 0.7em;
+      border: none;
+      outline: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &.floating {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    &.page-up {
+    }
+
+    &.page-down {
+      transform: translateY(-100%);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

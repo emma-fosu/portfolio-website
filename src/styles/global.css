@@ -1,14 +1,31 @@
-
+html {
+   scroll-behavior: smooth;
+}
 body {
-  scroll-behavior: smooth;
+ 
   font-family: var(--font-primary);
   font-size: clamp(var(--medium), 2vw, var(--normal));
   color: light-dark(var(--neutral-900), var(--neutral-50));
+  background-color: light-dark(var(--neutral-100), var(--neutral-950));
+
+  &:has(nav.floating) main {
+    margin-top: 80px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-secondary);
   color: light-dark(var(--color-black), var(--color-white));
+}
+
+.copyright {
+  color: light-dark(var(--neutral-100), var(--neutral-500));
+  text-align: right;
+  font-size: var(--medium);
 }
 

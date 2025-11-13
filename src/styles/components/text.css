@@ -1,12 +1,25 @@
 %text-sm {
-    font-size: var(--medium);
+  font-size: var(--medium);
+}
+
+%text-xs {
+    font-size: var(--small);
+}
+
+.text-xs {
+    @extend %text-xs;
+}
+
+.text-xs-1 {
+    @extend %text-xs;
+    color: light-dark(var(--neutral-100), var(--neutral-400));
 }
 
 .text-sm-1 {
-    @extend %text-sm;
+  @extend %text-sm;
 }
 
 .text-sm-2 {
-     @extend %text-sm;
-     color: light-dark(var(--neutral-100), var(--neutral-400));
+  @extend %text-sm;
+  color: light-dark(var(--neutral-100), var(--neutral-400));
 }

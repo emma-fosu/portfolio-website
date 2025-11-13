@@ -37,29 +37,25 @@ export function initForm(form: HTMLFormElement) {
 }
 
 function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
-  const errorDisplayDIV = field.parentElement!.querySelector(
+  const errorDisplay = field.parentElement!.querySelector(
     '[id*="error"]'
   ) as HTMLElement;
   const name = field.name || "this field";
   const example = field.dataset.example || "";
 
   if (field.validity.valid) {
-    if (errorDisplayDIV)
+    if (errorDisplay)
       setErrorDisplay(
-        errorDisplayDIV!.querySelector(".error")!,
-        errorDisplayDIV
+        errorDisplay
       );
     politeAnnounce();
     return true;
   }
 
-  const errorSpan = document.createElement("span");
-  errorSpan.classList.add("error");
-
   if (field.validity.valueMissing) {
     const msg = `${name} is required.`;
-    if (errorDisplayDIV) {
-      setErrorDisplay(errorSpan, errorDisplayDIV, msg);
+    if (errorDisplay) {
+      setErrorDisplay(errorDisplay, msg);
     }
     politeAnnounce(msg);
     return false;
@@ -69,8 +65,8 @@ function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
     const msg = `${name} does not match the required pattern${
       example ? ` (${example})` : ""
     }.`;
-    if (errorDisplayDIV) {
-      setErrorDisplay(errorSpan, errorDisplayDIV, msg);
+    if (errorDisplay) {
+      setErrorDisplay(errorDisplay, msg);
     }
     politeAnnounce(msg);
     return false;
@@ -85,14 +81,16 @@ function sendEmail(form: HTMLFormElement) {
 
 function setErrorDisplay(
   errorDisplay: HTMLElement,
-  errorDisplayDiv: HTMLElement,
   msg = ""
 ) {
-  if (!msg) {
-    if (errorDisplay) errorDisplayDiv.removeChild(errorDisplay);
-    return;
-  }
-
   errorDisplay.textContent = msg;
-  errorDisplayDiv.appendChild(errorDisplay);
+  if (!msg) {
+     errorDisplay.classList.add('invisible');
+     errorDisplay.classList.remove('visible');
+  }
+  else {
+    errorDisplay.classList.remove('invisible');
+    errorDisplay.classList.add('visible');
+    
+  }
 }

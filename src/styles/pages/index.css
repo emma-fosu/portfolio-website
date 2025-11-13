@@ -1,9 +1,223 @@
+@layer base, theme, components, utilities;
 @import "../config.css";
 @import "../global.css";
-@import "../components/button.css";
-@import "../components/label.css";
-@import "../components/input.css";
-@import "../components/alert.css";
-@import "../components/icon.css";
-@import "../components/text.css";
-@import "../components/container.css";
+@import "../components/container.css" layer(components);
+@import "../components/button.css" layer(components);
+@import "../components/label.css" layer(components);
+@import "../components/input.css" layer(components);
+@import "../components/alert.css" layer(components);
+@import "../components/icon.css" layer(components);
+@import "../components/text.css" layer(components);
+@import "../components/navigation.css" layer(components);
+@import "../components/link.css" layer(components);
+
+main > section {
+    scroll-margin-top: 60px;
+}
+
+section {
+    h2 {
+        font-size: var(--xx-large);
+        font-weight: 500;
+        color: light-dark(var(--neutral-100), var(--neutral-300));
+    }
+}
+
+section#home {
+    padding: clamp(15px, 5vw, 20px);
+    border-style: solid;
+    border-width: 2px;
+    border-color: light-dark(var(--neutral-100), var(--neutral-500));
+    border-radius: 35px;
+
+    h1 {
+        font-size: clamp(var(--xx-large), 5vw, var(--xxxx-large));
+        font-weight: 600;
+        width: min-content;
+        line-height: 1;
+    }
+
+    span:not(#job-title) {
+        color: light-dark(var(--neutral-100), var(--primary-400));
+    }
+    
+    p {
+        margin-block-start: 15px;
+        color: light-dark(var(--neutral-100), var(--neutral-300));
+        max-width: 50ch;
+    }
+
+    img {
+        border-radius: 15px;
+    }
+
+    header {
+        place-content: center;
+    }
+}
+
+#job-title {
+    margin-block-start: 5px;
+    font-size: var(--large);
+    font-weight: 500;
+    font-family: var(--font-secondary);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: minmax(500px, 50%) 1fr;
+    column-gap: 30px;
+
+    img {
+        border-radius: clamp(10px, 60%, 20px);
+        overflow: hidden;
+    }
+
+    section {
+
+        header {
+            p {
+                margin-block-start: 5px;
+                font-style: italic;
+                color: light-dark(var(--neutral-100), var(--neutral-300));
+            }
+        }
+
+        footer {
+            margin-block-start: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            
+        }
+
+        h3 {
+            font-size: clamp(var(--large), 10vw, var(--x-large));
+            font-weight: 500;
+            line-height: 1.2;
+            color: light-dark(var(--neutral-100), var(--neutral-300));
+        }
+
+        ul {
+            display: grid;
+            gap: 10px;
+            margin-block-start: 20px;
+        }
+
+        li {
+            line-height: 1.5;
+            list-style-type: disc;
+            margin-inline-start: 20px;
+    
+
+            &::marker {
+                font-size: 24px;
+                line-height: 0.3;
+                color: light-dark(var(--neutral-100), var(--primary-600));
+            }
+            
+            &:not(::first-line) {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+table {
+
+    tbody {
+        
+        tr {
+            th {
+                font-weight: 500;
+                padding-right: 20px;
+                border-right: 1px solid light-dark(var(--neutral-100), var(--neutral-700));
+
+                @container table-cont (width <= 760px) {
+                   border-right: initial;
+                }
+            }
+            
+            th,td {
+                box-sizing: border-box;
+                padding-bottom: 30px;
+                padding-top: 10px;
+
+                @container table-cont (width <= 760px) {
+                   padding-bottom: initial;
+                }
+            }
+            
+
+            td:first-of-type {
+                padding-left: 30px;
+
+                @container table-cont (width <= 760px) {
+                    padding-left: initial;
+                }
+            }
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid light-dark(var(--neutral-100), var(--neutral-700));
+
+                @container table-cont (width <= 760px) {
+                    border-bottom: initial;
+                }
+            }
+
+            &:last-of-type th, &:last-of-type td {
+                padding-bottom: initial;
+            }
+        }
+        
+        
+    }
+}
+
+
+.tool {
+    --background-color: var(--neutral-700);
+    box-sizing: content-box;
+    align-items: center;
+    padding-inline: 0.5em;
+    padding-block: 0.5em;
+    background-color: light-dark(var(--neutral-100), color-mix(in oklab, var(--background-color) 15%, transparent));
+    border-radius: 1em;
+    width: 100px;
+    height: 100px;
+
+    svg {
+        align-self: flex-end;
+    }
+
+    span {
+        font-weight: 600;
+        text-align: center;
+        align-self: flex-start;
+    }
+
+    &.databricks {
+        --background-color: rgb(184, 2, 2);
+    }
+
+    &.dbt {
+        --background-color: rgb(179, 116, 0);
+    }
+
+    &.snowflakes {
+        --background-color: rgb(72, 72, 123);
+    }
+
+    &.postgresql {
+        --background-color: rgb(95, 95, 243);
+    }
+
+    &.excel, &.sheet {
+        --background-color: green;
+    }
+
+    &.powerbi {
+        --background-color: rgb(127, 127, 1);
+    }
+}

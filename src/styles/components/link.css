@@ -1,0 +1,13 @@
+.link[target="_blank"]:not(:has(svg)) {
+  white-space: nowrap;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    background-color: light-dark(var(--danger-500), var(--neutral-400));
+    mask: url("/required_icon.svg") no-repeat;
+    mask-size: contain;
+    vertical-align: middle;
+  }
+}
