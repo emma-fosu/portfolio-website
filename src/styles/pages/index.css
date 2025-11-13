@@ -50,10 +50,6 @@ section#home {
     img {
         border-radius: 15px;
     }
-
-    header {
-        place-content: center;
-    }
 }
 
 #job-title {
@@ -64,32 +60,18 @@ section#home {
 }
 
 .project {
-    display: grid;
-    grid-template-columns: minmax(500px, 50%) 1fr;
-    column-gap: 30px;
 
     img {
         border-radius: clamp(10px, 60%, 20px);
-        overflow: hidden;
     }
 
     section {
 
         header {
             p {
-                margin-block-start: 5px;
                 font-style: italic;
                 color: light-dark(var(--neutral-100), var(--neutral-300));
             }
-        }
-
-        footer {
-            margin-block-start: 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-
-            
         }
 
         h3 {
@@ -99,17 +81,10 @@ section#home {
             color: light-dark(var(--neutral-100), var(--neutral-300));
         }
 
-        ul {
-            display: grid;
-            gap: 10px;
-            margin-block-start: 20px;
-        }
-
         li {
             line-height: 1.5;
             list-style-type: disc;
             margin-inline-start: 20px;
-    
 
             &::marker {
                 font-size: 24px;
@@ -117,9 +92,6 @@ section#home {
                 color: light-dark(var(--neutral-100), var(--primary-600));
             }
             
-            &:not(::first-line) {
-                margin-left: 5px;
-            }
         }
     }
 }

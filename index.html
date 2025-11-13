@@ -70,9 +70,9 @@
         </div>
       </nav>
       <header></header>
-      <main class="w-[90vw] max-w-[1100px] mx-auto">
-        <section class="grid gap-10 grid-cols-[1fr_1fr]" id="home">
-          <header class="grid items-center">
+      <main class="w-[90vw] max-w-[1100px] mx-auto @container">
+        <section class="grid items-center justify-items-center gap-10 grid-cols-[1fr] @[570px]:grid-cols-[1fr_1fr] " id="home">
+          <header class="order-2 place-content-center grid items-center @[570px]:order-1 ">
             <span>Hello, I'm</span>
             <h1>
               Fosu Emmanuel
@@ -142,8 +142,8 @@
               </a>
             </div>
           </header>
-          <div>
-            <img class="aspect-square object-center object-cover " src="/EF-avatariz-4-min.png" alt="">
+          <div class="order-1">
+            <img class="aspect-[2_/_1.3] object-center object-cover @[570px]:aspect-square " src="/EF-avatariz-4-min.png" alt="">
           </div>
         </section>
         <section id="about">
@@ -168,20 +168,20 @@
         </section>
         <section id="projects">
           <h2>Featured Projects</h2>
-          <div class="projects">
-            <div class="project">
-              <img class="aspect-16/9 object-contain object-center"  src="/electricity_consumption_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
+          <div class="projects @container">
+            <div class="project grid grid-cols-[1fr] gap-[30px] @[870px]:grid-cols-[minmax(500px,_50%)_1fr]">
+              <img class="overflow-hidden aspect-16/9 object-contain object-center"  src="/electricity_consumption_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
                <section>
-                <header>
+                <header class="mt-[5px]">
                   <h3>CoSSMic Household Electricity Consumption Analysis</h3>
-                  <p>A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
+                  <p class="max-w-[60ch]">A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
                 </header>
-                <ul>
-                  <li>Solar generation is insufficient in winter but exceeds demand by <b>46%</b> from summer to mid-autumn.</li>
-                  <li>Electricity consumption drops by <b>66%</b> from summer to autumn after rising by <b>75%</b> during winter.</li>
-                  <li>Heat pumps account for only a small share in summer and autumn but consume <b>67-72%</b> of total electricity in winter.</li>
+                <ul class="grid gap-[10px] mt-[20px]">
+                  <li class="max-w-[55ch]">Solar generation is insufficient in winter but exceeds demand by <b>46%</b> from summer to mid-autumn.</li>
+                  <li class="max-w-[55ch]">Electricity consumption drops by <b>66%</b> from summer to autumn after rising by <b>75%</b> during winter.</li>
+                  <li class="max-w-[55ch]">Heat pumps account for only a small share in summer and autumn but consume <b>67-72%</b> of total electricity in winter.</li>
                 </ul>
-                <footer>
+                <footer class="flex items-center gap-[20px] mt-[20px]">
                   <div class="project-tools">
                      <svg class="icon-md" version="1.1" id="Livello_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2289.75 2130"
