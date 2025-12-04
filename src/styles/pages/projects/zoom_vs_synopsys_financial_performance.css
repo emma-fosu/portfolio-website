@@ -12,3 +12,12 @@
 @import "../../effects/ripple-circle.css" layer(components);
 @import "../../components/documentation.css" layer(components);
 
+
+iframe {
+  transform: scale(0.54);
+  transform-origin: top left;
+  width: 190%;
+  height: 190%;
+  border: 0;
+  transform-origin: left top;
+}

@@ -5,7 +5,7 @@
     display: inline-block;
     width: 20px;
     aspect-ratio: 1 / 1;
-    background-color: light-dark(var(--danger-500), var(--neutral-400));
+    background-color: color-mix(in oklab, currentColor, transparent);
     mask: url("/required_icon.svg") no-repeat;
     mask-size: contain;
     vertical-align: middle;

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="A dashboard to look into the financial performance of Zoom and Synopsys and decide which one to invest."
+    />
+    <title>Zoom vs Synopsys Financial Performance Analysis</title>
+</head>
+<body>
+  <div>
+    <nav
+        class="primary-nav sticky top-[0] left-[0] right-[0] z-1 "
+        id="primary-nav"
+        aria-label="primary navigation"
+      >
+        <div class="w-[90vw] max-w-[1100px] mx-auto flex gap-3 items-center">
+          <div>
+            <svg
+              width="469"
+              height="469"
+              viewBox="0 0 469 469"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon-lg"
+            >
+              <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
+              <circle
+                cx="233.999"
+                cy="234.999"
+                r="62.0555"
+                transform="rotate(-2.78704 233.999 234.999)"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <a
+            href="https://github.com/emma-fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            class="ml-auto btn-outlined-secondary rounded bp-s-1"
+          >
+            <div>
+              <svg
+                class="icon-sm"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a class="link" href="#resume" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </nav>
+      <main class="w-[90vw] max-w-[1100px] mx-auto flex gap-[20px]">
+      <aside class="sticky top-[0px]">
+        <div class="sticky top-[80px]">
+          <span>On this Page</span>
+          <nav class="documentation-nav" id="documentation-nav">
+          </nav>
+        </div>
+      </aside>
+      <div id="documentation" class="grid gap-10">
+        <header>
+            <div class="header-icon flex gap-2 items-center">
+                <svg class="icon-xxxxl" fill="#4A8CFF " viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#4A8CFF "><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>zoom</title> <path d="M19.283 17.4c-0.367 0.374-0.879 0.606-1.444 0.606-1.117 0-2.023-0.906-2.023-2.023s0.906-2.023 2.023-2.023c0.929 0 1.712 0.626 1.949 1.479l0.003 0.014c0.045 0.159 0.071 0.341 0.071 0.53 0 0.552-0.221 1.052-0.579 1.417l0-0zM15.471 13.586c-0.648 0.615-1.052 1.483-1.052 2.446 0 1.861 1.509 3.37 3.37 3.37s3.37-1.509 3.37-3.37c0-1.54-1.033-2.838-2.444-3.241l-0.024-0.006c-0.27-0.078-0.581-0.123-0.902-0.123-0.899 0-1.716 0.352-2.32 0.925l0.002-0.001zM28.296 12.601c-0.802 0.001-1.522 0.352-2.016 0.909l-0.002 0.003c-0.496-0.562-1.219-0.915-2.023-0.915-0.563 0-1.086 0.173-1.519 0.468l0.009-0.006c-0.316-0.278-0.73-0.451-1.184-0.462l-0.002-0v6.742l0.337-0.016c0.544-0.014 0.981-0.451 0.995-0.993l0-0.001 0.016-0.337v-2.361l0.017-0.337c0-0.001 0-0.002 0-0.003 0-0.245 0.061-0.477 0.169-0.679l-0.004 0.008c0.238-0.405 0.671-0.672 1.166-0.672s0.928 0.267 1.162 0.664l0.003 0.006c0.103 0.196 0.164 0.428 0.165 0.675v0l0.017 0.339v2.361l0.016 0.336c0.022 0.54 0.454 0.972 0.991 0.995l0.002 0 0.337 0.016v-3.708l0.015-0.337c0-0.001 0-0.002 0-0.003 0-0.247 0.062-0.48 0.171-0.683l-0.004 0.008c0.238-0.403 0.67-0.669 1.165-0.669 0.496 0 0.929 0.268 1.164 0.666l0.003 0.006c0.102 0.195 0.162 0.427 0.162 0.673 0 0.001 0 0.001 0 0.002v-0l0.019 0.337v2.361l0.016 0.336c0.020 0.541 0.454 0.975 0.993 0.995l0.002 0 0.337 0.016v-4.045c-0.001-1.488-1.208-2.694-2.697-2.694-0.001 0-0.002 0-0.003 0h0zM12.206 17.4c-0.37 0.393-0.894 0.638-1.475 0.638-1.117 0-2.023-0.906-2.023-2.023s0.906-2.023 2.023-2.023c0.924 0 1.703 0.619 1.945 1.465l0.004 0.014c0.047 0.163 0.075 0.351 0.075 0.544 0 0.536-0.209 1.024-0.549 1.386l0.001-0.001zM10.78 12.6h-0.005c-1.86 0.001-3.367 1.509-3.367 3.368s1.508 3.368 3.368 3.368 3.368-1.508 3.368-3.368c0-1.86-1.507-3.367-3.366-3.368h-0zM6.734 18.008l-0.337-0.015h-3.035l4.044-4.045-0.016-0.337c-0.013-0.544-0.451-0.982-0.994-0.995l-0.001-0-0.337-0.016h-5.052l0.018 0.337c0.026 0.538 0.455 0.967 0.99 0.995l0.002 0 0.337 0.016h3.037l-4.049 4.045 0.017 0.336c0.019 0.541 0.453 0.975 0.992 0.995l0.002 0 0.337 0.016h5.056l-0.018-0.337c-0.024-0.539-0.455-0.969-0.991-0.993l-0.002-0z"></path> </g></svg>
+                <div class="vr"></div>
+                <svg class="icon-xxxxl" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 373.58 151.38" style="enable-background:new 0 0 373.58 151.38;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:#5A2A82;}
+                    </style>
+                    <g>
+                        <g>
+                            <path class="st0" d="M70.46,57.67c0-1.92-0.96-3.37-5.22-3.37s-5.22,1.44-5.22,3.37v5.22c0,1.58,0.55,3.16,2.06,4.47L76.5,79.71
+                                c2.06,1.72,3.3,3.85,3.3,6.04v7.83c0,4.67-5.49,7.28-14.56,7.28c-10.03,0-14.83-2.26-14.83-7.28v-6.8h9.07v6.52
+                                c0,2.34,1.79,3.71,5.77,3.71c3.71,0,5.5-1.37,5.5-3.71v-6.94c0-1.72-0.69-3.02-2.61-4.74L54.8,70.03
+                                c-2.47-2.13-3.85-3.78-3.85-6.32v-5.97c0-4.88,5.08-7.28,14.29-7.28c10.17,0,14.29,2.41,14.29,6.94v6.32h-9.06v-6.05H70.46z"/>
+                            <path class="st0" d="M157.89,58.72c0-4.87,3.71-8.38,15.93-8.38s15.93,3.5,15.93,8.38v33.65c0,4.88-3.71,8.38-15.93,8.38
+                                c-12.23,0-15.94-3.5-15.94-8.38L157.89,58.72z M166.95,92.24c0,2.75,1.1,4.67,6.87,4.67c5.77,0,6.87-1.92,6.87-4.67V58.86
+                                c0-2.75-1.1-4.67-6.87-4.67c-5.77,0-6.87,1.92-6.87,4.67V92.24z"/>
+                            <path class="st0" d="M194.76,50.76h14.43c11.68,0,15.11,1.92,15.11,7.56l-0.01,12.16c0,5.63-3.43,7.56-15.11,7.56h-5.36v22.32
+                                h-9.07L194.76,50.76L194.76,50.76z M208.23,74.18c4.12,0,7-0.55,7-3.09V57.7c0-2.54-2.88-3.09-7-3.09h-4.4v19.57H208.23z"/>
+                            <path class="st0" d="M246.94,57.56c0-1.93-0.96-3.37-5.22-3.37s-5.23,1.44-5.23,3.37v5.22c0,1.58,0.55,3.16,2.06,4.46l14.42,12.36
+                                c2.06,1.72,3.29,3.84,3.29,6.04v7.83c0,4.67-5.49,7.28-14.56,7.28c-10.03,0-14.84-2.27-14.84-7.28v-6.79h9.07v6.53
+                                c0,2.34,1.79,3.71,5.77,3.71c3.71,0,5.49-1.37,5.49-3.71v-6.94c0-1.72-0.68-3.02-2.61-4.74l-13.32-11.61
+                                c-2.47-2.13-3.85-3.78-3.85-6.31v-5.98c0-4.88,5.08-7.28,14.29-7.28c10.16,0,14.28,2.4,14.28,6.94v6.32h-9.07v-6.05H246.94z"/>
+                            <path class="st0" d="M313.85,57.56c0-1.92-0.97-3.36-5.22-3.36c-4.26,0-5.22,1.44-5.22,3.36v5.22c0,1.58,0.55,3.16,2.06,4.46
+                                l14.42,12.37c2.06,1.72,3.3,3.84,3.3,6.04v7.83c0,4.67-5.5,7.28-14.56,7.28c-10.03,0-14.84-2.27-14.84-7.28v-6.8h9.07l-0.01,6.53
+                                c0,2.34,1.79,3.71,5.78,3.71c3.7,0,5.49-1.37,5.49-3.71v-6.94c0-1.72-0.69-3.02-2.61-4.74l-13.32-11.61
+                                c-2.47-2.13-3.85-3.78-3.85-6.32v-5.98c0-4.87,5.08-7.28,14.29-7.28c10.16,0,14.28,2.41,14.28,6.94v6.32h-9.06V57.56z"/>
+                            <polygon class="st0" points="107.85,50.76 116.93,50.76 97.06,113.01 87.99,113.01 		"/>
+                            <polygon class="st0" points="93.53,89.43 81.25,50.87 90.33,50.87 98.07,75.18 		"/>
+                            <polygon class="st0" points="284.24,50.76 293.31,50.76 273.45,113.02 264.37,113.02 		"/>
+                            <polygon class="st0" points="269.96,89.32 257.68,50.76 266.75,50.76 274.5,75.07 		"/>
+                            <g>
+                                <path class="st0" d="M152.3,100.35h0.04V58.33c0-5.63-3.43-7.56-15.11-7.56h-17.48v49.59h9.06l0.01-0.01V54.62h7.46
+                                    c4.12,0,7,0.55,7,3.09v42.64H152.3z"/>
+                            </g>
+                            <path class="st0" d="M326.7,56.88c0-3.31,2.69-5.76,5.87-5.76c3.14,0,5.83,2.44,5.83,5.76c0,3.35-2.68,5.79-5.83,5.79
+                                C329.39,62.67,326.7,60.23,326.7,56.88z M332.57,61.71c2.61,0,4.67-2.05,4.67-4.83c0-2.73-2.06-4.8-4.67-4.8
+                                c-2.65,0-4.71,2.06-4.71,4.8C327.86,59.66,329.92,61.71,332.57,61.71z M331.35,60.23h-1.01v-6.66h2.54c1.57,0,2.35,0.58,2.35,1.89
+                                c0,1.19-0.75,1.71-1.73,1.84l1.9,2.93h-1.13l-1.76-2.89h-1.16L331.35,60.23L331.35,60.23z M332.55,56.49
+                                c0.86,0,1.62-0.06,1.62-1.08c0-0.83-0.75-0.98-1.45-0.98h-1.38v2.06H332.55z"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+          <h1 class="-mt-5">Zoom vs Synopsys Financial Performance Analysis</h1>
+          <p class="description mt-1">A comparative financial analysis of Zoom and Synopsys, evaluating revenue trends, profitability, and overall financial performance to highlight differences in business stability and growth potential.</p>
+          <div class="project-visual mt-8">
+            <div class="project-visual-info">
+              <p class="interactive-tag-1">
+                <span class="ripple-circle"></span>
+                <span>interactive</span>
+              </p>
+            </div>
+            <div class="frame-container">
+              <!-- <iframe title="financial performance dashboard" allowfullscreen frameborder="0" scrolling="no" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMWU1OWM1N2EtZDI3Ny00MTBlLWFhYjYtMjEwNTJlYzQwNWU3IiwidCI6IjEwNGQ4MDQ4LWZkMGMtNDNkNS1hNjMwLWZjNjI5ZTVkYWI1OSJ9"></iframe></div> -->
+            </div>
+          <div class="note mt-5">
+            <p>
+              <span class="doc-tag-2">NOTE:</span>
+              Due to Excel Online limitations, some features, visuals, and interactions may not fully reflect the original workbook. 
+             Slicers, pivot charts, macros, external data connections, and advanced BI features may not work in the embedded view.
+             <p class="mt-4">
+               For the full, fully functional workbook, download it <a href="https://git-scm.com/downloads">here</a>.
+             </p> 
+            </p>
+          </div>
+        </header>
+        <section id="project-overview">
+          <h2>Project Overview</h2>
+          <p>Household electricity consumption has a direct impact on both cost savings and environmental sustainability. 
+            This project explores consumption patterns of 11 households in southern Germany across different times of day and seasons to understand usage behavior.   
+            The goal is to identify opportunities for reducing wastage and optimizing energy efficiency.</p>
+        </section>
+        <section id="key-questions-addressed">
+          <h2>Key Questions Addressed</h2>
+          <ol class="mt-1">
+            <li>How is electricity consumed throughout the year and seasons?</li>
+            <li>How is electricity consumed throughout the day?</li>
+            <li>How appliance is used throughout the year and how much power each uses?</li>
+            <li>How much grid power is supplied to these households over time?</li>
+            <li>How is grid power used over time?</li>
+            <li>Can power generated by the solar panel supply the household demand?</li>
+          </ol>
+        </section>
+        <hr>
+        <button type="button" id="show-technical" class="btn-filled-primary">Explore More (Technical)</button>
+        <section id="skills-tools-demonstrated" class="mt-4" technical>
+            <h2>Skills & Tools Demonstrated</h2>
+            <ol class="mt-2">
+              <li>Data extraction using REST APIs.</li>
+              <li>Ability to interpret <b>SEC EDGAR API</b> documentation to identify appropriate endpoints, URL fields, and parameters, including taxonomies and tags required for retrieving and preparing accurate data for analysis.</li>
+              <li>Data cleaning and transformation using Power Query (<b>M language</b>, <b>user-defined functions</b>, <b>column pivoting</b>, <b>API requests</b>, and <b>error handling</b>).</li>
+              <li>Performed <b>data modeling</b> by defining table relationships, creating measures using <b>DAX</b>, building hierarchies, and applying proper star schema design to improve calculation accuracy and report performance.</li>
+              <li>Data visualization using built-in Power BI visuals and <b>custom KPI visuals</b> with <b>Deneb (Vega-Lite)</b>.</li>
+            </ol>
+        </section>
+        <section id="project-workflow" technical>
+          <h2>Project Workflow</h2>
+          <section id="data-sourcing" class="mt-4" technical>
+            <h3>Data Sourcing</h3>
+            <p>
+              The data was sourced from the <b>SEC EDGAR (Electronic Data Gathering, Analysis, and Retrieval) API</b>. 
+              It is a web-based interface provided by the U.S. Securities and Exchange Commission (SEC) that allows for programmatically accessing public company filings (10-K, 10-Q, 8-K, etc.) 
+              and financial data submitted to the SEC. Read more about the <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces">EDGAR API</a>.
+            </p>
+            <p>
+              The company-concept API was used to retrieve the XBRL disclosures from a single company (CIK) and concept (a taxonomy and tag) into a single JSON file.
+            </p>
+            <section>
+              <h4>API Anatomy</h4>
+              <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">bash</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-bash">
+https://data.sec.gov/api/xbrl/companyconcept/CIK##########/{taxonomy}/{tag}.json
+                </code>
+              </pre>
+            </div>
+            <ol class="mt-2">
+                <li><span class="doc-tag-1">CIK##########</span> - represent the CIK number for a company. You can find the CIK number of a company <a href="https://www.sec.gov/search-filings/cik-lookup">here</a>.</li>
+                <li>
+                  <span class="doc-tag-1">taxonomy</span> - A taxonomy is a structured dictionary of financial reporting concepts defined by accounting standards like <span class="doc-tag-1">us-gaap</span> or <span class="doc-tag-1">ifrs</span>. Each taxonomy has its own standardized concepts (tags). For example: <span class="doc-tag-1">us-gaap</span> has concepts such as <span class="doc-tag-1">Assets</span>, <span class="doc-tag-1">Revenues</span>, <span class="doc-tag-1">Liabilities</span>, etc.
+                </li>
+                <li>
+                  <span class="doc-tag-1">tag</span> - is the individual data elements within a taxonomy.
+                  <p>For example, under the us-gaap taxonomy, you might have tags like:</p>
+                  <ul>
+                    <li><span class="doc-tag-1">us-gaap:Assets</span> — Total assets reported by the company</li>
+                    <li><span class="doc-tag-1">us-gaap:Liabilities</span> — Total liabilities</li>
+                    <li><span class="doc-tag-1">us-gaap:Revenues</span> — Reported revenues</li>
+                  </ul>
+                </li>
+              </ol>
+              <p>To know the available taxonomy and tags from the financial statement, open any financial form in the XBRL viewer and click on any highlighted value to get the taxonomy and tag.
+                An example of Zoom, Inc. 10-K is provided <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/0001585521/000158552125000042/zm-20250131.htm#fact-identifier-82">here</a>.</p>
+
+              <figure class="mt-5">
+                <figcaption>This is the query function used to get various tag values with us-gaap taxonomy from the financial forms.</figcaption>
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+let
+  GetAPIData = (CIK as text, tag as text) =>
+  let
+      Source = Json.Document(
+          Web.Contents(
+              "https://data.sec.gov/api/xbrl/companyconcept/CIK" & CIK& "/us-gaap/" & tag & ".json",
+              [
+                  Headers = [
+                      #"User-Agent" = "Emmanuel Fosu emmanuel.fosuduffour@gmail.com"
+                  ]
+              ])),
+      Data   = Table.FromRecords({Source}) 
+  in
+      Data
+in
+  GetAPIData
+                </code>
+              </pre>
+            </div>
+              </figure>
+            </section>
+          </section>
+          <section id="data-cleaning-transformation" class="mt-4" technical>
+            <h3>Data Cleaning and Transformation</h3>
+            <ol class="mt-2">
+              <li>
+                A company-tag mapping table was created where each company (identified by cik) is paired with all relevant tag attributes.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+Source = Table.SelectColumns(company_dim, "cik"),
+#"Added tags" = Table.AddColumn(Source, "tags", each tags_dim),
+#"Expanded tags" = Table.ExpandTableColumn(#"Added tags", "tags", {"tag", "name", "tag_1", "tag_2"}, {"tag", "name", "tag_1", "tag_2"})
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                After building the company–tag mapping table, the next stage involved fetching financial data from an external API using each company’s CIK and associated tag values.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Added fectched data" = Table.AddColumn(
+  #"Expanded tags", 
+  "custom", 
+  each
+    try GetAPIData([cik], [tag])
+    otherwise try GetAPIData([cik], [tag_1])
+    otherwise null
+),
+#"Expanded custom" = Table.ExpandTableColumn(
+  #"Added fectched data", 
+  "custom", 
+  {"units"}, 
+  {"units"}
+),
+#"Expanded units" = Table.ExpandRecordColumn(
+  #"Expanded custom", 
+  "units", 
+  {"USD", "USD/shares", "shares"}, 
+  {"USD", "USD/shares", "shares"}
+),
+#"Added data" = Table.AddColumn(
+  #"Expanded units", "USD_new", 
+  each if [USD] &lt;&gt; null then [USD] else if [shares] &lt;&gt; null then [shares] else [#"USD/shares"]
+),
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                After consolidating all financial values into the unified USD_new column, redundant and intermediate columns are removed to simplify the dataset.
+                 <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Removed extra data" = Table.RemoveColumns(
+  #"Added data",
+  {"USD", "USD/shares", "shares", "tag", "tag_1", 
+  "tag_2"}
+),
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                This step expanded the contents of the unified <span class="doc-tag-1">USD_new</span> column to expose detailed financial information returned by the API. 
+                This produces a flat, structured table where each company and tag combination is linked with its corresponding financial <span class="doc-tag-1">value</span>, <span class="doc-tag-1">form type</span>, and <span class="doc-tag-1">reporting frame</span>, 
+                making the dataset ready for filtering and time-based analysis.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Expanded USD_new" = Table.ExpandListColumn(#"Removed extra data", "USD_new"),
+#"Expanded USD_new1" = Table.ExpandRecordColumn(
+  #"Expanded USD_new", 
+  "USD_new", 
+  {"val", "form", "frame"}, 
+  {"val", "form", "frame"}
+),
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                Next, the dataset was filtered to include only annual financial filings (Form 10-K) and remove records without a valid reporting frame.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Only 10-K Rows" = Table.SelectRows(
+  #"Expanded USD_new1",
+  each ([form] = "10-K") and ([frame] &lt;&gt; null)
+)
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                After filtering out 10-K values, the dataset was validated and filtered to keep only records with properly formatted reporting frames.
+                It adds a <span class="doc-tag-1">valid_frame</span> column using a regular expression to identify entries like <span class="doc-tag-1">CY2022</span> or <span class="doc-tag-1">CY2022Q4I</span>, then filters out any invalid or missing frames
+                — ensuring that only reliable annual and quarterly data remain for analysis.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Added 'valid_frame'" = Table.AddColumn(
+  #"Only 10-K Rows", "valid_frame", 
+  each regex_test("^(CY\\d{4}|CY\\d{4}Q(3|4)I)$", [frame])
+),
+#"Filtered Rows with valid frame" = Table.SelectRows(
+  #"Added 'valid_frame'", 
+  each ([valid_frame] = true)
+),
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                Next step extracted the fiscal year from each record's frame (e.g., <span class="doc-tag-1">CY2022</span> → 2022) and converted it to a numeric type.
+                It standardizes the year format, making it easier to perform time-based analysis, establish relationships with a fiscal calendar table, and support year-over-year comparisons in Power BI.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Extracted Year from 'frame'" = Table.AddColumn(
+  #"Filtered Rows with valid frame", "
+  fiscal_year", 
+  each Text.Middle([frame], 2, 4), type text
+),
+#"Changed Year Type" = Table.TransformColumnTypes(
+  #"Extracted Year from 'frame'",
+  {{"fiscal_year", Int64.Type}}
+),
+                </code>
+              </pre>
+            </div>
+              </li>
+              <li>
+                This step kept only the last seven fiscal years of data, ensuring that the analysis remains current and focused on recent performance trends.
+Additionally, redundant columns were removed from the dataset to make it readable, lighter, and ready for modeling in Power BI or other analytical tools.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+CurrentYear = Date.Year(DateTime.LocalNow()),
+LastYear = CurrentYear - 1,
+MinYear = LastYear - 6,
+#"Filtered Row Not in Years Range" = Table.SelectRows(
+  #"Changed Year Type", 
+  each [fiscal_year] &lt;= LastYear and [fiscal_year] >= MinYear
+),
+#"Removed Columns" = Table.RemoveColumns(
+  #"Filtered Row Not in Years Range",
+  {"form", "frame", "valid_frame"}
+),
+                </code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            The final step converted <span class="doc-tag-1">val</span> to numeric form for accurate calculations, pivoted the table so each financial metric (e.g., Assets, Liabilities, Revenue) becomes its own column and formatted fiscal_year as a date to support time-based analysis.
+                <div class="code-block mt-1">
+            <div class="top-block flex gap-[20px] justify-between items-center">
+              <span class="language">Power Query (M Language)</span>
+              <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+              </button>
+            </div>
+            <hr>
+              <pre>
+                <code class="language-powerquery">
+#"Changed val to number" = Table.TransformColumnTypes(
+  #"Removed Columns", 
+  {{"val", type number}}
+),
+
+#"Pivoted Column" = Table.Pivot(
+  #"Changed val to number",
+  List.Distinct(#"Changed val to number"[name]),
+  "name",
+  "val",
+  List.Sum
+),
+
+#"Changed fiscal_year to text" = Table.TransformColumnTypes(
+  #"Pivoted Column", 
+  {{"fiscal_year", type text}}
+),
+
+#"Changed fiscal_year to date" = Table.TransformColumnTypes(
+  #"Changed fiscal_year to text", 
+  {{"fiscal_year", type date}}
+)
+                </code>
+              </pre>
+            </div>
+          </li>
+            </ol>
+          </section>
+          <section id="exploratory-data-analysis" class="mt-4" technical>
+            <h3>Exploratory Data Analysis <em>(with Pivot Tables and Charts)</em></h3>
+            <ol class="mt-2">
+              <li>Created Pivot tables to show the total electricity against time.</li>
+              <li>Created a Pivot table to show electricity usage throughout the day.</li>
+              <li>Computed the percentage usage of each appliance electricity consumption.</li>
+              <li>Calculated the total solar (PV) electricity generated, grid electricity imports and exports.</li>
+              <li>Calculated the portion of grid import consumed at a specific time. </li>
+            </ol>
+          </section>
+          <section id="visualization-dashboards" class="mt-4" technical>
+            <h3>Visualization & Dashboards <em>(with Pivot Charts and Sliders)</em></h3>
+            <ol class="mt-2">
+              <li>Created a time-series line plot of total electricity consumption against time (years, months, quarters).  </li>
+              <li>Created a treemap to show the portion of electricity consumed by each appliance.</li>
+              <li> single timestamp slider to filter out all the charts and tables.</li>
+              <li>Designed a new card to show total electricity consumption, total grid import and export and pv import.</li>
+            </ol>
+          </section>
+        </section>
+        <section id="skills-showcased" technical>
+          <h2>Skills Showcased</h2>
+          <ul class="mt-1">
+            <li>Using <b>Power Query</b> with the <b>M language</b> to load the dataset, compute new fields and remove columns.</li>
+            <li><b>Pivot tables</b> with computed measures and formatting to analyse electricity consumption.</li>
+            <li><b>Pivot charts</b> to visualize time series electricity consumption and appliance usage.</li>
+          </ul>
+        </section>
+        <section id="project-structure" technical>
+          <h2>Project Structure</h2>
+          <div class="code-block mt-1">
+          <div class="top-block flex gap-[20px] justify-between items-center">
+            <span class="language">bash</span>
+            <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+              <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+            </button>
+          </div>
+          <hr>
+            <pre>
+              <code class="language-bash">
+CossMic-Household-Electricity-Consumption/
+├── dataset/ # all dataset used for the dashboard
+├── assets/ # images for README.md
+├── household_electricity.xlsx # Excel file containing the dashboard
+└── README.md # Project documentation
+              </code>
+            </pre>
+          </div>
+        </section>
+        <section id="how-to-run-the-project" technical>
+          <h2>How to Run the Project</h2>
+          <p class="mt-1">This project can be downloaded locally in two ways:</p>
+          <ol class="mt-1">
+            <li>
+              <span>Clone the repository with git:</span>
+              <div class="code-block mt-3">
+                <div class="top-block flex gap-[20px] justify-between items-center">
+                  <span class="language">Power Query</span>
+                  <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
+                    <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  </button>
+                </div>
+                <hr>
+                <pre>
+                  <code class="language-powerquery">
+git clone https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption.git
+                  </code>
+                </pre>
+              </div>
+              <p class="note mt-2 mb-4">
+                <span class="doc-tag-2">NOTE:</span> 
+                In order to use this command, you have to get <span><a class="link" rel="noopener" target="_blank" href="https://git-scm.com/downloads">Git</a></span> installed.
+              </p>
+            </li>
+            <li>
+              <span>Donwloading and unziping from GitHub:</span>
+              <ol class="mt-2">
+                <li>Click the green <span class="doc-tag-1">&lt; &gt; Code</span> button located above the list of files.</li>
+                <li>In the menu that appears, click <span class="doc-tag-1">Download ZIP</span>.</li>
+                <li>Once the download is complete, extract the contents of the ZIP file to access all the files. </li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section id="cleaned-dataset" technical>
+          <h2>Cleaned Dataset</h2>
+          <figure class="mt-2">
+            <figcaption>Table: Cleaned Dataset Schema for Household Electricity Analysis</figcaption>
+            <div class="doc-table-container">
+              <table class="doc-table w-full">
+                <thead>
+                  <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="doc-tag-1">Index</span></td>
+                    <td><span class="doc-tag-2">Int64</span></td>
+                    <td>Sequential index used for joining and ordering</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">utc_timestamp</span></td>
+                    <td><span class="doc-tag-2">datetime</span></td>
+                    <td>Timestamp of the measurement in UTC</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">hour</span></td>
+                    <td><span class="doc-tag-2">Int64</span></td>
+                    <td>Extracted hour of day (0-23)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">weekweek</span></td>
+                    <td><span class="doc-tag-2">Int64</span></td>
+                    <td>ISO week of the year</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">freezer_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental freezer consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">grid_export</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Total grid export (aggregated)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">refrigerator_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental refrigerator consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">dishwasher_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental dishwasher consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">washing_machine_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental washing-machine consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">heat_pump_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental heat-pump consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">circulation_pump_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental circulation pump consumption</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">grid_import_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental grid import</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">grid_export_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental grid export</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">pv_int</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Incremental solar PV output</td>
+                  </tr>
+                  <tr>
+                    <td><span class="doc-tag-1">consumption</span></td>
+                    <td><span class="doc-tag-2">number</span></td>
+                    <td>Total household energy consumption (sum of major incremental appliances)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </figure>
+        </section>
+        <footer class="flex justify-between items-center gap-5 mt-[60px] mb-[20px]">
+        <div class="flex gap-2">
+          <a
+            class="btn-outlined-secondary rounded bp-s-1"
+            href="https://x.com/emman_fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="X (formerly Twitter)"
+          >
+            <div>
+              <svg
+                class="icon-sm"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            class="btn-outlined-secondary rounded bp-s-1"
+            href="https://www.linkedin.com/in/emma-fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <div>
+              <svg
+                class="icon-sm"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://github.com/emma-fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            class="btn-outlined-secondary rounded bp-s-1"
+          >
+            <div>
+              <svg
+                class="icon-sm"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"
+                ></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <p class="copyright">
+          &copy;<span id="current-year"></span>
+          Emmanuel Fosu
+        </p>
+      </footer>
+      </div>
+    </main>
+  </div>
+  <script type="text/javascript">
+      const currentYearDisplay = document.getElementById("current-year");
+      if (currentYearDisplay) {
+        currentYearDisplay.textContent = new Date().getFullYear();
+      } else {
+        console.warn(
+          "Current year display missing: It is used with the copyright mark to show current year."
+        );
+      }
+
+      hideAllTechnicalDocumentation();
+
+      function hideAllTechnicalDocumentation() {
+        const technicalSections = document.querySelectorAll('section[technical]');
+        technicalSections.forEach(section => section.classList.add("hidden"));
+      }
+    </script>
+    <script type="module" src="/src/scripts/pages/projects/zoom_vs_synopsys_financial_performance.ts"></script>  
+</body>
+</html>

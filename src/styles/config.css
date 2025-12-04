@@ -62,16 +62,17 @@
   --primary-900: oklch(0.38 0.14 266);
   --primary-950: oklch(0.28 0.09 268);
 
-  --secondary-50: #fdf2f8;
-  --secondary-100: #fce7f3;
-  --secondary-200: #fbcfe8;
-  --secondary-300: #f9a8d4;
-  --secondary-400: #f472b6;
-  --secondary-500: #ec4899;
-  --secondary-600: #db2777;
-  --secondary-700: #be185d;
-  --secondary-800: #9d174d;
-  --secondary-900: #831843;
+  --secondary-50:  #ECFDFE;
+  --secondary-100: #CFFAFE;
+  --secondary-200: #A5F3FC;
+  --secondary-300: #67E8F9;
+  --secondary-400: #22D3EE;
+  --secondary-500: #14B8A6; /* BASE */
+  --secondary-600: #0D9488;
+  --secondary-700: #0F766E;
+  --secondary-800: #115E59;
+  --secondary-900: #134E4A;
+  --secondary-950: #042F2E;
 
   --success-50: #ecfdf5;
   --success-100: #d1fae5;

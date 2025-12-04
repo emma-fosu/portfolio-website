@@ -1,7 +1,8 @@
 import "../../../styles/tailwind.css";
-import "../../../styles/pages/projects/cossmic_electricity_analysis.css";
+import "../../../styles/pages/projects/zoom_vs_synopsys_financial_performance.css";
 import 'prismjs/themes/prism-tomorrow.css';
 import "prismjs";
+
 import initDocumentationNav from "../../components/documentation-nav";
 import observeActiveLinks from "../../utils/observe-active-link";
 

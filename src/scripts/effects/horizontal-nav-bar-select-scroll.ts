@@ -2,7 +2,7 @@ import observeActiveLinks from "../utils/observe-active-link";
 
 
 export default function initHorizontalNavBarSelectScrollEffect(nav: HTMLElement, sectionRegionElement: HTMLElement ) {
-  observeActiveLinks(nav, sectionRegionElement, moveSlider);
+  observeActiveLinks(nav, sectionRegionElement, undefined, moveSlider);
   // Recalculate on resize (for responsive layouts)
   window.addEventListener('resize', () => {
     const active = nav.querySelector('a.active') as HTMLAnchorElement;
