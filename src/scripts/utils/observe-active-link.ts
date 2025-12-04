@@ -5,7 +5,7 @@ export default function observeActiveLinks(nav: HTMLElement, sectionRegionElemen
         root: sectionRegionElement, 
     }
 
-    const setLinkActiveStyle: IntersectionObserverCallback = (entries, observer) => {
+    const setLinkActiveStyle: IntersectionObserverCallback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
