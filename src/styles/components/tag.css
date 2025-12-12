@@ -1,6 +1,8 @@
 %tag {
-    padding: 0.3em;
-    border-radius: 0.5em;
+    display: inline-block;
+    padding-inline: 0.3em;
+    white-space: nowrap;
+    border-radius: 0.25em;
 }
 
 .doc-tag-1 {
@@ -15,6 +17,11 @@
     background-color: light-dark(var(--neutral-100), var(--neutral-800));
 }
 
+.note-tag-1 {
+   @extend %tag;
+    color: light-dark(var(--neutral-100), var(--secondary-400)); 
+}
+
 .interactive-tag-1 {
     padding-inline: 0.75em;
     padding-block: 0.25em;
@@ -24,6 +31,7 @@
     width: fit-content;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    font-size: var(--small);
 
 }

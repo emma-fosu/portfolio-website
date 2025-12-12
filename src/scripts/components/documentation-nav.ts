@@ -1,6 +1,6 @@
 export default function initDocumentationNav(
   documentationArea: HTMLElement,
-  documentNav: HTMLElement
+  documentNav: HTMLElement,
 ) {
   populateNav(documentNav, getSectionSchemes(documentationArea));
 }
@@ -20,12 +20,17 @@ function getSectionSchemes(
   const topLevelSections =
     documentationArea.querySelectorAll(":scope > section");
   topLevelSections.forEach((section) => {
-    const topLevelMetaDataScheme = getSectionMetaDataScheme(section as HTMLElement, 2)
+    const topLevelMetaDataScheme = getSectionMetaDataScheme(
+      section as HTMLElement,
+      2
+    );
     const deepLevelSections = section.querySelectorAll(":scope > section");
     if (deepLevelSections.length !== 0) {
       const deepLevelSectionSchemes = [] as SectionMetaData[];
       deepLevelSections.forEach((section) => {
-        deepLevelSectionSchemes.push(getSectionMetaDataScheme(section as HTMLElement, 3));
+        deepLevelSectionSchemes.push(
+          getSectionMetaDataScheme(section as HTMLElement, 3)
+        );
       });
 
       topLevelMetaDataScheme.deepLevels = deepLevelSectionSchemes;
@@ -67,7 +72,10 @@ function populateNav(
   });
 }
 
-function getSectionMetaDataScheme(section: HTMLElement, level: number = 2): SectionMetaData {
+function getSectionMetaDataScheme(
+  section: HTMLElement,
+  level: number = 2
+): SectionMetaData {
   const sectionMetaData = {} as SectionMetaData;
   sectionMetaData.id = section.id;
   const isTechnical = section.hasAttribute("technical");
@@ -85,9 +93,37 @@ function createLinkList(href: string, name: string, isTechnical: boolean) {
   const ListElem = document.createElement("li");
   const ListElemTextNode = document.createTextNode(name);
   const LinkElem = document.createElement("a");
-  if (isTechnical) LinkElem.setAttribute("technical", "");
+  if (isTechnical) {
+    LinkElem.setAttribute("technical", "");
+    LinkElem.setAttribute("inert", "");
+  }
   LinkElem.href = href;
   LinkElem.appendChild(ListElemTextNode);
   ListElem.appendChild(LinkElem);
   return ListElem;
+}
+
+
+export function initCloseNavWhenLinkClicked(
+  documentNav: HTMLElement,
+  documentationNavCont: HTMLElement
+) {
+  const allLinks = documentNav.querySelectorAll("a");
+  allLinks.forEach(link => {
+    link.addEventListener('click', () => closeNavPopover(documentationNavCont))
+  })
+}
+
+function closeNavPopover(documentNavCont: HTMLElement) {
+  documentNavCont.hidePopover();
+}
+
+export function cleanupCloseNavWhenLinkClicked(
+  documentNav: HTMLElement,
+  documentationNavCont: HTMLElement
+) {
+  const allLinks = documentNav.querySelectorAll("a");
+  allLinks.forEach(link => {
+    link.removeEventListener('click', () => closeNavPopover(documentationNavCont))
+  })
 }

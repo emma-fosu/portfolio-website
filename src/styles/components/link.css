@@ -1,13 +1,40 @@
-.link[target="_blank"]:not(:has(svg)) {
-  white-space: nowrap;
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    aspect-ratio: 1 / 1;
-    background-color: color-mix(in oklab, currentColor, transparent);
-    mask: url("/required_icon.svg") no-repeat;
-    mask-size: contain;
-    vertical-align: middle;
+:where(a) {
+  outline-width: 4px;
+  outline-style: solid;
+  outline-color: transparent;
+
+  &:focus-visible {
+    outline-color: light-dark(var(--neutral-100), var(--neutral-600));
+  }
+
+  &:hover {
+    color: light-dark(var(--neutral-100), var(--neutral-300));
+  }
+
+  &.only-text {
+    padding-block: 0.4em;
+    padding-inline: 0.7em;
+  }
+
+  &.only-icon {
+    border-radius: 1000px;
+  }
+
+  &[target="_blank"]:not(:has(svg)) {
+    white-space: nowrap;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      aspect-ratio: 1 / 1;
+      background-color: color-mix(in oklab, currentColor, transparent);
+      mask: url("/required_icon.svg") no-repeat;
+      mask-size: contain;
+      vertical-align: middle;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

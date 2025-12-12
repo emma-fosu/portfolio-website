@@ -81,6 +81,12 @@
   }
 }
 
+.btn-nothing-primary {
+  @extend %base-button;
+  background-color: transparent;
+  border: none;
+}
+
 .icon {
   box-sizing: content-box;
   height: 24px;

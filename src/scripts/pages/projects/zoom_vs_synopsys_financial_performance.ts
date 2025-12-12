@@ -28,7 +28,9 @@ function showTechnicalDoc(documentationArea: HTMLElement, documentationNav: HTML
     technicalSections.forEach(section => section.classList.remove("hidden"));
 
     const technicalLinks = documentationNav.querySelectorAll("a[technical]");
-    technicalLinks.forEach(link => link.removeAttribute("technical"));
+    technicalLinks.forEach(link => {
+        link.removeAttribute("technical");
+});
     const firstLink = technicalLinks[0] as HTMLElement;
     firstLink.click();
 }

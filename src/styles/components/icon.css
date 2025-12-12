@@ -9,11 +9,12 @@
 
 .icon-smm {
     width: 20px;
-
+    aspect-ratio: 1 / 1;
 }
 
 .icon-md {
     width: 26px;
+    aspect-ratio: 1 / 1;
 }
 
 .icon-lg {
@@ -23,10 +24,12 @@
 
 .icon-xl {
     width: 40px;
+    height: fit-content;
 }
 
 .icon-xxl {
     width: 56px;
+    height: fit-content;
 }
 
 .icon-xxxl {

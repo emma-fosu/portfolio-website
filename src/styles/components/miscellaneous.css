@@ -1,12 +1,10 @@
 .note {
     padding: 0.75em;
     background-color: light-dark(var(--neutral-100), color-mix(in oklab, var(--secondary-600) 25%, transparent));
-    border-radius: 0.25em;
-    border-left: 2px solid light-dark(var(--neutral-100), var(--success-500));
-    position: relative;
+    display: flex;
+    gap: 10px;
 
     &::before {
-        position: absolute;
         content: "";
         display: inline-block;
         vertical-align: top; 
@@ -17,9 +15,10 @@
         background-position: center;
         background-size: contain;
         float: left;
+        flex-shrink: 0;
     }
 
-    > * {
+    /* > span[note] {
         margin-left: 25px;
-    }
+    } */
 }

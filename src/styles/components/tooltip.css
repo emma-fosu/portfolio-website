@@ -1,0 +1,29 @@
+.tooltip {
+    font-weight: 400;
+    font-size: var(--small);
+    padding: 0.25em 0.5em;
+    background-color: light-dark(var(--neutral-100), var(--neutral-800));
+    color: light-dark(var(--neutral-100), var(--neutral-200));
+    border-radius: 0.5em;
+
+    margin: 0;
+    margin-top: 5px;
+    inset: auto;
+    position-area: bottom;
+
+
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                overlay 0.2s allow-discrete, 
+                display 0.2s allow-discrete;
+
+    &:popover-open {
+        opacity: 1;
+
+        @starting-style {
+            opacity: 0;
+        }
+    }
+
+
+}

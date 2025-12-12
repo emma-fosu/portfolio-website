@@ -5,11 +5,12 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
@@ -17,39 +18,53 @@
     />
     <title>CoSSMic Household Electricity Consumption Analysis Dashboard</title>
 </head>
-<body>
-  <div>
+<body class="overflow-y-scroll h-dvh">
+  <main class="@container/main-container">
     <nav
-        class="primary-nav sticky top-[0] left-[0] right-[0] z-1 "
+        class="z-1000 fixed primary-nav top-[0] left-[0] right-[0]"
         id="primary-nav"
         aria-label="primary navigation"
       >
-        <div class="w-[90vw] max-w-[1100px] mx-auto flex gap-3 items-center">
-          <div>
-            <svg
-              width="469"
-              height="469"
-              viewBox="0 0 469 469"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon-lg"
-            >
-              <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
-              <circle
-                cx="233.999"
-                cy="234.999"
-                r="62.0555"
-                transform="rotate(-2.78704 233.999 234.999)"
-                fill="white"
-              />
-            </svg>
-          </div>
+        <div class="w-[90vw] max-w-[1200px] mx-auto flex gap-3 items-center">
+          <a class="only-icon" href="/portfolio-website/">
+            <span class="sr-only">Go to home</span>
+            <div class="logo">
+              <svg
+                width="469"
+                height="469"
+                viewBox="0 0 469 469"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-lg"
+              >
+                <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
+                <circle
+                  cx="233.999"
+                  cy="234.999"
+                  r="62.0555"
+                  transform="rotate(-2.78704 233.999 234.999)"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </a>
+          <button 
+            type="button"
+            class="doc-nav-button btn-outlined-secondary bp-s-1 rounded" 
+            aria-expanded="false"
+            aria-controls="documentation-nav"
+            aria-haspopup="true"
+            popovertarget="documentation-nav-cont"
+            aria-label="Open Table of Content" tooltip="Open Table of Content">
+            <div class="icon-sm" aria-hidden="true" icon></div>
+          </button>
           <a
-            href="https://github.com/emma-fosu"
+            href="https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption"
             target="_blank"
             rel="noopener"
             aria-label="GitHub"
             class="ml-auto btn-outlined-secondary rounded bp-s-1"
+            tooltip="View Source Code"
           >
             <div>
               <svg
@@ -64,67 +79,222 @@
               </svg>
             </div>
           </a>
-          <a class="link" href="#resume" target="_blank" rel="noopener">Résumé</a>
+          <a class="only-text rounded" href="#resume" target="_blank" rel="noopener">Résumé</a>
         </div>
       </nav>
-      <main class="w-[90vw] max-w-[1100px] mx-auto flex gap-[20px]">
-      <aside class="sticky top-[0px]">
-        <div class="sticky top-[80px]">
-          <span>On this Page</span>
-          <nav class="documentation-nav" id="documentation-nav">
+      <div class="w-[90vw] max-w-[1200px] mx-auto grid grid-cols-[30ch_1fr] grid-rows-[auto_auto] items-start gap-[20px] @max-[950px]:grid-cols-[1fr]">
+      <aside id="documentation-nav-cont">
+        <div>
+          <header class="flex items-center justify-between gap-5">
+            <span class="doc-nav-span">On this Page</span>
+            <button 
+              type="button"
+              class="doc-nav-button btn-outlined-secondary bp-s-1 rounded" 
+              aria-expanded="true"
+              aria-controls="documentation-nav"
+              aria-haspopup="true"
+              popovertarget="documentation-nav-cont"
+              aria-label="Close Table of Content" tooltip="Close Table of Content">
+              <div class="icon-sm" aria-hidden="true" icon></div>
+            </button>
+          </header>
+          <nav class="mt-7" id="documentation-nav">
           </nav>
         </div>
       </aside>
-      <div id="documentation" class="grid gap-10">
-        <header >
-          <h1>CoSSMic Electricity Consumption Analysis</h1>
-          <p class="description mt-1">A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
-          <div class="project-visual mt-8">
-            <div class="project-visual-info">
+      <div id="documentation" class="flex flex-col mt-[90px] @container/doc-cont">
+        <header  >
+          <div class="grid-cell-top">
+            <h1 class="grid-cell-inline">CoSSMic Electricity Consumption Analysis</h1>
+          <p class="grid-cell-inline description mt-2">A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
+          <div class="project-visual mt-12">
+            <div class="project-visual-info flex items-center">
               <p class="interactive-tag-1">
                 <span class="ripple-circle"></span>
                 <span>interactive</span>
               </p>
+              <button
+              iframe 
+              type="button"
+              class="fullscreen-button btn-nothing-primary rounded ml-auto bp-s-2" 
+              aria-label="Fullscreen" tooltip="Fullscreen">
+              <div class="icon-smm" aria-hidden="true" icon></div>
+            </button>
             </div>
             <div class="frame-container">
-              <iframe allowfullscreen frameborder="0" scrolling="no" src="https://1drv.ms/x/c/23208cb2a0b67433/IQR8oOuAxZZaRqEPSXgX6avQAWZcunFL426LrweCrisIl8s?em=2&AllowTyping=True&Item=dashboard&wdHideGridlines=True&wdDownloadButton=False&wdInConfigurator=True&wdInConfigurator=True&action=embedview&wdbipreview=true&wdAllowInteractivity=True"></iframe>            </div>
+              <!-- <iframe width="160" height="90" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/23208cb2a0b67433/IQR8oOuAxZZaRqEPSXgX6avQAWZcunFL426LrweCrisIl8s?em=2&wdAllowInteractivity=False&Item=dashboard&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe> -->
             </div>
-          <div class="note mt-5">
-            <p>
-              <span class="doc-tag-2">NOTE:</span>
-              Due to Excel Online limitations, some features, visuals, and interactions may not fully reflect the original workbook. 
-             Slicers, pivot charts, macros, external data connections, and advanced BI features may not work in the embedded view.
-             <p class="mt-4">
-               For the full, fully functional workbook, download it <a href="https://git-scm.com/downloads">here</a>.
-             </p> 
-            </p>
+          </div>
+          </div>
+          <div class="note">
+            <div>
+              <span class="note-tag-1" note>NOTE:</span>
+              <span>
+                Due to Excel Online limitations, some features, visuals, and interactions may not fully reflect the original workbook. 
+                Slicers, pivot charts, macros, external data connections, and advanced BI features may not work in the embedded view.
+              </span>
+              <p class="mt-4">
+                For the fully functional workbook, download it <a href="https://git-scm.com/downloads">here</a>.
+              </p> 
+            </div>
           </div>
         </header>
-        <section id="project-overview">
-          <h2>Project Overview</h2>
-          <p>Household electricity consumption has a direct impact on both cost savings and environmental sustainability. 
-            This project explores consumption patterns of 11 households in southern Germany across different times of day and seasons to understand usage behavior.   
-            The goal is to identify opportunities for reducing wastage and optimizing energy efficiency.</p>
+        <div style="height: 10px;"></div>
+        <section id="project-overview" class="grid gap-5 grid-cols-[1fr_35%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+          <h2 aria-hidden="true" class="sr-only">Project Overview</h2>
+          <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+            <h2>Project Overview</h2>
+            <p>
+              Household electricity consumption has a direct impact on both cost savings and environmental sustainability. To reduce costs and support Germany's sustainability policies, household electricity consumption needs to be studied to identify ways to improve efficiency.   
+              <p class="mt-5">
+                This project explores the consumption patterns of <b>11 households</b> in <b>Southern Germany</b> across different times of day and seasons to better understand their usage behavior. The goal is to identify opportunities for reducing wastage and optimizing energy efficiency.
+              </p>
+            </p>
+          </div>
+          <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+            <img class="object-center object-cover h-full w-full " src="/cossmic_solar_household.webp" alt="A house with a solar panel grid on the roof.">
+          </div>
         </section>
         <section id="key-questions-addressed">
-          <h2>Key Questions Addressed</h2>
-          <ol class="mt-1">
-            <li>How is electricity consumed throughout the year and seasons?</li>
-            <li>How is electricity consumed throughout the day?</li>
-            <li>How appliance is used throughout the year and how much power each uses?</li>
-            <li>How much grid power is supplied to these households over time?</li>
-            <li>How is grid power used over time?</li>
-            <li>Can power generated by the solar panel supply the household demand?</li>
+          <h2 class="grid-cell mt-6">Key Questions Addressed</h2>
+          <ol class="grid grid-list grid-cols-3">
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">What are the daily, weekly, and seasonal electricity consumption patterns of households?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">At what times of day do households experience peak electricity usage?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">How does appliance-level usage contribute to overall household consumption, and which appliances consume the most energy?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">What proportion of household electricity demand is met by on-site solar generation, and when does shortfall occur?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">Which days or periods show the highest potential for energy savings?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">How does household electricity usage compare to solar generation patterns across different times and seasons?</li>
+            <li class="grid-cell flex flex-col items-center gap-3 text-center place-content-center">Which strategies (behavioral changes, appliance upgrades, or solar usage) could most effectively reduce energy consumption and reliance on the grid?</li>
           </ol>
         </section>
-        <hr>
-        <button type="button" id="show-technical" class="btn-filled-primary">Explore More (Technical)</button>
+        <section id="key-findings">
+          <h2 class="grid-cell mt-6">Key Findings</h2>
+          <div>
+            <div class="grid-cell-inline note">
+            <div>
+              <span class="note-tag-1" note>NOTE:</span> 
+              <span>These findings are based mostly on <b>2016</b> electricity consumption analysis.</span>
+            </div>
+          </div>
+          <ol class="grid-list-one @container">
+            <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+              <div>
+                  <span><b>Electricity Consumption Peaks and Valleys throughout Seasons.</b></span>
+                  <p class="mt-3">Electricity consumption varies dramatically across the year. It peaks in winter (Nov-Jan), then gradually decreases through late winter to early spring. </p>
+                  <img class="mt-3" src="/electricity_consumption_1.png" alt="A chart showing the electricity consumption throughout the year.">
+                  <p class="mt-3">In April, it drops sharply by <b>40%</b> compared to March, reaching its lowest point in summer 
+                    (<b>78%</b> below the beginning of the year). From September onwards, consumption slowly increases, with a spike from autumn to early winter, reaching <b>3x</b> what was consumed in August.</p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Daily Electricity Patterns Remain Stable but Peak in Winter.</b></span>
+                  <p class="mt-3">
+                    Electricity use throughout the day is generally consistent. Occasional peaks occur likely when appliances like the dish washer or heat pump are in use. Winter consumption is clearly higher than in summer and autumn, 
+                    with noticeable peaks around <b>4-5 AM</b>, <b>10 AM</b>, and after sunset.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Heat Pumps Dominate Winter Energy Use.</b></span>
+                  <p class="mt-3">The heat pump is the primary driver of winter electricity consumption, accounting for <b>72%</b>, with the circulation pump next in line.</p>
+                  <figure class="mt-3">
+                    <img src="/appliances.gif" alt="A chart showing the electricity consumption for each appliance throughout the year.">
+                    <figcaption>A chart showing the electricity consumption for each appliance throughout the year.</figcaption>
+                  </figure>
+                  <p class="mt-3">
+                    During spring and autumn, the heat pump competes with other appliances, contributing around <b>24%</b>, alongside the dishwasher and washing machine. This indicates that winter spikes are largely due to heating needs.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Solar PV Generation Exceeds Demand in Summer and Autumn.</b></span>
+                  <p class="mt-3">
+                    Solar electricity generation surpasses household demand and sometimes grid import during summer and autumn. Starting in March, PV generation exceeded demand
+                    by <b>82%</b>, averaging <b>370%</b> above demand over the next four months, with a peak of <b>910%</b> in July.
+                  </p>
+                  <figure class="mt-3">
+                    <img src="/solar_season.png" alt="A chart showing the electricity consumption for each appliance throughout the year.">
+                    <figcaption>A chart showing when and how much solar generated electricity surpases that from the grid in Summer through to Autumn.</figcaption>
+                  </figure>
+                  <p class="mt-3">
+                    Much of this surplus is wasted, highlighting the untapped potential of solar energy. Effective storage or flexible usage strategies could maximize this energy during peak generation periods.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Solar Electricity is Highly Predictable Throughout the Day.</b></span>
+                  <p class="mt-3">
+                    Solar PV generation follows a consistent daily pattern: it rises from <b>8 AM</b> to noon and falls after
+                    <b>3 PM</b> until sunset. While the timing is predictable, the magnitude varies seasonally, with the highest output in <b>July</b>.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Electricity Demand and Solar Generation Follow Opposite Trends.</b></span>
+                  <p class="mt-3">
+                    Electricity consumption and solar generation behave like two opposing parabolic curves. In winter, solar generation is far below demand, while in July it 
+                    surpasses demand by <b>910%</b>. Demand increases toward the end of the year, but solar generation cannot meet it, emphasizing the need for alternative energy sources or storage solutions to bridge the gap. 
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section id="Recommendations">
+          <h2 class="grid-cell mt-6">Recommendations</h2>
+          <ol class="grid-list-one">
+            <li class="grid gap-5 grid-cols-[1fr_35%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+                <span><b>Implement Hybrid Electricity Management with Smart Switching:</b></span>
+                <p class="mt-3">
+                  Introduce a hybrid electricity system with automated switching: the system prioritizes PV solar electricity when generation is high and seamlessly draws from the grid only when solar is insufficient. 
+                </p>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img class="object-center object-cover h-full w-full" src="/hybrid_electricity.webp" alt="a house with hybrid electricity connection.">
+              </div>
+            </li>
+            <li class="grid gap-5 grid-cols-[35%_1fr] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="order-2 grid-cell @max-[500px]/doc-cont:order-2">
+                <span><b>Connect PV Solar Electricity to Low-Power Appliances:</b></span>
+                <p class="mt-3">
+                  Directly connect PV-generated electricity to <b>Low-power appliances (LED lights, fans, chargers, small pumps)</b> which are ideal for consuming this surplus energy without affecting household operations.
+                </p>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img class="object-center object-cover h-full w-full" src="/solar_to_low_appliances.webp" alt="a solar power system in a room.">
+              </div>
+            </li>
+            <li class="grid gap-5 grid-cols-[1fr_35%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+                <span><b>Implement Energy Storage or Demand-Shifting Strategies:</b></span>
+                <div>
+                  <p class="mt-3">
+                    Invest in battery storage systems to store excess solar energy during high-generation months for use in winter or during peak demand periods.
+                  </p>
+                  <p class="mt-2">
+                    Alternatively, implement demand-shifting strategies, such as scheduling flexible appliances (washing machines, dishwashers, chargers) to run during peak solar generation hours (8 AM-3 PM), maximizing self-consumption and reducing grid dependency.
+                  </p>
+                </div>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img class="object-center object-cover h-full w-full" src="/energy_storage.webp" alt="A set of PV Storage Batteries">
+              </div>
+            </li>
+          </ol>
+        </section>
+        <button type="button" id="show-technical" class=" btn-filled-primary">Explore More (Technical)</button>
         <section id="dataset" technical>
-          <h2>Dataset</h2>
-          <p class="mt-1">
+          <h2 class="grid-cell mt-6">Dataset</h2>
+          <p class="grid-cell-inline grid-cell-top">
             A time series collected by CoSSMic (Collaborating Smart Solar-powered Microgrids). More infomation about the dataset can be found <a href="https://data.open-power-system-data.org/household_data/">here</a>.
           </p>
-          <figure class="mt-5">
+          <figure class="grid-cell-inline mt-5">
             <figcaption>Table: Household Energy Consumption Dataset Schema</figcaption>
             <div class="doc-table-container">
               <table class="doc-table w-full">
@@ -189,31 +359,39 @@
             </div>
           </figure>
           <section id="challeges-with-datasets" class="mt-4" technical>
-            <h3>Challenges With Datasets</h3>
-            <ol class="mt-2">
+            <h3 class="grid-cell-inline">Challenges With Datasets</h3>
+            <ol class="mt-2 grid-cell-inline grid-cell-bottom">
               <li>Multiple missing values after the dataset was interpolated.</li>
               <li>Noisy readings and huge gaps from subsequent records. </li>
             </ol>
           </section>
         </section>
         <section id="methodology" technical>
-          <h2>Methodology</h2>
-          <section id="data-cleaning-preparation" class="mt-4" technical>
+          <h2 class="grid-cell mt-6">Methodology</h2>
+          <section id="data-cleaning-preparation" class="grid-cell-inline grid-cell-top" technical>
             <h3>Data Cleaning & Preparation <em>(with Power Query)</em></h3>
             <ol class="mt-2">
                 <li>Columns relating to industrial areas and public infrastructure were removed.</li>
-                <li>The columns were indexed with <b>Power Query index creator</b>.</li>
+                <li><div>The columns were indexed with <b>Power Query index creator</b>.</div></li>
                 <li>
                   In order to calculate the differential electricity consumption of each appliance, 
                   the table was duplicated with an offset index of 1.
                 </li>
                 <li>These tables were merged by the index and each record was substracted from their respective cumulative appliance consumption.</li>
                 <li>Differential electricity consumption was computed by indexing</li>
-                <li>Total appliance electricity consumption from the household was calculated to create five new columns (<span class="doc-tag-1">refrigerator</span>, <span class="doc-tag-1">dishwasher</span>,
-                  <span class="doc-tag-1">freezer</span>, <span class="doc-tag-1">heat pump</span>, <span class="doc-tag-1">cooling pump</span>).</li>
+                <li>
+                  <div>
+                    Total appliance electricity consumption from the household was calculated to create five new columns (<span class="doc-tag-1">refrigerator</span>, <span class="doc-tag-1">dishwasher</span>,
+                  <span class="doc-tag-1">freezer</span>, <span class="doc-tag-1">heat pump</span>, <span class="doc-tag-1">cooling pump</span>).
+                  </div>
+                </li>
               </ol>
+              <figure class="mt-5">
+                <figcaption>A snapshot of power query steps used to clean the data.</figcaption>
+                <img src="/power_query.gif" alt="A preview of using power query to clean and transform the dataset">
+              </figure>
           </section>
-          <section id="exploratory-data-analysis" class="mt-4" technical>
+          <section id="exploratory-data-analysis" class="grid-cell-inline mt-5" technical>
             <h3>Exploratory Data Analysis <em>(with Pivot Tables and Charts)</em></h3>
             <ol class="mt-2">
               <li>Created Pivot tables to show the total electricity against time.</li>
@@ -223,83 +401,27 @@
               <li>Calculated the portion of grid import consumed at a specific time. </li>
             </ol>
           </section>
-          <section id="visualization-dashboards" class="mt-4" technical>
+          <section id="visualization-dashboards" class="grid-cell-bottom grid-cell-inline mt-5" technical>
             <h3>Visualization & Dashboards <em>(with Pivot Charts and Sliders)</em></h3>
             <ol class="mt-2">
               <li>Created a time-series line plot of total electricity consumption against time (years, months, quarters).  </li>
               <li>Created a treemap to show the portion of electricity consumed by each appliance.</li>
-              <li> single timestamp slider to filter out all the charts and tables.</li>
+              <li>A timestamp slider to filter out all the charts and tables.</li>
               <li>Designed a new card to show total electricity consumption, total grid import and export and pv import.</li>
             </ol>
           </section>
         </section>
         <section id="skills-showcased" technical>
-          <h2>Skills Showcased</h2>
-          <ul class="mt-1">
-            <li>Using <b>Power Query</b> with the <b>M language</b> to load the dataset, compute new fields and remove columns.</li>
-            <li><b>Pivot tables</b> with computed measures and formatting to analyse electricity consumption.</li>
-            <li><b>Pivot charts</b> to visualize time series electricity consumption and appliance usage.</li>
+          <h2 class="grid-cell mt-6">Skills Showcased</h2>
+          <ul class="grid-cell">
+            <li><div>Using <b>Power Query</b> with the <b>M language</b> to load the dataset, compute new fields and remove columns.</div></li>
+            <li><div><b>Pivot tables</b> with computed measures and formatting to analyse electricity consumption.</div></li>
+            <li><div><b>Pivot charts</b> to visualize time series electricity consumption and appliance usage.</div></li>
           </ul>
         </section>
-        <section id="project-structure" technical>
-          <h2>Project Structure</h2>
-          <div class="code-block mt-1">
-          <div class="top-block flex gap-[20px] justify-between items-center">
-            <span class="language">bash</span>
-            <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-              <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
-            </button>
-          </div>
-          <hr>
-            <pre>
-              <code class="language-bash">
-CossMic-Household-Electricity-Consumption/
-├── dataset/ # all dataset used for the dashboard
-├── assets/ # images for README.md
-├── household_electricity.xlsx # Excel file containing the dashboard
-└── README.md # Project documentation
-              </code>
-            </pre>
-          </div>
-        </section>
-        <section id="how-to-run-the-project" technical>
-          <h2>How to Run the Project</h2>
-          <p class="mt-1">This project can be downloaded locally in two ways:</p>
-          <ol class="mt-1">
-            <li>
-              <span>Clone the repository with git:</span>
-              <div class="code-block mt-3">
-                <div class="top-block flex gap-[20px] justify-between items-center">
-                  <span class="language">Power Query</span>
-                  <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                    <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
-                  </button>
-                </div>
-                <hr>
-                <pre>
-                  <code class="language-powerquery">
-git clone https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption.git
-                  </code>
-                </pre>
-              </div>
-              <p class="note mt-2 mb-4">
-                <span class="doc-tag-2">NOTE:</span> 
-                In order to use this command, you have to get <span><a class="link" rel="noopener" target="_blank" href="https://git-scm.com/downloads">Git</a></span> installed.
-              </p>
-            </li>
-            <li>
-              <span>Donwloading and unziping from GitHub:</span>
-              <ol class="mt-2">
-                <li>Click the green <span class="doc-tag-1">&lt; &gt; Code</span> button located above the list of files.</li>
-                <li>In the menu that appears, click <span class="doc-tag-1">Download ZIP</span>.</li>
-                <li>Once the download is complete, extract the contents of the ZIP file to access all the files. </li>
-              </ol>
-            </li>
-          </ol>
-        </section>
         <section id="cleaned-dataset" technical>
-          <h2>Cleaned Dataset</h2>
-          <figure class="mt-2">
+          <h2 class="grid-cell mt-6">Cleaned Dataset</h2>
+          <figure class="grid-cell">
             <figcaption>Table: Cleaned Dataset Schema for Household Electricity Analysis</figcaption>
             <div class="doc-table-container">
               <table class="doc-table w-full">
@@ -391,7 +513,72 @@ git clone https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption
             </div>
           </figure>
         </section>
-        <footer class="flex justify-between items-center gap-5 mt-[60px] mb-[20px]">
+        <section id="project-structure" technical>
+          <h2 class="grid-cell mt-6">Project Structure</h2>
+          <div class="grid-cell">
+            <div class="code-block">
+          <div class="top-block flex gap-[20px] justify-between items-center">
+            <span class="language">bash</span>
+            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+              <div icon class="icon-smm" aria-hidden="true"></div>
+            </button>
+          </div>
+          <hr>
+            <pre>
+              <code class="language-bash">
+CossMic-Household-Electricity-Consumption/
+├── dataset/ # all dataset used for the dashboard
+├── assets/ # images for README.md
+├── household_electricity.xlsx # Excel file containing the dashboard
+└── README.md # Project documentation
+              </code>
+            </pre>
+          </div>
+          </div>
+        </section>
+        <section id="how-to-run-the-project" technical>
+          <h2 class="grid-cell mt-6">How to Run the Project</h2>
+          <p class="grid-cell-inline grid-cell-top">This project can be downloaded locally in two ways:</p>
+          <ol class="grid-cell-inline grid-cell-bottom mt-2">
+            <li>
+              <div>
+                <span>Clone the repository with git:</span>
+              <div class="code-block mt-3">
+                <div class="top-block flex gap-[20px] justify-between items-center">
+                  <span class="language">Power Query</span>
+                  <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                    <div icon class="icon-smm" aria-hidden="true"></div>
+                  </button>
+                </div>
+                <hr>
+                <pre>
+                  <code class="language-powerquery">
+git clone https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption.git
+                  </code>
+                </pre>
+              </div>
+              <div class="note mt-2 mb-4">
+                <div>
+                  <span class="note-tag-1" note>NOTE:</span> 
+                  <span>In order to use this command, you have to get <span><a rel="noopener" target="_blank" href="https://git-scm.com/downloads">Git</a></span> installed.</span>
+                </div>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>Donwloading and unziping from GitHub:</span>
+              <ol class="mt-2">
+                <li><div>Click the green <span class="doc-tag-1">&lt; &gt; Code</span> button located above the list of files.</div></li>
+                <li><div>In the menu that appears, click <span class="doc-tag-1">Download ZIP</span>.</div></li>
+                <li>Once the download is complete, extract the contents of the ZIP file to access all the files. </li>
+              </ol>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+      <footer class="col-[2/-1] flex justify-between items-center gap-5 mt-[60px] mb-[20px] @max-[950px]:col-auto">
         <div class="flex gap-2">
           <a
             class="btn-outlined-secondary rounded bp-s-1"
@@ -459,9 +646,8 @@ git clone https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption
           Emmanuel Fosu
         </p>
       </footer>
-      </div>
-    </main>
-  </div>
+    </div>
+  </main>
   <script type="text/javascript">
       const currentYearDisplay = document.getElementById("current-year");
       if (currentYearDisplay) {

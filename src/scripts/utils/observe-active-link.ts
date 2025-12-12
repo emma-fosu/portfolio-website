@@ -1,4 +1,4 @@
-export default function observeActiveLinks(nav: HTMLElement, sectionRegionElement: HTMLElement, intersectionObserverOptions?: IntersectionObserverInit, observerCallback?: (link: HTMLAnchorElement, nav: HTMLElement) => void) {
+export default function observeActiveLinks(nav: HTMLElement, sectionRegionElement: HTMLElement, intersectionObserverOptions?: IntersectionObserverInit, observerCallback?: (link: HTMLAnchorElement, nav?: HTMLElement) => void) {
     // if (!CSS.supports('scroll-target-group', 'auto')) return;
 
     const OPTIONS: IntersectionObserverInit = intersectionObserverOptions ?? {

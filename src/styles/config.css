@@ -30,12 +30,13 @@
   --xxxx-large: 4.5rem;
 
   /* Font Family */
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font-primary: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
-  --font-secondary: "Poppins", Roboto, "Segoe UI", "Helvetica Neue", Arial,
+  --font-secondary:"Geist", "Poppins", Roboto, "Segoe UI", "Helvetica Neue", Arial,
     sans-serif;
 
   --color-white: #ffffff;
+  --color-white-off: rgb(237, 237, 237);
   --color-black: #000000;
 
   --neutral-50: oklch(0.99 0.00 0);

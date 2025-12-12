@@ -12,6 +12,7 @@
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^24.10.1",
     "@types/prismjs": "^1.26.5",
+    "baseline-browser-mapping": "^2.9.6",
     "postcss": "^8.5.6",
     "postcss-extend": "^1.0.5",
     "postcss-preset-env": "^10.4.0",

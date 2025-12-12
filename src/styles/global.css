@@ -5,7 +5,7 @@ body {
  
   font-family: var(--font-primary);
   font-size: clamp(var(--medium), 2vw, var(--normal));
-  color: light-dark(var(--neutral-900), var(--neutral-50));
+  color: light-dark(var(--neutral-900), var(--color-white-off));
   background-color: light-dark(var(--neutral-100), var(--neutral-950));
 
   &:has(nav.floating) main {
@@ -20,8 +20,10 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-secondary);
-  color: light-dark(var(--color-black), var(--color-white));
+  color: light-dark(var(--color-black), var(--color-white-off));
 }
+
+
 
 .copyright {
   color: light-dark(var(--neutral-100), var(--neutral-500));
@@ -29,3 +31,7 @@ h1, h2, h3, h4, h5 {
   font-size: var(--medium);
 }
 
+.logo {
+  border: 2px solid light-dark(var(--neutral-100), var(--neutral-600));
+  border-radius: 1000px;
+}

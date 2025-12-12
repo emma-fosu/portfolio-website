@@ -1,6 +1,7 @@
 .doc-table {
     text-indent: 0;
     border-collapse: collapse;
+    
 
     tr {
         display: table-row;
@@ -37,6 +38,7 @@ figure {
 }
 
 .doc-table-container {
+    overflow-x: auto;
     border: 1px solid light-dark(var(--neutral-100), var(--neutral-600));
-    border-radius: 1em;
+    /* border-radius: 1em; */
 }
