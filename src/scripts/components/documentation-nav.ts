@@ -83,7 +83,7 @@ function getSectionMetaDataScheme(
   const headingElem = section.querySelector(`:scope > h${level}`);
   if (headingElem) {
     const headingName = headingElem.textContent;
-    sectionMetaData.name = headingName;
+    sectionMetaData.name = headingName ?? "";
   }
 
   return sectionMetaData;
