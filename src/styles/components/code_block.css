@@ -1,0 +1,39 @@
+.code-block {
+  --block-padding: 0.8em;
+  background-color: light-dark(var(--neutral-100), var(--neutral-900));
+  font-size: var(--medium);
+  color: light-dark(var(--neutral-100), var(--neutral-300));
+  overflow: hidden;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: light-dark(var(--neutral-100), var(--neutral-700));
+
+  hr {
+    color: light-dark(var(--neutral-100), var(--neutral-700));
+  }
+  .language {
+    font-size: var(--small);
+    font-style: italic;
+  }
+
+  .top-block {
+    padding-top: calc(var(--block-padding) / 2);
+    padding-bottom: 0.3em;
+    padding-left: var(--block-padding);
+    padding-right: var(--block-padding);
+    background-color: light-dark(var(--neutral-100), var(--neutral-950));
+  }
+  pre {
+    white-space: collapse;
+    background-color: inherit;
+    padding-left: var(--block-padding);
+    padding-right: var(--block-padding);
+    code {
+      tab-size: 2;
+      white-space: preserve;
+      font-family: "DM Mono", "Courier New", Courier, monospace;
+      font-size: var(--medium);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.doc-table {
+    text-indent: 0;
+    border-collapse: collapse;
+    
+
+    tr {
+        display: table-row;
+        
+        &:not(:last-of-type) {
+            border-bottom: 1px solid light-dark(var(--neutral-100), var(--neutral-600));
+        }
+    }
+    
+    
+    th {
+        font-weight: 600;
+        padding-block: 0.5em;
+        padding-inline: 1em;
+        text-align: left;
+
+        border-bottom: 1px solid light-dark(var(--neutral-100), var(--neutral-600));
+    }
+    
+    td {
+        padding-inline: 1em;
+        padding-block: 1em;
+    }
+
+    
+}
+
+figure {
+    figcaption {
+        font-size: var(--small);
+        font-style: italic;
+        color: light-dark(var(--neutral-100), var(--neutral-300));
+    }
+}
+
+.doc-table-container {
+    overflow-x: auto;
+    border: 1px solid light-dark(var(--neutral-100), var(--neutral-600));
+    /* border-radius: 1em; */
+}

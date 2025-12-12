@@ -1,0 +1,200 @@
+@layer base, theme, components, utilities;
+@import "../../config.css";
+@import "../../global.css";
+@import "../../components/button.css" layer(components);
+@import "../../components/icon.css" layer(components);
+@import "../../components/link.css" layer(components);
+@import "../../components/code_block.css" layer(components);
+@import "../../components/table.css" layer(components);
+@import "../../components/tag.css" layer(components);
+@import "../../components/miscellaneous.css" layer(components);
+@import "../../components/navigation.css" layer(components);
+@import "../../effects/ripple-circle.css" layer(components);
+@import "../../components/documentation.css" layer(components);
+@import "../../components/tooltip.css" layer(components);
+
+main {
+  overflow-x: hidden;
+  container-type: inline-size;
+  container-name: main-container doc-nav-parent-container;
+}
+
+@container doc-nav-parent-container (width <= 950px) {
+  #documentation-nav-cont {
+    opacity: 0;
+    left: -1500px;
+    inset: 0;
+    height: 100dvh;
+
+    > div {
+      width: 35ch;
+      padding-block-start: 50px;
+      padding-block-end: 50px;
+      height: 100%;
+      padding-left: 5vw;
+
+      nav {
+        height: 85%;
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+          scrollbar-color: light-dark(var(--neutral-100), var(--neutral-700))
+            light-dark(var(--neutral-100), var(--neutral-950));
+        }
+      }
+    }
+
+    &:popover-open {
+      left: 0;
+      opacity: 1;
+
+      @starting-style {
+        left: -1500px;
+        opacity: 0;
+      }
+    }
+
+    &::backdrop {
+      background-color: rgba(255, 255, 255, 0.048);
+      backdrop-filter: blur(8px);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: opacity 500ms cubic-bezier(0.1, 0.86, 0, 1),
+        left 500ms cubic-bezier(0.1, 0.86, 0, 1), display 500ms allow-discrete,
+        overlay 100ms allow-discrete;
+    }
+  }
+}
+
+@container doc-nav-parent-container (width > 950px) {
+  .doc-nav-button {
+    display: none;
+  }
+  #documentation-nav-cont {
+    > div {
+      width: 30ch;
+      height: 100dvh;
+      position: fixed;
+      top: 0;
+      padding-top: 100px;
+
+      nav {
+        height: 70dvh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+          scrollbar-color: light-dark(var(--neutral-100), var(--neutral-700))
+            light-dark(var(--neutral-100), var(--neutral-950));
+        }
+      }
+    }
+  }
+}
+
+.doc-nav-span {
+  font-size: var(--large);
+}
+
+.fullscreen-button {
+  > [icon] {
+    background-color: light-dark(var(--neutral-500), var(--neutral-400));
+    mask-size: contain;
+    mask: url("/expand-diagonal-icon.svg") no-repeat;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: background-color 200ms ease-in-out;
+    }
+  }
+
+  &:hover {
+    > [icon] {
+      background-color: light-dark(var(--neutral-500), var(--neutral-300));
+    }
+  }
+}
+
+#key-questions-addressed {
+  ul {
+    counter-reset: list-counter;
+  }
+
+  li {
+    counter-increment: list-counter;
+    list-style: none;
+
+    &::before {
+      content:  "0" counter(list-counter);
+      font-weight: 500;
+      color: var(--primary-400) !important;
+      font-size: var(--x-large);
+    }
+  }
+}
+
+
+#key-findings {
+  ul {
+    counter-reset: list-counter;
+  }
+
+  li {
+    counter-increment: list-counter;
+    list-style: none;
+
+    &::before {
+      content:  "0" counter(list-counter);
+      font-weight: 500;
+      color: var(--primary-400) !important;
+      font-size: clamp(var(--large), 5vw, var(--xx-large));
+      line-height: 1;
+    }
+
+    span b {
+      font-size: clamp(24px, 5vw, var(--x-large));
+      font-weight: 400;
+      font-family: "Geist", Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.3;
+    }
+  }
+}
+
+
+#Recommendations {
+  ul {
+    counter-reset: list-counter;
+  }
+
+  li {
+    counter-increment: list-counter;
+    list-style: none;
+
+    span b {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+
+    div:first-child::before {
+      display: block;
+      content:  "0" counter(list-counter);
+      font-weight: 500;
+      color: var(--primary-400) !important;
+      font-size: var(--x-large);
+    }
+  }
+}
+
+button#show-technical {
+  border-radius: 0;
+  border: none;
+}

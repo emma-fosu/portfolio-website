@@ -1,0 +1,23 @@
+@layer base, theme, components, utilities;
+@import "../../config.css";
+@import "../../global.css";
+@import "../../components/button.css" layer(components);
+@import "../../components/icon.css" layer(components);
+@import "../../components/navigation.css" layer(components);
+@import "../../components/link.css" layer(components);
+@import "../../components/code_block.css" layer(components);
+@import "../../components/table.css" layer(components);
+@import "../../components/tag.css" layer(components);
+@import "../../components/miscellaneous.css" layer(components);
+@import "../../effects/ripple-circle.css" layer(components);
+@import "../../components/documentation.css" layer(components);
+
+
+iframe {
+  transform: scale(0.54);
+  transform-origin: top left;
+  width: 190%;
+  height: 190%;
+  border: 0;
+  transform-origin: left top;
+}

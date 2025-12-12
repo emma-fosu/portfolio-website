@@ -2,27 +2,16 @@
   padding-block: 20px;
   background-color: light-dark(var(--neutral-100), var(--neutral-950));
   will-change: transform;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: transparent;
 
-  a {
-    outline-width: 4px;
-    outline-style: solid;
-    outline-color: transparent;
-    border-radius: 1000px;
-    padding-block: 0.4em;
-    padding-inline: 0.7em;
-
-    &:focus-visible {
-      outline-color: light-dark(var(--neutral-100), var(--neutral-600));
-    }
-
-    &:hover {
-      color: light-dark(var(--neutral-100), var(--neutral-300));
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-  }
+  animation-name: show-border-bottom;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-timeline: scroll(root);
+  animation-range-start: entry 0% ;
+  animation-range-end: entry 10% ;
 
   ul {
     position: relative;
@@ -86,9 +75,6 @@
     right: 0;
     top: 0;
 
-    &.page-up {
-    }
-
     &.page-down {
       transform: translateY(-100%);
     }
@@ -96,5 +82,84 @@
 
   @media (prefers-reduced-motion: no-preference) {
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+#documentation-nav-cont {
+  > div {
+    background-color: light-dark(var(--neutral-100), var(--neutral-950));
+    padding-inline-end: 20px;
+  }
+}
+
+
+
+#documentation-nav {
+  color: light-dark(var(--neutral-100), var(--neutral-400));
+  min-width: 25ch;
+
+  a {
+    display: block;
+    padding: 0.5em 0.5em 0.5em 0em;
+    padding-left: 1.1em;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: light-dark(var(--neutral-100), var(--neutral-400));
+    min-width: 20ch;
+    outline: none;
+
+    &:hover, &:focus-visible {
+      color: light-dark(var(--neutral-100), var(--neutral-200));
+      border-left-color: light-dark(var(--neutral-100), var(--neutral-200));
+    }
+
+    &.active {
+      color: light-dark(var(--neutral-100), var(--primary-400)) !important;
+      border-color: light-dark(var(--neutral-100), var(--primary-400));
+    }
+
+    &[technical] {
+      pointer-events: none;
+      color: light-dark(var(--neutral-100), var(--neutral-600));
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  li:has(ul a.active) > a {
+    color: light-dark(var(--neutral-100), var(--primary-400)) !important;
+    border-color: light-dark(var(--neutral-100), var(--primary-400));
+  }
+
+  > ul > li > ul > li a {
+    padding-left: 1.8em;
+  }
+}
+
+.doc-nav-button {
+  cursor: pointer;
+
+  > [icon] {
+    background-color: light-dark(var(--neutral-500), var(--neutral-300));
+    mask-size: contain;
+  }
+
+  &[aria-expanded="false"] > [icon] {
+     mask: url("/menu-unfold-icon.svg") no-repeat;
+  }
+
+  &[aria-expanded="true"] > [icon] {
+    mask: url("/menu-fold-icon.svg") no-repeat;
+  }
+}
+
+@keyframes show-border-bottom {
+  0% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: #7b7b7ba4;
   }
 }

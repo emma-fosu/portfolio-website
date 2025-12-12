@@ -1,0 +1,37 @@
+%tag {
+    display: inline-block;
+    padding-inline: 0.3em;
+    white-space: nowrap;
+    border-radius: 0.25em;
+}
+
+.doc-tag-1 {
+    @extend %tag;
+    color: light-dark(var(--neutral-100), var(--primary-300));
+    background-color: light-dark(var(--neutral-100), var(--neutral-800));
+}
+
+.doc-tag-2 {
+    @extend %tag;
+    color: light-dark(var(--neutral-100), var(--secondary-400));
+    background-color: light-dark(var(--neutral-100), var(--neutral-800));
+}
+
+.note-tag-1 {
+   @extend %tag;
+    color: light-dark(var(--neutral-100), var(--secondary-400)); 
+}
+
+.interactive-tag-1 {
+    padding-inline: 0.75em;
+    padding-block: 0.25em;
+    border-radius: 100px;
+    background-color: light-dark(var(--neutral-100), color-mix(in oklab, var(--success-700), transparent));
+
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--small);
+
+}

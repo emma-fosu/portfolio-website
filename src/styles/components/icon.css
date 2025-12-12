@@ -7,19 +7,38 @@
     height: 16px;
 }
 
+.icon-smm {
+    width: 20px;
+    aspect-ratio: 1 / 1;
+}
+
 .icon-md {
     width: 26px;
-    height: 26px;
+    aspect-ratio: 1 / 1;
 }
 
 .icon-lg {
     width: 32px;
-    height: 32px;
+    height: fit-content;
 }
 
 .icon-xl {
     width: 40px;
-    height: 40px;
+    height: fit-content;
+}
+
+.icon-xxl {
+    width: 56px;
+    height: fit-content;
+}
+
+.icon-xxxl {
+    width: 64px;
+}
+
+.icon-xxxxl {
+    width: 92px;
+    height: fit-content;
 }
 
 .ic-outlined-primary {
