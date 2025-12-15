@@ -20,7 +20,7 @@
     border-radius: 1000px;
   }
 
-  &[target="_blank"]:not(:has(svg)) {
+  &[target="_blank"]:not(:has(svg), :has(img), :has([mask-icon])) {
     white-space: nowrap;
     &::after {
       content: "";

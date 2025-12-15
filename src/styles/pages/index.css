@@ -1,4 +1,4 @@
-@layer base, theme, components, utilities;
+@layer base, theme, components, utility;
 @import "../config.css";
 @import "../global.css";
 @import "../components/container.css" layer(components);
@@ -10,186 +10,307 @@
 @import "../components/text.css" layer(components);
 @import "../components/navigation.css" layer(components);
 @import "../components/link.css" layer(components);
+@import "../components/tooltip.css" layer(components);
 
-main > section {
-    scroll-margin-top: 60px;
+main {
+  --border: 1px solid #7b7b7ba4;
+  --grid-padding: clamp(20px, 5vw, 40px);
+
+  > div {
+    border: var(--border);
+
+    > section {
+      scroll-margin-top: 60px;
+
+      &:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+}
+
+.tooltip {
+  margin-top: 15px;
+}
+
+p, label, [social-handles] span:first {
+  color: light-dark(var(--neutral-100), var(--neutral-300));
 }
 
 section {
-    h2 {
-        font-size: var(--xx-large);
-        font-weight: 500;
-        color: light-dark(var(--neutral-100), var(--neutral-300));
-    }
+  h2 {
+    font-size: clamp(var(--xx-large), 5vw, 3.5rem);
+    font-weight: 500;
+    color: light-dark(var(--neutral-100), var(--neutral-100));
+  }
+
+  h3 {
+    font-weight: 400;
+    line-height: 1.2;
+    text-wrap: balance;
+    font-size: clamp(var(--x-large), 5vw, 2.5rem);
+    color: light-dark(var(--neutral-100), var(--neutral-100))
+  }
 }
 
 section#home {
-    padding: clamp(15px, 5vw, 20px);
-    border-style: solid;
-    border-width: 2px;
-    border-color: light-dark(var(--neutral-100), var(--neutral-500));
-    border-radius: 35px;
+  h1 {
+    font-size: clamp(var(--xxx-large), 5vw, var(--xxxx-large));
+    font-weight: 400 !important;
+    width: min-content;
+    line-height: 1;
+  }
 
-    h1 {
-        font-size: clamp(var(--xx-large), 5vw, var(--xxxx-large));
-        font-weight: 600;
-        width: min-content;
-        line-height: 1;
-    }
+  span:not(#job-title) {
+    color: light-dark(var(--neutral-100), var(--primary-400));
+    font-weight: 500;
+    font-size: 24px;
+  }
 
-    span:not(#job-title) {
-        color: light-dark(var(--neutral-100), var(--primary-400));
-    }
-    
-    p {
-        margin-block-start: 15px;
-        color: light-dark(var(--neutral-100), var(--neutral-300));
-        max-width: 50ch;
-    }
+  p {
+    margin-block-start: 15px;
+    max-width: 50ch;
+  }
+}
 
+section#projects {
+  > div {
+    --grid-n: 2;
+  }
+}
+
+section#about {
+  > div {
+    --grid-n: 3;
+  }
+
+  #expertise {
+    span {
+      font-size: clamp(var(--large), 5vw, 1.2rem);
+      font-weight: 500;
+      color: light-dark(var(--neutral-100), var(--neutral-100));
+    }
+  }
+}
+
+section#tools {
+  > div {
+    --grid-n: 4;
+  }
+
+  img {
+    width: clamp(100px, 50%, 100px);
+    filter: grayscale(100%) brightness(1.2);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+
+  li:hover {
     img {
-        border-radius: 15px;
+      filter: grayscale(0) brightness(1);
     }
+  }
+}
+
+[mask-icon] {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: light-dark(var(--neutral-100), var(--neutral-300));
+}
+
+.x {
+  mask-image: url("/x_icon.svg");
+}
+
+.linkedin {
+  mask-image: url("/linkedin_icon.svg");
+}
+
+.github {
+  mask-image: url("/github_icon.svg");
+}
+.email {
+  mask-image: url("/email_icon.svg");
+}
+
+.map {
+  mask-image: url("/map_icon.svg");
+}
+
+.pipeline {
+  mask-image: url("/pipeline_icon.svg");
+}
+
+.pass_valid {
+  mask-image: url("/pass_valid_icon.svg");
+}
+
+.presentation {
+  mask-image: url("/presentation_icon.svg");
+}
+
+.line_chart {
+  mask-image: url("/line_chart_icon.svg");
+}
+
+.briefcase {
+  mask-image: url("/briefcase_icon.svg");
+}
+
+.bar_chart {
+  mask-image: url("/bar_chart_icon.svg");
+}
+
+.webhook {
+  mask-image: url("/webhook_icon.svg");
 }
 
 #job-title {
-    margin-block-start: 5px;
-    font-size: var(--large);
-    font-weight: 500;
-    font-family: var(--font-secondary);
+  margin-block-start: 5px;
+  font-size: var(--large);
+  font-weight: 500;
+  font-family: var(--font-secondary);
 }
 
 .project {
-
-    img {
-        border-radius: clamp(10px, 60%, 20px);
+  section {
+    header {
+      p {
+        font-size: var(--medium);
+        color: light-dark(var(--neutral-100), var(--neutral-300));
+      }
     }
 
-    section {
+    li {
+      line-height: 1.5;
+      list-style-type: disc;
+      margin-inline-start: 20px;
 
-        header {
-            p {
-                font-style: italic;
-                color: light-dark(var(--neutral-100), var(--neutral-300));
-            }
-        }
-
-        h3 {
-            font-size: clamp(var(--large), 10vw, var(--x-large));
-            font-weight: 500;
-            line-height: 1.2;
-            color: light-dark(var(--neutral-100), var(--neutral-300));
-        }
-
-        li {
-            line-height: 1.5;
-            list-style-type: disc;
-            margin-inline-start: 20px;
-
-            &::marker {
-                font-size: 24px;
-                line-height: 0.3;
-                color: light-dark(var(--neutral-100), var(--primary-600));
-            }
-            
-        }
+      &::marker {
+        font-size: 24px;
+        line-height: 0.3;
+        color: light-dark(var(--neutral-100), var(--primary-600));
+      }
     }
+  }
 }
 
-table {
-
-    tbody {
-        
-        tr {
-            th {
-                font-weight: 500;
-                padding-right: 20px;
-                border-right: 1px solid light-dark(var(--neutral-100), var(--neutral-700));
-
-                @container table-cont (width <= 760px) {
-                   border-right: initial;
-                }
-            }
-            
-            th,td {
-                box-sizing: border-box;
-                padding-bottom: 30px;
-                padding-top: 10px;
-
-                @container table-cont (width <= 760px) {
-                   padding-bottom: initial;
-                }
-            }
-            
-
-            td:first-of-type {
-                padding-left: 30px;
-
-                @container table-cont (width <= 760px) {
-                    padding-left: initial;
-                }
-            }
-
-            &:not(:last-of-type) {
-                border-bottom: 1px solid light-dark(var(--neutral-100), var(--neutral-700));
-
-                @container table-cont (width <= 760px) {
-                    border-bottom: initial;
-                }
-            }
-
-            &:last-of-type th, &:last-of-type td {
-                padding-bottom: initial;
-            }
-        }
-        
-        
-    }
+.grid-cell {
+  padding: var(--grid-padding);
 }
 
+.grid-cell-inline {
+  padding-inline: var(--grid-padding);
+}
 
-.tool {
-    --background-color: var(--neutral-700);
-    box-sizing: content-box;
-    align-items: center;
-    padding-inline: 0.5em;
-    padding-block: 0.5em;
-    background-color: light-dark(var(--neutral-100), color-mix(in oklab, var(--background-color) 15%, transparent));
-    border-radius: 1em;
-    width: 100px;
-    height: 100px;
+.grid-cell-left {
+  padding-inline-start: var(--grid-padding);
+}
 
-    svg {
-        align-self: flex-end;
-    }
+.grid-cell-right {
+  padding-inline-end: var(--grid-padding);
+}
 
-    span {
-        font-weight: 600;
-        text-align: center;
-        align-self: flex-start;
-    }
+.grid-cell-block {
+  padding-block: var(--grid-padding);
+}
 
-    &.databricks {
-        --background-color: rgb(184, 2, 2);
-    }
+.grid-cell-top {
+  padding-block-start: var(--grid-padding);
+}
 
-    &.dbt {
-        --background-color: rgb(179, 116, 0);
-    }
+.grid-cell-bottom {
+  padding-block-end: var(--grid-padding);
+}
 
-    &.snowflakes {
-        --background-color: rgb(72, 72, 123);
-    }
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-n), 1fr);
+}
 
-    &.postgresql {
-        --background-color: rgb(95, 95, 243);
-    }
+.grid-list-one {
+  > *:not(:last-child) {
+    border-bottom: var(--border);
+  }
+}
 
-    &.excel, &.sheet {
-        --background-color: green;
-    }
+@container projects-cont (width <= 650px) {
+  section#projects > div {
+    --grid-n: 1;
+  }
+}
 
-    &.powerbi {
-        --background-color: rgb(127, 127, 1);
-    }
+@container tools-cont (width <= 650px) {
+  section#tools > div {
+    --grid-n: 3;
+  }
+}
+
+@container tools-cont (width <= 450px) {
+  section#tools > div {
+    --grid-n: 2;
+  }
+}
+
+@container expertise-cont (width <= 950px) {
+  section#expertise > div {
+    --grid-n: 2;
+  }
+}
+
+@container expertise-cont (width <= 650px) {
+  section#expertise > div {
+    --grid-n: 1;
+  }
+}
+
+@container style(--grid-n: 1) {
+  .grid-list > *:not(:last-child) {
+    border-bottom: var(--border);
+  }
+}
+
+@container style(--grid-n: 2) {
+  .grid-list > *:nth-child(2n + 1) {
+    border-right: var(--border);
+  }
+}
+
+@container style(--grid-n: 3) {
+  .grid-list > *:nth-child(3n + 1) {
+    border-right: var(--border);
+  }
+
+  .grid-list > *:nth-child(3n) {
+    border-left: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 4),
+  .grid-list > *:nth-child(4n + 5),
+  .grid-list > *:nth-child(4n + 6) {
+    border-block: var(--border);
+  }
+}
+
+@container style(--grid-n: 4) {
+  .grid-list > *:nth-child(2n + 1) {
+    border-right: var(--border);
+  }
+
+  .grid-list > *:nth-child(8n + 5),
+  .grid-list > *:nth-child(8n + 6),
+  .grid-list > *:nth-child(8n + 7),
+  .grid-list > *:nth-child(8n + 8) {
+    border-block: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 2) {
+    border-right: var(--border);
+  }
+}
+
+.border-radius-0 {
+  border-radius: 0;
 }

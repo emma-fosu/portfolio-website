@@ -3,13 +3,21 @@ import "../../styles/pages/index.css";
 import { initForm } from "../components/contact-form";
 import initHorizontalNavBarSelectScrollEffect from "../effects/horizontal-nav-bar-select-scroll";
 import initHorizontalNavBarScrollDisplayEffect from "../effects/horizontal-nav-bar-scroll-display";
+import initTooltip from "../components/tooltip";
+import Lenis from "lenis";
 
-const form = document.querySelector('form') as HTMLFormElement;
+const form = document.querySelector("form") as HTMLFormElement;
 initForm(form);
 const nav = document.getElementById("primary-nav") as HTMLElement;
 
 window.addEventListener("load", () => {
-    initHorizontalNavBarSelectScrollEffect(nav, document.querySelector("main")!);
-    initHorizontalNavBarScrollDisplayEffect(nav);
-}
-)
+  initHorizontalNavBarSelectScrollEffect(nav, document.querySelector("main")!);
+  initHorizontalNavBarScrollDisplayEffect(nav);
+
+  initTooltip();
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+
+  lenis.on("scroll", () => {});
+});

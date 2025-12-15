@@ -21,8 +21,8 @@ function insertHintTooltipWithName(elem: HTMLElement) {
 }
 
 function addEventListenerForTooltips(elem: HTMLElement, hintTooltip: HTMLElement) {
-    elem.addEventListener("mouseover", () => hintTooltip.showPopover());
+    elem.addEventListener("mouseover", () => hintTooltip.showPopover({source: elem}));
     elem.addEventListener("mouseout", () => hintTooltip.hidePopover());
-    elem.addEventListener("focus", () => hintTooltip.showPopover());
+    elem.addEventListener("focus", () => hintTooltip.showPopover({source: elem}));
     elem.addEventListener("blur", () => hintTooltip.hidePopover());
 }

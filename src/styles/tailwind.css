@@ -12,3 +12,19 @@
 @layer utilities {
   @tailwind utilities;
 }
+
+@utility border-left {
+  border-left: 1px solid #7b7b7ba4;
+}
+
+@utility border-bottom {
+  border-bottom: 1px solid #7b7b7ba4;
+}
+
+@utility border-top {
+    border-top: 1px solid #7b7b7ba4;
+}
+
+@utility border-right {
+    border-right: 1px solid #7b7b7ba4;
+}
