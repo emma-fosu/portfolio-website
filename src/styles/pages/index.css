@@ -77,6 +77,12 @@ section#projects {
   > div {
     --grid-n: 2;
   }
+
+  footer {
+    img {
+      filter: saturate(0) brightness(1.1);
+    }
+  }
 }
 
 section#about {

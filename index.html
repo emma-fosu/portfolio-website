@@ -235,17 +235,32 @@
           <h2 class="grid-cell mt-6 border-bottom">Featured Projects</h2>
           <div>
             <div class="projects grid-list">
-              <div class="project grid">
-                <img class="overflow-hidden h-full aspect-16/9 object-contain object-center"  src="/electricity_consumption_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
-                <section>
+              <div class="project flex flex-col">
+                <img class="self-start overflow-hidden w-full aspect-16/9 object-contain object-center"  src="/electricity_consumption_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
+                <section class="grow grid">
                   <header class="grid-cell">
                     <h3 class="mt-[20px]">CoSSMic Household Electricity Consumption Analysis</h3>
                     <p class="max-w-[60ch] mt-3">A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
                   </header>
-                  <footer class="flex items-center grid-cell-right justify-between just gap-[20px] border-top">
-                    <a href="#" class="btn-filled-primary border-radius-0 w-[150px]" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
+                  <footer class="mt-auto flex items-center grid-cell-right justify-between just gap-[20px] border-top">
+                    <a href="./projects/cossmic_electricity_analysis" class="btn-filled-primary border-radius-0 w-[150px]" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
                     <div>
                       <img class="icon-md" src="/excel.svg" alt="Excel icon">
+                    </div>
+                  </footer>
+                </section>
+              </div>
+              <div class="project grid">
+                <img class="overflow-hidden w-full aspect-16/9 object-contain object-center"  src="/zoom_vs_synopsys_dashboard.gif" alt="CoSSMic Household Electricity Consumption Analysis Dashboard">
+                <section class="grow grid">
+                  <header class="grid-cell">
+                    <h3 class="mt-[20px]">Zoom and Synopsys: Financial Performance Analysis</h3>
+                    <p class="max-w-[60ch] mt-3">A comparative financial analysis of Zoom and Synopsys, evaluating revenue trends, profitability, and overall financial performance to highlight differences in business stability and growth potential and help investors make the best decision.</p>
+                  </header>
+                  <footer class="flex items-center grid-cell-right justify-between just gap-[20px] border-top">
+                    <a href="./projects/zoom_vs_synopsys_financial_performance" class="btn-filled-primary border-radius-0 w-[150px]" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
+                    <div>
+                      <img class="icon-md" src="/powerbi.svg" alt="Excel icon">
                     </div>
                   </footer>
                 </section>
@@ -273,7 +288,7 @@
           <header>
             <h2 class="grid-cell mt-6 border-bottom">Let's Connect</h2>
           </header>
-          <div class="grid gap-10 @[760px]:grid-cols-[minmax(300px,30%)_1fr]">
+          <div class="grid gap-10 @[760px]:grid-cols-[minmax(300px,30%)_1fr] @max-[760px]:gap-0">
             <section
               social-handles
               class="grid-cell order-2 @[760px]:order-none @container/social-handles"

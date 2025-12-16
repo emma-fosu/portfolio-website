@@ -10,7 +10,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         projects: resolve(__dirname, "projects/index.html"),
-        "projects/cossmic_electricity_analysis": resolve(__dirname, "projects/cossmic_electricity_analysis.html")
+        "projects/cossmic_electricity_analysis": resolve(__dirname, "projects/cossmic_electricity_analysis.html"),
+        "projects/zoom_vs_synopsys_financial_performance": resolve(__dirname, "projects/zoom_vs_synopsys_financial_performance.html")
       }
     }
   },

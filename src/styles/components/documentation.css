@@ -6,11 +6,17 @@ body {
 #documentation {
   --border: 1px solid #7b7b7ba4;
   --grid-padding: clamp(20px, 5vw, 40px);
+  --grid-padding-sm: clamp(10px, 5vw, 20px);
 
   border: var(--border);
 
   .grid-cell {
     padding: var(--grid-padding);
+  }
+
+  .grid-cell-2 {
+    padding-block: var(--grid-padding-sm);
+    padding-inline: var(--grid-padding);
   }
 
   .grid-cell-inline {
@@ -225,10 +231,6 @@ iframe {
     mask-size: contain;
     mask: url("/file_copy_icon.svg") no-repeat;
 
-    .copied & {
-      mask: url("/check-icon.svg") no-repeat;
-    }
-
   }
   
   &.copied {
@@ -237,6 +239,10 @@ iframe {
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     opacity: 0;
+
+    > [icon] {
+      mask: url("/check-icon.svg") no-repeat;
+    }
     
   }
   
