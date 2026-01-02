@@ -33,8 +33,14 @@ main {
   margin-top: 15px;
 }
 
-p, label, [social-handles] span:first {
+p,
+label,
+[social-handles] span:first {
   color: light-dark(var(--neutral-100), var(--neutral-300));
+}
+
+.social img {
+  filter: brightness(0) invert(1) brightness(0.8);
 }
 
 section {
@@ -49,7 +55,7 @@ section {
     line-height: 1.2;
     text-wrap: balance;
     font-size: clamp(var(--x-large), 5vw, 2.5rem);
-    color: light-dark(var(--neutral-100), var(--neutral-100))
+    color: light-dark(var(--neutral-100), var(--neutral-100));
   }
 }
 
@@ -105,7 +111,8 @@ section#tools {
   }
 
   img {
-    width: clamp(100px, 50%, 100px);
+    width: clamp(50px, 50%, 100px) !important;
+    aspect-ratio: 1 / 1;
     filter: grayscale(100%) brightness(1.2);
 
     @media (prefers-reduced-motion: no-preference) {

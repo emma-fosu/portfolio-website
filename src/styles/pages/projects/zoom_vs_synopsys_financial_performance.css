@@ -122,12 +122,12 @@ main {
   }
 }
 
-#key-questions-addressed {
-  ul {
+#objectives {
+  ol {
     counter-reset: list-counter;
   }
 
-  li {
+  ol li {
     counter-increment: list-counter;
     list-style: none;
 
@@ -140,8 +140,7 @@ main {
   }
 }
 
-
-#key-findings {
+#key-insights {
   ul {
     counter-reset: list-counter;
   }

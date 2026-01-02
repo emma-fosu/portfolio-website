@@ -1,4 +1,13 @@
 @layer component;
+
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial");
+ ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
 :where(html) {
   /* Font Configs */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -29,10 +38,9 @@
   --xxx-large: 4rem;
   --xxxx-large: 4.5rem;
 
-  /* Font Family */
-  --font-primary: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font-primary: "Geist", "Geist Fallback", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
-  --font-secondary:"Geist", "Poppins", Roboto, "Segoe UI", "Helvetica Neue", Arial,
+  --font-secondary:"Geist", "Geist Fallback", "Poppins", Roboto, "Segoe UI", "Helvetica Neue", Arial,
     sans-serif;
 
   --color-white: #ffffff;
