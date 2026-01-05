@@ -25,8 +25,10 @@ main {
     left: -1500px;
     inset: 0;
     height: 100dvh;
-
+    position: fixed;
+    
     > div {
+      
       width: 35ch;
       padding-block-start: 50px;
       padding-block-end: 50px;
@@ -197,4 +199,30 @@ main {
 button#show-technical {
   border-radius: 0;
   border: none;
+}
+
+.x {
+  mask-image: url("/x_icon.svg");
+}
+
+
+.linkedin {
+  mask-image: url("/linkedin_icon.svg");
+}
+
+.github {
+  mask-image: url("/github_icon.svg");
+}
+.email {
+  mask-image: url("/email_icon.svg");
+}
+
+.map {
+  mask-image: url("/map_icon.svg");
+}
+
+[mask-icon] {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: light-dark(var(--neutral-100), var(--neutral-300));
 }

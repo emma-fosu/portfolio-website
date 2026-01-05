@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="preload" href="/EF-avatariz-4-min.png" as="image" type="image/png" fetchpriority="high"/>
+    <link rel="preload" href="/EF-avatariz-4-min.webp" as="image" type="image/webp" fetchpriority="high"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -108,7 +108,7 @@
               </a>
             </div>
           </header>
-          <img loading="eager" width="928" height="1120" class="order-1 aspect-[2_/_1.3] h-full w-full object-center object-cover @[570px]:aspect-square " src="/EF-avatariz-4-min.png" alt="emmanuel fosu profile picture">
+          <img loading="eager" width="928" height="1120" class="order-1 aspect-[2_/_1.3] h-full w-full object-center object-cover @[570px]:aspect-square " src="/EF-avatariz-4-min.webp" alt="emmanuel fosu profile picture">
         </section>
         <section id="about">
           <h2 class="grid-cell mt-6 border-bottom">About me</h2>
@@ -123,7 +123,7 @@
                       <span class="text-center block">Statistical Analysis</span>
                       <p class="mt-3 text-center">
                         Apply descriptive and Inferential Statistics, <b>Regression</b>, <b>A/B Testing</b> and <b>Hypothesis Testing</b> to analyze data, 
-                        identify trends and relationships, validate assumptions, and support evidence-based decision-making.
+                        identify trends and relationships and validate assumptions.
                       </p>
                     </div>
                   </li>
@@ -143,8 +143,7 @@
                       <span class="text-center block">Data Visualization and Storytelling</span>
                       <p class="mt-3 text-center">
                         Transform complex data into clear, engaging visuals through a logical narrative. 
-                        Design custom charts using <b>Deneb (Vega-Lite)</b> and <b>Vega</b> to highlight patterns and comparisons, 
-                        ensuring insights are understandable, accurate, and tailored to both technical and non-technical viewers.
+                        Design custom charts using <b>Deneb (Vega-Lite)</b> and <b>Vega</b> to effectively communicate to both technical and non-technical audiences.
                       </p>
                     </div>
                   </li>
@@ -153,9 +152,8 @@
                       <div mask-icon class="icon-md mb-6 mx-auto webhook"></div>
                       <span class="text-center block">Automation</span>
                       <p class="mt-3 text-center">
-                        Build scripts and scheduled workflows with <b>Python</b>, <b>SQL</b>, and <b>Power Automate</b> to streamline data extraction, transformation, 
-                        and reporting, reducing manual effort, minimizing errors, 
-                        and improving efficiency across analytics pipelines and business processes.
+                        Build scripts and scheduled workflows with <b>Python</b>, <b>SQL</b>, <b>Power Automate</b> and <b>Google App Script</b> to streamline data extraction, transformation, 
+                        and reporting faster, reducing manual effort and minimizing errors.
                       </p>
                     </div>
                   </li>
@@ -165,8 +163,7 @@
                        <span class="text-center block">Business and Domain Acumen</span>
                         <p class="mt-3 text-center">
                           Translate business questions into analytical problems by understanding operations, 
-                          finance, and customer behavior. Identify relevant metrics, interpret data in context, and 
-                          align analysis with organizational goals to support informed decision-making
+                          finance, products and customer behavior of the organization and identify relevant metrics that suit organizational goals.
                         </p>
                     </div>
                   </li>
@@ -208,7 +205,10 @@
                     <p class="max-w-[60ch] mt-3">A dashboard to uncover patterns in household electricity consumption and provide actionable recommendations for sustainable energy use.</p>
                   </header>
                   <footer class="mt-auto flex items-center grid-cell-right justify-between just gap-[20px] border-top">
-                    <a href="./projects/cossmic_electricity_analysis" class="btn-filled-primary border-radius-0 w-[150px]" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
+                    <a href="./projects/cossmic_electricity_analysis" class="btn-filled-primary border-radius-0 w-[150px]">
+                      <p class="sr-only">Learn more about COSSMIC household electricity consumption analysis</p>
+                      <span aria-hidden="true">Learn more</span>
+                    </a>
                     <div>
                       <img loading="lazy" class="icon-md" src="/excel.svg" alt="Excel icon">
                     </div>
@@ -223,7 +223,10 @@
                     <p class="max-w-[60ch] mt-3">A comparative financial analysis of Zoom and Synopsys, evaluating revenue trends, profitability, and overall financial performance to highlight differences in business stability and growth potential and help investors make the best decision.</p>
                   </header>
                   <footer class="flex items-center grid-cell-right justify-between just gap-[20px] border-top">
-                    <a href="./projects/zoom_vs_synopsys_financial_performance" class="btn-filled-primary border-radius-0 w-[150px]" aria-label="Learn more about COSSMIC household electricity consumption analysis">Learn more</a>
+                    <a href="./projects/zoom_vs_synopsys_financial_performance" class="btn-filled-primary border-radius-0 w-[150px]">
+                      <p class="sr-only">Learn more about Zoom vs Synopsys Financial analysis</p>
+                      <span aria-hidden="true">Learn more</span>
+                    </a>
                     <div>
                       <img loading="lazy" class="icon-md" src="/powerbi.svg" alt="Excel icon">
                     </div>
@@ -240,7 +243,6 @@
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="SQL (Postgresql)"><img loading="lazy" width="100" height="100" src="/postgresql.svg" alt="Postgresql Logo"></div></li>
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="Microsoft Excel"><img loading="lazy" width="100" height="100" src="/excel.svg" alt="Excel Logo"></div></li>
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="Databricks"><img loading="lazy" width="100" height="100" src="/databricks.svg" alt="Databricks Logo"></div></li>
-              <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="Snowflakes"><img loading="lazy" width="100" height="100" src="/snowflakes.svg" alt="Snowflakes Logo"></div></li>
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="dbt (Data Build Tool)"><img src="/dbt.svg" alt="dbt (Data Build Tool) Logo"></div></li>
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="Python"><img loading="lazy" width="100" height="100" src="/python.svg" alt="Python Logo"></div></li>
               <li class="grid-cell aspect-square flex items-center justify-center"><div class="w-full flex items-center justify-center" tooltip="Microsoft Power BI"><img width="100" height="100" loading="lazy" src="/powerbi.svg" alt="Microsoft Power BI Logo"></div></li>
@@ -396,7 +398,7 @@
         </section>
         </div>
       </main>
-      <footer class="w-[90vw] max-w-[1200px] mx-auto mt-[60px] mb-[20px] flex items-center gap-5">
+      <footer class="w-[90vw] max-w-[1200px] mx-auto mt-[60px] mb-[20px] flex gap-5">
          <div class="flex gap-2 mt-2">
             <a
               class="btn-outlined-secondary rounded bp-s-1"
@@ -426,7 +428,7 @@
               <div class="icon-sm github" mask-icon></div>
             </a>
         </div>
-        <p class="copyright ml-auto">
+        <p class="copyright ml-auto self-end">
           &copy;<span id="current-year"></span>
           Emmanuel Fosu
         </p>
