@@ -7,6 +7,7 @@ body {
   font-size: clamp(var(--medium), 2vw, var(--normal));
   color: light-dark(var(--neutral-900), var(--color-white-off));
   background-color: light-dark(var(--neutral-100), var(--neutral-950));
+  color-scheme: dark;
 
   &:has(nav.floating) main {
     margin-top: 80px;
@@ -21,6 +22,10 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: var(--font-secondary);
   color: light-dark(var(--color-black), var(--color-white-off));
+}
+
+b {
+  color: light-dark(var(--neutral-100), var(--neutral-200));
 }
 
 

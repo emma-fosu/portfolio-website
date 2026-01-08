@@ -35,24 +35,28 @@
         aria-label="primary navigation"
       >
         <div class="w-[90vw] max-w-[1200px] mx-auto flex gap-5 items-center">
-          <div>
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 469 469"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
-              <circle
-                cx="233.999"
-                cy="234.999"
-                r="62.0555"
-                transform="rotate(-2.78704 233.999 234.999)"
-                fill="white"
-              />
-            </svg>
-          </div>
+          <a class="only-icon" href="/portfolio-website/">
+            <span class="sr-only">Go to home</span>
+            <div class="logo">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 469 469"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-lg"
+              >
+                <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
+                <circle
+                  cx="233.999"
+                  cy="234.999"
+                  r="62.0555"
+                  transform="rotate(-2.78704 233.999 234.999)"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </a>
           <div class="grow">
             <ul class="flex mx-auto w-fit gap-2">
               <li><a href="#projects">Projects</a></li>
@@ -71,7 +75,15 @@
               Fosu Emmanuel
             </h1>
             <span id="job-title">Data Analyst</span>
-            <p class="mt-5">I help managers, directors, and business stakeholders to make strategic decisions supported by insights from their data.</p>
+            <div class="mt-5">
+              <p>
+                I help <b>managers</b>, <b>directors</b>, and <b>business stakeholders</b> make strategic decisions using their <b>data</b>.
+              </p>
+              <p class="mt-1">
+                With hands-on experience, I turn complex datasets into actionable recommendations
+                and streamline workflows and reporting to deliver <b>fast</b>, <b>reliable</b>, <b>decision-ready analysis</b>.  
+              </p>
+            </div>
             <div class="social flex gap-2 mt-8">
               <a
                 class="btn-outlined-secondary rounded bp-s-1"
@@ -111,7 +123,7 @@
           <img loading="eager" width="928" height="1120" class="order-1 aspect-[2_/_1.3] h-full w-full object-center object-cover @[570px]:aspect-square " src="/EF-avatariz-4-min.webp" alt="emmanuel fosu profile picture">
         </section>
         <section id="about">
-          <h2 class="grid-cell mt-6 border-bottom">About me</h2>
+          <h2 class="grid-cell mt-6 border-bottom sr-only">About me</h2>
           <div>
             <section id="expertise" class="@container/expertise-cont">
               <h3 class="grid-cell border-bottom">Areas of Expertise</h3>
