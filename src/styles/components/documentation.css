@@ -154,7 +154,7 @@ section {
   &[technical] {
     ol {
       counter-reset: list-counter;
-      li {
+      > li {
         list-style: none;
         line-height: 1.5;
         counter-increment: list-counter;
@@ -282,3 +282,8 @@ iframe {
     opacity: 1;
   }
 }
+
+pre code {
+  font-family: "Fira Code", monospace !important;
+}
+

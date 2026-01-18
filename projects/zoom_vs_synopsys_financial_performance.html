@@ -5,13 +5,21 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/zoom_icon.svg" as="image" type="image/svg+xml" fetchpriority="high"/>
+    <link rel="preload" href="/synopsys_icon.svg" as="image" type="image/svg+xml" fetchpriority="high"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
       content="A dashboard to look into the financial performance of Zoom and Synopsys and decide which one to invest."
     />
     <title>Zoom vs Synopsys Financial Performance Analysis</title>
+    <style>
+      html {
+        scrollbar-gutter: stable;
+        overflow-y: auto;
+      }
+    </style>
 </head>
 <body>
       <main class="@container/main-container">
@@ -21,7 +29,7 @@
         aria-label="primary navigation"
       >
         <div class="w-[90vw] max-w-[1200px] mx-auto flex gap-3 items-center">
-          <a class="only-icon" href="/portfolio-website">
+          <a class="only-icon" href="/portfolio-website/">
             <span class="sr-only">Go to home</span>
             <div class="logo">
               <svg
@@ -100,9 +108,9 @@
         <div id="documentation" class="flex flex-col mt-[90px] @container/doc-cont">
           <header>
               <div class=" grid-cell-top grid-cell-inline header-icon flex gap-2 items-center">
-                  <img class="icon-xxxxl" src="/zoom_icon.svg" alt="Zoom Logo">
+                  <img loading="eager" class="icon-xxxxl" src="/zoom_icon.svg" alt="Zoom Logo">
                   <div class="vr"></div>
-                  <img class="icon-xxxxl" src="/synopsys_icon.svg" alt="synopsys logo">
+                  <img loading="eager" class="icon-xxxxl" src="/synopsys_icon.svg" alt="synopsys logo">
               </div>
             <h1 class="grid-cell-inline">Zoom vs Synopsys Financial Performance Analysis</h1>
             <p class="grid-cell-inline description mt-2">A comparative financial analysis of Zoom and Synopsys, evaluating revenue trends, profitability, and overall financial performance to highlight differences in business stability and growth potential.</p>
@@ -121,7 +129,7 @@
               </button>
               </div>
               <div class="frame-container">
-                <!-- <iframe width='160' height='90' title="financial performance dashboard" allowfullscreen frameborder="0" scrolling="no" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMWU1OWM1N2EtZDI3Ny00MTBlLWFhYjYtMjEwNTJlYzQwNWU3IiwidCI6IjEwNGQ4MDQ4LWZkMGMtNDNkNS1hNjMwLWZjNjI5ZTVkYWI1OSJ9"></iframe></div> -->
+                <iframe width='160' height='90' title="financial performance dashboard" allowfullscreen frameborder="0" scrolling="no" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMWU1OWM1N2EtZDI3Ny00MTBlLWFhYjYtMjEwNTJlYzQwNWU3IiwidCI6IjEwNGQ4MDQ4LWZkMGMtNDNkNS1hNjMwLWZjNjI5ZTVkYWI1OSJ9"></iframe></div>
               </div>
           </header>
           <div style="height: 10px;"></div>
@@ -129,7 +137,6 @@
             <h2 aria-hidden="true" class="sr-only">Project Overview</h2>
             <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
               <h2>Project Overview</h2>
-               
               <div>
                 <p>
                   This project analyses and visualises the financial performance of <b>Zoom Video Communications</b> and <b>Synopsys</b> to support informed investment decision-making. 
@@ -140,7 +147,7 @@
               </div>
             </div>
             <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
-              <img class="object-center object-cover h-full w-full " src="/investment.avif" alt="An person checking the stock on phone.">
+              <img loading="lazy" class="object-center object-cover h-full w-full " src="/investment.avif" alt="An person checking the stock on phone.">
             </div>
           </section>
           <section id="executive-summary">
@@ -199,7 +206,7 @@
                   <p class="mt-3">
                     Zoom and Synopsys both demonstrate strong profitability, with peak net income margins reaching approximately <b>30%</b>. However, Zoom's net income margin is highly volatile. It peaked in <b>2021</b> and experienced a sharp decline the following year, reflecting its sensitivity to demand shocks and post-pandemic normalization.
                   </p>
-                  <img class="mt-3 w-full" src="/NPM.png" alt="A chart showing the net profit margin of Zoom and Synopsys.">
+                  <img width="1275" height="710" loading="lazy" class="mt-3 w-full" src="/NPM.png" alt="A chart showing the net profit margin of Zoom and Synopsys.">
                   <p class="mt-3">
                     In contrast, Synopsys has recorded a <b>steady and consistent increase</b> in net income margin over the past five years, reaching its highest level in <b>2024</b>. This stability indicates stronger earnings resilience and operational discipline.
                   </p>
@@ -211,7 +218,7 @@
                   <p class="mt-3">
                     Both companies consistently maintain gross margins above the <b>70%</b> benchmark, indicating strong pricing power and operational efficiency but an exception occurred in 2020 when Zoom's gross margin declined sharply from <b>82%</b> to <b>69%</b>. This drop can be attributed to the pandemic-driven surge in usage, particularly from free users for educational and social purposes, which significantly increased infrastructure and hosting costs, thereby raising <b>COGS</b>.
                   </p>
-                  <img class="mt-3 w-full" src="/GPM.png" alt="A chart showing the Gross Profit Margin of Zoom and Synopsys.">
+                  <img width="1272" height="708" loading="lazy" class="mt-3 w-full" src="/GPM.png" alt="A chart showing the Gross Profit Margin of Zoom and Synopsys.">
                   <p class="mt-3">
                     Meanwhile, Synopsys exhibited a steady upward trend in gross margin for several years, with only a modest decline from <b>81%</b> to <b>79%</b> in the most recent year.
                   </p>
@@ -224,7 +231,7 @@
                     Zoom's EPS has been volatile, reaching its lowest point of <b>$0.34</b> in <b>2022</b>. 
                   </p>
                   <p>Over the past eight years, Zoom's EPS has not surpassed even the lowest EPS recorded by Synopsys during the same period.</p>
-                  <img class="mt-3 w-full" src="/EPS.png" alt="A chart showing the Earnings per Share of Zoom and Synopsys.">
+                  <img width="1279" height="702" loading="lazy" class="mt-3 w-full" src="/EPS.png" alt="A chart showing the Earnings per Share of Zoom and Synopsys.">
                   <p class="mt-3">
                     Synopsys has delivered consistent and robust EPS growth, peaking at <b>$14.50</b> in <b>2024</b>. This reflects strong earnings quality and long-term value creation.
                   </p>
@@ -236,7 +243,7 @@
                   <p class="mt-3">
                     Zoom's free cash flow performance over the past eight years has been weak and <b>highly volatile</b>****, with <b>negative FCF</b> recorded in alternating years on <b>three occasions</b>. This indicates instability in cash generation and weaker operating leverage.
                   </p>
-                  <img class="mt-3 w-full" src="/FCF.png" alt="A chart showing the free cash flow of Zoom and Synopsys.">
+                  <img width="1273" height="707" loading="lazy" class="mt-3 w-full" src="/FCF.png" alt="A chart showing the free cash flow of Zoom and Synopsys.">
                   <p class="mt-3">
                     Synopsys, on the other hand, has demonstrated strong and consistent FCF growth, reaching approximately <b>$2.6 billion</b> in <b>2024</b>, representing a <b>115%</b> year-over-year increase.
                   </p>
@@ -246,8 +253,8 @@
                 <div>
                   <span><b>Zoom has a stronger short-term liquidity position, though both firms are financially sound in this regard.</b></span>
                   <div class="grid grid-cols-2 gap-2 @max-[700px]:grid-cols-1">
-                    <img class="mt-3 w-full" src="/QR.png" alt="A chart showing the quick ratio of Zoom and Synopsys.">
-                    <img class="mt-3 w-full" src="/CR.png" alt="A chart showing the current ratio of Zoom and Synopsys.">
+                    <img width="1276" height="707" loading="lazy" class="mt-3 w-full" src="/QR.png" alt="A chart showing the quick ratio of Zoom and Synopsys.">
+                    <img width="1269" height="705" loading="lazy" class="mt-3 w-full" src="/CR.png" alt="A chart showing the current ratio of Zoom and Synopsys.">
                   </div>
                   <p class="mt-3">
                     Both companies maintain healthy liquidity positions, with quick ratios above <b>1</b> and current ratios above <b>1.5</b>. Zoom's liquidity ratios are higher, indicating a greater capacity to meet short-term obligations.
@@ -260,7 +267,7 @@
                   <p class="mt-3">
                     Zoom recorded <b>negative debt-to-equity ratios</b> in its early years <b>(2017-2019)</b> due to negative shareholder equity. Since becoming a public company, Zoom has maintained a near-zero debt-to-equity ratio and is effectively debt-free, supported by a strong balance sheet.
                   </p>
-                  <img class="mt-3 w-full" src="/DE.png" alt="A chart showing the Debt-to-Equity Ratio of Zoom and Synopsys.">
+                  <img width="1253" height="708" loading="lazy" class="mt-3 w-full" src="/DE.png" alt="A chart showing the Debt-to-Equity Ratio of Zoom and Synopsys.">
                   <p class="mt-3">
                     Synopsys has consistently maintained a low but positive debt-to-equity ratio, typically ranging between <b>0.0</b> and <b>0.50</b>, reflecting prudent use of leverage without excessive financial risk.
                   </p>
@@ -272,7 +279,7 @@
                   <p class="mt-3">
                     Synopsys has consistently traded at a <b>premium P/E</b>, reflecting sustained investor confidence in its long-term earnings growth and strategic importance in the semiconductor and EDA ecosystem. Its valuation has remained relatively stable and elevated, indicating that the market expects continued, durable growth.
                   </p>
-                  <img class="mt-3 w-full" src="/PE.png" alt="A chart showing the Price-to-Earnings Ratio of Zoom and Synopsys.">
+                  <img width="1272" height="708" loading="lazy" class="mt-3 w-full" src="/PE.png" alt="A chart showing the Price-to-Earnings Ratio of Zoom and Synopsys.">
                   <p class="mt-3">
                     In contrast, Zoom's P/E has been <b>highly volatile</b>, peaking at extreme levels around its IPO and during the pandemic due to rapid adoption and a low earnings base, then compressing sharply as growth normalized. Today, Zoom trades at a much lower, more mature valuation, signaling reduced growth expectations but improved earnings stability.
                   </p>
@@ -285,8 +292,8 @@
                     Zoom's ROE and ROA are <b>moderate</b>, indicating reasonable profitability but weaker efficiency compared to high-performing technology peers.
                   </p>
                   <div class="grid grid-cols-2 gap-2 @max-[700px]:grid-cols-1">
-                    <img class="mt-3 w-full" src="/ROA.png" alt="A chart showing the Return-on-Asset of Zoom and Synopsys.">
-                    <img class="mt-3 w-full" src="/ROE.png" alt="A chart showing the Return-on-Equity Ratio of Zoom and Synopsys.">
+                    <img width="1276" height="711" loading="lazy" class="mt-3 w-full" src="/ROA.png" alt="A chart showing the Return-on-Asset of Zoom and Synopsys.">
+                    <img width="1260" height="694" loading="lazy" class="mt-3 w-full" src="/ROE.png" alt="A chart showing the Return-on-Equity Ratio of Zoom and Synopsys.">
                   </div>
                   <p class="mt-3">
                     Synopsys exhibits <b>strong ROE and ROA</b> relative to the broader software sector, demonstrating efficient utilization of both equity and assets to generate earnings.
@@ -360,7 +367,7 @@
               <p class="grid-cell order-1 @max-[400px]:order-2">
                 Investors should allocate capital to <b>Synopsys</b> as a <b>long-term holding</b>, supported by its consistent earnings growth, strong cash-flow generation, and efficient capital utilization. Exposure to Zoom should be <b>limited or deferred</b> until the company demonstrates sustained earnings stability and predictable cash-flow performance.
               </p>
-              <img width="100" height="400" class="h-full w-full order-2 @max-[400px]:order-1" style="object-fit: cover; object-position: center;" src="/synopsys-2.webp" alt="an image of synopsys">
+              <img loading="lazy" width="100" height="400" class="h-full w-full order-2 @max-[400px]:order-1" style="object-fit: cover; object-position: center;" src="/synopsys-2.webp" alt="an image of synopsys">
             </div>
           </section>
           <button type="button" id="show-technical" class="btn-filled-primary">Explore More (Technical)</button>
@@ -416,20 +423,20 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">bash</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-bash">
-  https://data.sec.gov/api/xbrl/companyconcept/CIK##########/{taxonomy}/{tag}.json
+https://data.sec.gov/api/xbrl/companyconcept/CIK##########/{taxonomy}/{tag}.json
                   </code>
                 </pre>
               </div>
               <ol class="grid-cell-inline grid-cell-top">
                   <li>
                     <div>
-                      <span class="doc-tag-1">CIK##########</span> - represent the CIK number for a company. You can find the CIK number of a company <a href="https://www.sec.gov/search-filings/cik-lookup">here</a>.
+                      <span class="doc-tag-1">CIK##########</span> - represent the CIK number for a company. <a href="https://www.sec.gov/search-filings/cik-lookup">You can find the CIK number of a company here</a>.
                     </div>
                   </li>
                   <li>
@@ -441,17 +448,17 @@
                     <div>
                       <span class="doc-tag-1">tag</span> - is the individual data elements within a taxonomy.
                       <p>For example, under the us-gaap taxonomy, you might have tags like:</p>
-                      <ul>
+                      <ol>
                         <li><span class="doc-tag-1">us-gaap:Assets</span> — Total assets reported by the company</li>
                         <li><span class="doc-tag-1">us-gaap:Liabilities</span> — Total liabilities</li>
                         <li><span class="doc-tag-1">us-gaap:Revenues</span> — Reported revenues</li>
-                      </ul>
+                      </ol>
                     </div>
                   </li>
                 </ol>
                 <p class="grid-cell-inline grid-cell-bottom mt-4">
                   To know the available taxonomy and tags from the financial statement, open any financial form in the XBRL viewer and click on any highlighted value to get the taxonomy and tag.
-                  An example of Zoom, Inc. 10-K is provided <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/0001585521/000158552125000042/zm-20250131.htm#fact-identifier-82">here</a>.
+                   <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/0001585521/000158552125000042/zm-20250131.htm#fact-identifier-82">An example of Zoom, Inc. 10-K is provided here</a>.
                 </p>
                 <figure class="grid-cell-inline grid-cell-bottom">
                   <figcaption>This is the query function used to get various tag values with us-gaap taxonomy from the financial forms.</figcaption>
@@ -459,28 +466,28 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
+let
+  GetAPIData = (CIK as text, tag as text) =>
   let
-    GetAPIData = (CIK as text, tag as text) =>
-    let
-        Source = Json.Document(
-            Web.Contents(
-                "https://data.sec.gov/api/xbrl/companyconcept/CIK" & CIK& "/us-gaap/" & tag & ".json",
-                [
-                    Headers = [
-                        #"User-Agent" = "Emmanuel Fosu emmanuel.fosuduffour@gmail.com"
-                    ]
-                ])),
-        Data   = Table.FromRecords({Source}) 
-    in
-        Data
+      Source = Json.Document(
+          Web.Contents(
+              "https://data.sec.gov/api/xbrl/companyconcept/CIK" & CIK& "/us-gaap/" & tag & ".json",
+              [
+                  Headers = [
+                      #"User-Agent" = "Emmanuel Fosu emmanuel.fosuduffour@gmail.com"
+                  ]
+              ])),
+      Data   = Table.FromRecords({Source}) 
   in
-    GetAPIData
+      Data
+in
+  GetAPIData
                   </code>
                 </pre>
               </div>
@@ -497,15 +504,15 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  Source = Table.SelectColumns(company_dim, "cik"),
-  #"Added tags" = Table.AddColumn(Source, "tags", each tags_dim),
-  #"Expanded tags" = Table.ExpandTableColumn(#"Added tags", "tags", {"tag", "name", "tag_1", "tag_2"}, {"tag", "name", "tag_1", "tag_2"})
+Source = Table.SelectColumns(company_dim, "cik"),
+#"Added tags" = Table.AddColumn(Source, "tags", each tags_dim),
+#"Expanded tags" = Table.ExpandTableColumn(#"Added tags", "tags", {"tag", "name", "tag_1", "tag_2"}, {"tag", "name", "tag_1", "tag_2"})
                   </code>
                 </pre>
               </div>
@@ -518,36 +525,36 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Added fectched data" = Table.AddColumn(
-    #"Expanded tags", 
-    "custom", 
-    each
-      try GetAPIData([cik], [tag])
-      otherwise try GetAPIData([cik], [tag_1])
-      otherwise null
-  ),
-  #"Expanded custom" = Table.ExpandTableColumn(
-    #"Added fectched data", 
-    "custom", 
-    {"units"}, 
-    {"units"}
-  ),
-  #"Expanded units" = Table.ExpandRecordColumn(
-    #"Expanded custom", 
-    "units", 
-    {"USD", "USD/shares", "shares"}, 
-    {"USD", "USD/shares", "shares"}
-  ),
-  #"Added data" = Table.AddColumn(
-    #"Expanded units", "USD_new", 
-    each if [USD] &lt;&gt; null then [USD] else if [shares] &lt;&gt; null then [shares] else [#"USD/shares"]
-  ),
+#"Added fectched data" = Table.AddColumn(
+  #"Expanded tags", 
+  "custom", 
+  each
+    try GetAPIData([cik], [tag])
+    otherwise try GetAPIData([cik], [tag_1])
+    otherwise null
+),
+#"Expanded custom" = Table.ExpandTableColumn(
+  #"Added fectched data", 
+  "custom", 
+  {"units"}, 
+  {"units"}
+),
+#"Expanded units" = Table.ExpandRecordColumn(
+  #"Expanded custom", 
+  "units", 
+  {"USD", "USD/shares", "shares"}, 
+  {"USD", "USD/shares", "shares"}
+),
+#"Added data" = Table.AddColumn(
+  #"Expanded units", "USD_new", 
+  each if [USD] &lt;&gt; null then [USD] else if [shares] &lt;&gt; null then [shares] else [#"USD/shares"]
+),
                   </code>
                 </pre>
               </div>
@@ -560,17 +567,17 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Removed extra data" = Table.RemoveColumns(
-    #"Added data",
-    {"USD", "USD/shares", "shares", "tag", "tag_1", 
-    "tag_2"}
-  ),
+#"Removed extra data" = Table.RemoveColumns(
+  #"Added data",
+  {"USD", "USD/shares", "shares", "tag", "tag_1", 
+  "tag_2"}
+),
                   </code>
                 </pre>
               </div>
@@ -585,19 +592,19 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Expanded USD_new" = Table.ExpandListColumn(#"Removed extra data", "USD_new"),
-  #"Expanded USD_new1" = Table.ExpandRecordColumn(
-    #"Expanded USD_new", 
-    "USD_new", 
-    {"val", "form", "frame"}, 
-    {"val", "form", "frame"}
-  ),
+#"Expanded USD_new" = Table.ExpandListColumn(#"Removed extra data", "USD_new"),
+#"Expanded USD_new1" = Table.ExpandRecordColumn(
+  #"Expanded USD_new", 
+  "USD_new", 
+  {"val", "form", "frame"}, 
+  {"val", "form", "frame"}
+),
                   </code>
                 </pre>
               </div>
@@ -610,16 +617,16 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
-                  <code class="language-powerquery">
-  #"Only 10-K Rows" = Table.SelectRows(
-    #"Expanded USD_new1",
-    each ([form] = "10-K") and ([frame] &lt;&gt; null)
-  )
+                <code class="language-powerquery">
+#"Only 10-K Rows" = Table.SelectRows(
+  #"Expanded USD_new1",
+  each ([form] = "10-K") and ([frame] &lt;&gt; null)
+)
                   </code>
                 </pre>
               </div>
@@ -634,20 +641,20 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Added 'valid_frame'" = Table.AddColumn(
-    #"Only 10-K Rows", "valid_frame", 
-    each regex_test("^(CY\\d{4}|CY\\d{4}Q(3|4)I)$", [frame])
-  ),
-  #"Filtered Rows with valid frame" = Table.SelectRows(
-    #"Added 'valid_frame'", 
-    each ([valid_frame] = true)
-  ),
+#"Added 'valid_frame'" = Table.AddColumn(
+  #"Only 10-K Rows", "valid_frame", 
+  each regex_test("^(CY\\d{4}|CY\\d{4}Q(3|4)I)$", [frame])
+),
+#"Filtered Rows with valid frame" = Table.SelectRows(
+  #"Added 'valid_frame'", 
+  each ([valid_frame] = true)
+),
                   </code>
                 </pre>
               </div>
@@ -661,21 +668,21 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Extracted Year from 'frame'" = Table.AddColumn(
-    #"Filtered Rows with valid frame", "
-    fiscal_year", 
-    each Text.Middle([frame], 2, 4), type text
-  ),
-  #"Changed Year Type" = Table.TransformColumnTypes(
-    #"Extracted Year from 'frame'",
-    {{"fiscal_year", Int64.Type}}
-  ),
+#"Extracted Year from 'frame'" = Table.AddColumn(
+  #"Filtered Rows with valid frame", "
+  fiscal_year", 
+  each Text.Middle([frame], 2, 4), type text
+),
+#"Changed Year Type" = Table.TransformColumnTypes(
+  #"Extracted Year from 'frame'",
+  {{"fiscal_year", Int64.Type}}
+),
                   </code>
                 </pre>
               </div>
@@ -689,23 +696,23 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  CurrentYear = Date.Year(DateTime.LocalNow()),
-  LastYear = CurrentYear - 1,
-  MinYear = LastYear - 6,
-  #"Filtered Row Not in Years Range" = Table.SelectRows(
-    #"Changed Year Type", 
-    each [fiscal_year] &lt;= LastYear and [fiscal_year] >= MinYear
-  ),
-  #"Removed Columns" = Table.RemoveColumns(
-    #"Filtered Row Not in Years Range",
-    {"form", "frame", "valid_frame"}
-  ),
+CurrentYear = Date.Year(DateTime.LocalNow()),
+LastYear = CurrentYear - 1,
+MinYear = LastYear - 6,
+#"Filtered Row Not in Years Range" = Table.SelectRows(
+  #"Changed Year Type", 
+  each [fiscal_year] &lt;= LastYear and [fiscal_year] >= MinYear
+),
+#"Removed Columns" = Table.RemoveColumns(
+  #"Filtered Row Not in Years Range",
+  {"form", "frame", "valid_frame"}
+),
                   </code>
                 </pre>
               </div>
@@ -718,34 +725,34 @@
               <div class="top-block flex gap-[20px] justify-between items-center">
                 <span class="language">Power Query (M Language)</span>
                 <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                  <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                  <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                 </button>
               </div>
               <hr>
                 <pre>
                   <code class="language-powerquery">
-  #"Changed val to number" = Table.TransformColumnTypes(
-    #"Removed Columns", 
-    {{"val", type number}}
-  ),
-  
-  #"Pivoted Column" = Table.Pivot(
-    #"Changed val to number",
-    List.Distinct(#"Changed val to number"[name]),
-    "name",
-    "val",
-    List.Sum
-  ),
-  
-  #"Changed fiscal_year to text" = Table.TransformColumnTypes(
-    #"Pivoted Column", 
-    {{"fiscal_year", type text}}
-  ),
-  
-  #"Changed fiscal_year to date" = Table.TransformColumnTypes(
-    #"Changed fiscal_year to text", 
-    {{"fiscal_year", type date}}
-  )
+#"Changed val to number" = Table.TransformColumnTypes(
+  #"Removed Columns", 
+  {{"val", type number}}
+),
+
+#"Pivoted Column" = Table.Pivot(
+  #"Changed val to number",
+  List.Distinct(#"Changed val to number"[name]),
+  "name",
+  "val",
+  List.Sum
+),
+
+#"Changed fiscal_year to text" = Table.TransformColumnTypes(
+  #"Pivoted Column", 
+  {{"fiscal_year", type text}}
+),
+
+#"Changed fiscal_year to date" = Table.TransformColumnTypes(
+  #"Changed fiscal_year to text", 
+  {{"fiscal_year", type date}}
+)
                   </code>
                 </pre>
               </div>
@@ -753,7 +760,7 @@
             </li>
               </ol>
             </section>
-            <section id="data-modelling">
+            <section technical id="data-modelling">
               <h3 class="grid-cell border-bottom border-top">Data Modelling</h3>
               <section class="grid-cell">
                 <h4 class="mb-4">Overview</h4>
@@ -761,7 +768,7 @@
                 <p class="mt-2">It follows a <b>star schema</b> structure, combining fact tables (<span class="doc-tag-1">revenues_fact</span>, <span class="doc-tag-1">sharePrice_fact</span>) with related dimension tables (<span class="doc-tag-1">company_dim</span>, <span class="doc-tag-1">Fiscal Year</span>, <span class="doc-tag-1">Share Price Date</span>).</p>
                 <figure class="mt-3">
                   <figcaption>The star schema showing various tables and relationship formed.</figcaption>
-                  <img src="/semantic_model_disconnected.png" alt="this shows the variou table and relationship formed.">
+                  <img loading="lazy" src="/semantic_model_disconnected.png" alt="this shows the variou table and relationship formed.">
                 </figure>
               </section>
               <section class="grid-cell-inline">
@@ -986,7 +993,7 @@
             <div class="top-block flex gap-[20px] justify-between items-center">
               <span class="language">bash</span>
               <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
               </button>
             </div>
             <hr>
@@ -1010,7 +1017,7 @@
                   <div class="top-block flex gap-[20px] justify-between items-center">
                     <span class="language">Bash</span>
                     <button type="button" class="btn-outlined-secondary icon bp-s-2" aria-label="copy code">
-                      <img class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
+                      <img loading="lazy" class="icon-smm" src="/file_copy_icon.svg" alt="copy icon">
                     </button>
                   </div>
                   <hr>
@@ -1103,7 +1110,7 @@ git clone https://github.com/emma-fosu/Financial-Performance-Dashboard-Zoom-Inc.
             </div>
           </a>
         </div>
-        <p class="copyright">
+        <p class="copyright ml-auto self-end">
           &copy;<span id="current-year"></span>
           Emmanuel Fosu
         </p>

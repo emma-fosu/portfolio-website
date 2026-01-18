@@ -11,7 +11,9 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         projects: resolve(__dirname, "projects/index.html"),
         "projects/cossmic_electricity_analysis": resolve(__dirname, "projects/cossmic_electricity_analysis.html"),
-        "projects/zoom_vs_synopsys_financial_performance": resolve(__dirname, "projects/zoom_vs_synopsys_financial_performance.html")
+        "projects/zoom_vs_synopsys_financial_performance": resolve(__dirname, "projects/zoom_vs_synopsys_financial_performance.html"),
+        "projects/divvy_lyft_customer_riding_behaviour_analysis": resolve(__dirname, "projects/divvy_lyft_customer_riding_behaviour_analysis.html")
+
       }
     }
   },

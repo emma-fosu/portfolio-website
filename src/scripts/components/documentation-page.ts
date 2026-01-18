@@ -1,5 +1,4 @@
 import "../../styles/tailwind.css";
-import "../../styles/pages/projects/cossmic_electricity_analysis.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs";
 import initDocumentationNav, {

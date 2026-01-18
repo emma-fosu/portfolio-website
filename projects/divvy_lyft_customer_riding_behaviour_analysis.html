@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/divvy_lyft_cover.jpg" as="image" type="image/jpeg" fetchpriority="high"/>
+    <link rel="preload" href="/bike-1.jpg" as="image" type="image/jpeg" fetchpriority="high"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="A report to uncover riding patterns of both Casual and Member riders using the Divvy-Lyft bike-sharing service."
+    />
+    <title>Divvy-Lyft Customer Riding Behaviour Analysis</title>
+</head>
+<body class="overflow-y-scroll h-dvh">
+  <main class="@container/main-container">
+    <nav
+        class="z-1000 fixed primary-nav top-[0] left-[0] right-[0]"
+        id="primary-nav"
+        aria-label="primary navigation"
+      >
+        <div class="w-[90vw] max-w-[1200px] mx-auto flex gap-3 items-center">
+          <a class="only-icon" href="/portfolio-website/">
+            <span class="sr-only">Go to home</span>
+            <div class="logo">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 469 469"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-lg"
+              >
+                <circle cx="234.5" cy="234.5" r="234.5" fill="black" />
+                <circle
+                  cx="233.999"
+                  cy="234.999"
+                  r="62.0555"
+                  transform="rotate(-2.78704 233.999 234.999)"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </a>
+          <button 
+            type="button"
+            class="doc-nav-button btn-outlined-secondary bp-s-1 rounded" 
+            aria-expanded="false"
+            aria-controls="documentation-nav"
+            aria-haspopup="true"
+            popovertarget="documentation-nav-cont"
+            aria-label="Open Table of Content" tooltip="Open Table of Content">
+            <div class="icon-sm" aria-hidden="true" icon></div>
+          </button>
+          <a
+            href="https://github.com/emma-fosu/CoSSMic-Household-Electricity-Consumption"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            class="ml-auto btn-outlined-secondary rounded bp-s-1"
+            tooltip="View Source Code"
+          >
+            <div mask-icon class="icon-sm github"></div>
+          </a>
+          <a class="only-text rounded" href="#resume" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </nav>
+      <div class="w-[90vw] max-w-[1200px] mx-auto grid grid-cols-[30ch_1fr] grid-rows-[auto_auto] items-start gap-[20px] @max-[950px]:grid-cols-[1fr]">
+      <aside id="documentation-nav-cont">
+        <div>
+          <header class="flex items-center justify-between gap-5">
+            <span class="doc-nav-span">On this Page</span>
+            <button 
+              type="button"
+              class="doc-nav-button btn-outlined-secondary bp-s-1 rounded" 
+              aria-expanded="true"
+              aria-controls="documentation-nav"
+              aria-haspopup="true"
+              popovertarget="documentation-nav-cont"
+              aria-label="Close Table of Content" tooltip="Close Table of Content">
+              <div class="icon-sm" aria-hidden="true" icon></div>
+            </button>
+          </header>
+          <nav class="mt-7" id="documentation-nav">
+          </nav>
+        </div>
+      </aside>
+      <div id="documentation" class="flex flex-col mt-[90px] @container/doc-cont">
+        <header>
+            <div class="grid-cell-top grid-cell-inline">
+                
+                <div class="logo-container">
+                    <img width="120" height="25" src="/divvy_lyft_logo.svg" alt="Divvy-Lyft logo">
+                </div>
+            </div>
+          <div class="mt-2">
+            <h1 class="grid-cell-inline">Divvy-Lyft Customer Riding Behaviour Analysis</h1>
+            <p class="grid-cell-inline description mt-2 mb-10">A report to analyse riding behaviour patterns of both Casual and Member riders using the Divvy-Lyft Bike-sharing service in Chicago.</p>
+            <img width="1050" height="591" src="/divvy_lyft_cover.jpg" alt="A man with a divvy lyft bike">
+          </div>
+        </header>
+        <div style="height: 10px;"></div>
+        <section id="project-overview" class="grid gap-5 grid-cols-[1fr_35%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+          <h2 aria-hidden="true" class="sr-only">Project Overview</h2>
+          <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+            <h2>Project Overview</h2>
+            <p>
+              This project analyzes and reports on the riding behavior of both <b>Casual</b> and <b>Member</b> riders who use <b>Divvy-Lyft Bike-Sharing</b> service.   
+              <p class="mt-1">
+                The <b>Marketing Department</b> aims to understand how these riders use the service and identify strategies to convert Casual riders into Members.
+              </p>
+            </p>
+          </div>
+          <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+            <img width="1000" height="667" class="object-center object-cover h-full w-full " src="/bike-1.jpg" alt="A divvy lyft bike">
+          </div>
+        </section>
+        <section id="executive-summary">
+          <h2 class="grid-cell mt-6">Executive Summary</h2>
+          <div class="grid-cell">
+            <p>In <b>2024</b>, Divvy-Lyft bike-sharing usage showed clear differences between Casual and Member riders. Casual riders primarily used the service for <b>leisure</b> and <b>occasional</b> trips, with longer rides and higher activity on <b>weekends</b>. In contrast, Member riders used Divvy more frequently for <b>short</b>, <b>routine</b> trips, largely on weekdays, reflecting commuting and daily mobility needs.</p>
+            <p class="mt-2">The marketing department should focus on <b>behaviour-based conversion</b>, not generic membership messaging. Target frequent Casual riders who take multiple rides per month or during weekday peak hours with <b>personalised in-app</b> and <b>email campaigns</b> highlighting cost savings compared with per-ride fees.</p>
+          </div>
+        </section>
+        <section id="problem-statement">
+            <h2 class="grid-cell mt-6">Problem Statement</h2>
+            <div class="grid-cell">
+                <p>
+                    The <b>Marketing department</b> at <b>Lyft</b> aims to maximise annual memberships, as the director believes this is key to long-term success. This analysis examines and reports differences in <b>riding behaviour</b> between Casual and Member riders to support this goal.
+                </p>
+                <p class="mt-2">
+                    By examining trip duration, ride frequency, peak usage times, and common routes over the past <b>12 months</b> in <b>2024</b>, we will uncover insights that can guide targeted marketing strategies to convert more casual riders into annual members.
+                </p>
+            </div>
+        </section>
+        <section id="key-insights">
+          <h2 class="grid-cell mt-6">Key Insights</h2>
+          <div>
+          <ol class="grid-list-one @container">
+            <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+              <div>
+                  <span><b>Members Drive the Majority of Divvy Rides.</b></span>
+                  <div class="mt-4 w-full aspect-[740_/_515]" id="member_casual_count">
+                  </div>
+                  <p class="mt-3">
+                    Members account for <b>64%</b> of total rides, compared to <b>36%</b> from Casual riders, indicating more consistent and frequent usage driven by <b>strong retention</b> and <b>habitual riding</b>. However, trip counts alone do not reflect ride distance or duration, and further analysis is required to identify when and where Casual riders may exceed Members in usage.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Casual and Member Riders Travel Similar Distances but at Different Durations.</b></span>
+                  <p class="mt-3">
+                    Although both groups travel nearly identical distances—about <b>1.6 km on average</b>—Casual riders take significantly longer to complete their trips, with a duration of <b>12 minutes</b> compared to <b>8 minutes</b> for Members. This indicates that the key difference between the two groups is not <b>how far they travel</b>, but <b>how they travel</b>.
+                  </p>
+                  <div class="mt-4 w-full aspect-[742_/_571]" id="member_casual_duration">
+                  </div>
+                  <p class="mt-3">
+                    Members appear to ride more efficiently and consistent with routine such as <b>commuting</b>, while Casual riders likely use the service for <b>leisure</b> or <b>sightseeing</b>. These patterns highlight two distinct user behaviors within the system and suggest that further analysis of ride patterns by time of day, day of week, and station location will provide deeper insight.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Seasonality Affects Casual and Member Riders Similarly.</b></span>
+                  <div class="mt-4 w-full aspect-[842_/_638]" id="member_casual_by_month"></div>
+                  <p class="mt-3">
+                    Seasonality does not significantly differentiate rider behaviour between <b>Casual</b> and  <b>Member</b> users. Instead, it acts as a <b>shared external driver influencing both groups</b> in the same way over time. This ensures that subsequent insights derived from <b>hour-level analysis</b> are robust across seasons and will not be distorted by <b>seasonal fluctuations</b> in total ridership.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Members Primary use the System for Commuting.</b></span>
+                  <div class="mt-4 w-full aspect-[878_/586]" id="member_count_weekday"></div>
+                  <p class="mt-3">
+                    Members show higher engagement on weekdays, peaking on <b>Wednesdays</b>, which aligns with Chicago's busiest midweek travel days. Interestingly, member trip duration increases by <b>11%</b> on weekends, indicating that some members also use the service for leisure purposes in addition to routine commuting.                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Casual Engages More in Weekends than in Weekdays.</b></span>
+                  <div class="mt-4 w-full aspect-[887_/_551]" id="casual_count_weekday"></div>
+                  <p class="mt-3">
+                    Casual riders are primarily <b>weekend users</b>. Their engagement increased <b>51%</b> more in weekend than in weekday and they ride <b>4 min longer</b>. Weekend rides are <b>leisure-oriented trips</b>, while weekday trips are <b>limited and short</b>.                  
+                  </p>
+                  <p class="mt-1">
+                    The conclusion that <b>all Casual riders</b> are leisure-oriented cannot be made immediately, as members also show longer trip durations on weekends. Further analysis is needed to determine what proportion of Casual riders are truly leisure-oriented versus members who use the service for commuting.
+                  </p>
+                </div>
+              </li>
+              <li class="grid-cell flex items-start gap-5 @max-[400px]:flex-col">
+                <div>
+                  <span><b>Weekdays are for Work and Weekend are for Leisure But Casual Takes it Far.</b></span>
+                  <div class="mt-4 w-full aspect-[1165_/_601]" id="member_casual_week_and_hour_count"></div>
+                  <p class="mt-3">
+                   Both rider types exhibit similar patterns, with commuting peaks between <b>7-9 AM</b> and <b>4-6 PM</b> on weekdays, and leisure peaks between <b>11 AM-4 PM</b> on weekends. However, Casual rider volume increases by <b>52%</b> on weekends, while Member volume decreases by <b>21%</b>. This suggests that some casual riders use the service for both commuting and leisure, making them prime targets for marketing campaigns aimed at converting them into Members.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section id="conclusion">
+          <h2 class="grid-cell mt-6">Conclusion</h2>
+          <div></div>
+          <div class="grid-cell">
+            <p>There is a clear distinction in how <b>Member</b> and <b>Casual</b> riders use the bike-sharing service: Members are <b>predominantly commute-oriented</b>, while Casual riders are <b>primarily leisure-oriented</b>.</p>
+            <p class="mt-2">
+              However, the analysis also reveals overlap in behavior. Some Casual riders exhibit commuting-like patterns on weekdays, and some Members use the service for leisure during weekends. Due to the <b>anonymized nature</b> of the dataset, it is not possible to reliably classify individual riders as exclusively leisure-based, commute-based, or mixed-use over time.
+            </p>
+            <p class="mt-2">
+              The inclusion of additional user-level attributes such as <b>rider name and id</b>, <b>history</b>, <b>subscription tenure</b>, or <b>inferred trip purpose</b> would enable more precise behavioral segmentation. This information would significantly improve the ability of the marketing team to identify high-value Casual riders with strong conversion potential to Membership, leading to more targeted and effective campaigns.
+            </p>
+          </div>
+        </section>
+        <section id="Recommendations">
+          <h2 class="grid-cell mt-6">Recommendations</h2>
+          <ol class="grid-list-one">
+            <li class="grid gap-5 grid-cols-[1fr_30%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+                <span><b>Convert High-Frequency Casual Riders Who Commute on Weekdays.</b></span>
+                <p class="mt-3">
+                  Focus marketing efforts on Casual riders with weekday, peak-hour usage patterns, as their behavior closely mirrors that of Members. These riders represent the lowest-friction conversion opportunity.                </p>
+                <p class="mt-2">
+                  The marketing team can deploy <b>targeted in-app</b> and <b>email campaigns</b> during weekday mornings and evenings that emphasize cost savings, time efficiency, and reliability of Membership versus single-ride pricing.
+                </p>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img width="1400" height="820" loading="lazy" class="object-center object-cover h-full w-full" src="/messaging_phone.webp" alt="an illustration of a phone with a notification.">
+              </div>
+            </li>
+            <li class="grid gap-5 grid-cols-[30%_1fr] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="order-2 grid-cell @max-[500px]/doc-cont:order-2">
+                <span><b>Use Location-Based Marketing at Leisure and Residential Hotspots.</b></span>
+                <p class="mt-3">
+                  Casual usage is concentrated around <b>tourist</b> and <b>recreational</b> areas, while Member usage aligns with <b>residential</b> and <b>working districts</b>. Marketing messages should adapt based on where rides begin.                
+                </p>
+                <p class="mt-2">
+                  The team can promote leisure and exploration messaging near parks and waterfronts and send commuter-focused Membership offers when Casual riders start trips near residential zones
+                </p>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img width="1052" height="1080" loading="lazy" class="object-center object-cover h-full w-full" src="/location-based-marketing.webp" alt="an illustration of a phone with a map next to it.">
+              </div>
+            </li>
+            <li class="grid gap-5 grid-cols-[1fr_30%] @max-[500px]/doc-cont:grid-cols-[1fr] @max-[500px]/doc-cont:gap-0">
+              <div class="grid-cell-left grid-cell-block @max-[500px]/doc-cont:order-2">
+                <span><b>Introduce Flexible Membership Options for Mixed-Use Riders.</b></span>
+                <div>
+                  <p class="mt-3">
+                    A significant portion of riders demonstrate both leisure and commuting behavior, especially across weekdays and weekends. A single annual plan may be too restrictive for this segment.                  </p>
+                  <p class="mt-2">
+                    Therefore, the team can offer or promote <b>flexible plans</b> such as <b>weekday-only passes</b>, seasonal memberships, or bundled ride credits.
+                  </p>
+                </div>
+              </div>
+              <div class="@max-[500px]:/doc-cont:order-1 @max-[500px]/doc-cont:h-[100px]">
+                <img loading="lazy" width="1024" height="576" class="object-center object-cover h-full w-full" src="/membership-marketing.webp" alt="A Membership marketing illustration.">
+              </div>
+            </li>
+          </ol>
+        </section>
+        <button type="button" id="show-technical" class=" btn-filled-primary">Explore More (Technical)</button>
+        <section id="skills-and-tools-demonstrated" technical>
+          <h2 class="grid-cell mt-6">Skills & Tools Demonstrated</h2>
+          <ol class="mt-2 grid-cell">
+            <li>
+                <p><b>dbt (Data Build Tools)</b>: Designed, tested, and materialized analytic-ready models using <b>Jinja macros</b> and <b>seed files</b> for auxiliary tables. Validated data quality with <b>dbt tests</b> and compiled models using <b>dbt Fusion</b>. </p>
+            </li>
+            <li>
+              <p><b>Databricks (SQL)</b>: Integrated dbt with the <b>Databricks platform</b>, materializing models as tables. Managed table storage and merges within Databricks and conducted exploratory analysis using <b>Databricks SQL Dashboards</b>.</p>
+            </li>
+            <li>
+              <p>
+                <b>Altair-Vega (Python)</b>: Built clear and expressive visualizations, including line chart and bar charts using the <b>Altair (Vega-Lite)</b> library.
+              </p>
+            </li>
+          </ol>
+        </section>
+        <section id="project-workflow" technical>
+          <h2 class="grid-cell mt-6">Project Workflow</h2>
+          <section id="data-sourcing-extraction-storing" technical>
+            <h3 class="grid-cell border-bottom">Data Sourcing, Extraction and Storing</h3>
+            <div class="grid-cell">
+              <p>The data has been made available by <a href="https://divvybikes.com/data-license-agreement"><b>Divvy-Lyft Bike-Sharing</b> under this license</a>.</p>
+              <p class="mt-1">
+                The data source is partitioned into <b>twelve zip folders</b>. Each zip folder contains a .csv file for a particular month in <b>2024</b>. The zip folder and .csv file are named: <span class="doc-tag-1">YYYYMM-divvy-tripdata</span> and <span class="doc-tag-1">YYYMM-divvy-tripdata.csv</span> respectively.
+                <a href="https://divvy-tripdata.s3.amazonaws.com/index.html">You can view and download the dataset.</a>
+              </p>
+              <p class="mt-1">Each .csv file was stored at <b>Databricks</b> (a cloud-based data platform) under the catalog <span class="doc-tag-1">divvy-trip</span> and schema <span class="doc-tag-1">default</span>.</p>
+            </div>
+          </section>
+          <section id="data-transformation-with-dbt" technical>
+            <h3 class="grid-cell border-top border-bottom">Data Transformation with dbt (Data Build Tools)</h3>
+            <div>
+              <ol>
+                <li class="grid-cell">
+                  <div>
+                    <p>Each .csv trip data was appended into one table and stored in <b>Databricks</b> under the catalog <span class="doc-tag-1">divvy-trip</span> and schema <span class="doc-tag-1">default</span> with the name: <span class="doc-tag-1">divvy_tripdata_2024.</span></p>
+                    <div class="code-block mt-6">
+                      <div class="top-block flex gap-[20px] justify-between items-center">
+                        <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/raw/divvy_tripdata_2024.sql</span>
+                        <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                          <div icon class="icon-smm" aria-hidden="true"></div>
+                        </button>
+                      </div>
+                      <hr>
+                        <pre>
+                          <code class="language-sql">
+{{
+  config(
+    materialized = 'table',
+    )
+}}
+
+{% set tables = dbt_utils.get_relations_by_pattern(
+    schema_pattern='default',
+    table_pattern='2024%_divvy_tripdata'
+) %}
+
+{% for table in tables %}
+SELECT *
+FROM {{ table }}
+{% if not loop.last %}
+UNION ALL
+{% endif %}
+{% endfor %}
+                          </code>
+                        </pre>
+                    </div>
+                    <figure class="mt-5">
+                      <figcaption>Table: Merged divvy-trip dataset fields with descriptions.</figcaption>
+                      <div class="doc-table-container">
+                        <table class="doc-table w-full">
+                          <thead>
+                            <tr>
+                              <th>Field</th>
+                              <th>Type</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr><td><span class="doc-tag-1">ride_id</span></td><td><span class="doc-tag-2">string</span></td><td>Unique ride identifier</td></tr>
+                            <tr><td><span class="doc-tag-1">rideable_type</span></td><td><span class="doc-tag-2">string</span></td><td>Types of rideable bikes</td></tr>
+                            <tr><td><span class="doc-tag-1">started_at</span></td><td><span class="doc-tag-2">timestamp</span></td><td>Ride's start time</td></tr>
+                            <tr><td><span class="doc-tag-1">ended_at</span></td><td><span class="doc-tag-2">timestamp</span></td><td>Ride's end time</td></tr>
+                            <tr><td><span class="doc-tag-1">start_station_name</span></td><td><span class="doc-tag-2">string</span></td><td>Ride's start station name</td></tr>
+                            <tr><td><span class="doc-tag-1">end_station_name</span></td><td><span class="doc-tag-2">string</span></td><td>Ride's end station name</td></tr>
+                            <tr><td><span class="doc-tag-1">start_station_id</span></td><td><span class="doc-tag-2">string</span></td><td>Ride's start station id</td></tr>
+                            <tr><td><span class="doc-tag-1">end_station_id</span></td><td><span class="doc-tag-2">string</span></td><td>Ride's end station id</td></tr>
+                            <tr><td><span class="doc-tag-1">start_lat</span></td><td><span class="doc-tag-2">double</span></td><td>Ride's starting latitude</td></tr>
+                            <tr><td><span class="doc-tag-1">end_lat</span></td><td><span class="doc-tag-2">double</span></td><td>Ride's ending latitude</td></tr>
+                            <tr><td><span class="doc-tag-1">start_lng</span></td><td><span class="doc-tag-2">double</span></td><td>Ride's starting longitude</td></tr>
+                            <tr><td><span class="doc-tag-1">end_lng</span></td><td><span class="doc-tag-2">double</span></td><td>Ride's ending longitude</td></tr>
+                            <tr><td><span class="doc-tag-1">member_casual</span></td><td><span class="doc-tag-2">string</span></td><td>Subscriber type</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </figure>
+                  </div>
+                </li>
+                <li class="grid-cell-inline grid-cell-bottom">
+                  <div>
+                    <p>Each field was <b>cleaned</b> and <b>normalized</b>.</p>
+                    <p class="mt-1">Before cleaning and filtering, the appended dataset was indexed using a newly created column, <span class="doc-tag-1">rn</span>, which uniquely identifies each trip. This index enables reliable tracking of individual records and simplifies join and other relational operations throughout the data pipeline.</p>
+                    <div class="code-block mt-6">
+                      <div class="top-block flex gap-[20px] justify-between items-center">
+                        <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/stag_divvy_tripdata_2024.sql</span>
+                        <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                          <div icon class="icon-smm" aria-hidden="true"></div>
+                        </button>
+                      </div>
+                      <hr>
+                        <pre>
+                          <code class="language-sql">
+SELECT
+    ROW_NUMBER() OVER(ORDER BY ride_id) as rn,
+    *
+FROM
+    {{ ref('divvy_tripdata_2024') }}
+                          </code>
+                        </pre>
+                    </div>
+                    <ul>
+                      <li class="mt-10">
+                        <div>
+                          <p><span class="doc-tag-1">ride_id</span>: The ride_id field is unique and should not be empty or duplicated. <span class="doc-tag-1">ride_id</span> was trimmed before it was filtered.</p>
+                          <div class="code-block mt-3">
+                            <div class="top-block flex gap-[20px] justify-between items-center">
+                              <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/01_ride_id/ride_id_cleaned.sql</span>
+                              <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                                <div icon class="icon-smm" aria-hidden="true"></div>
+                              </button>
+                            </div>
+                            <hr>
+                              <pre>
+                                <code class="language-sql">
+SELECT
+  rn,
+  TRIM(ride_id) AS ride_id
+FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+                                </code>
+                              </pre>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="mt-10">
+                        <div>
+                        <p><span class="doc-tag-1">rideable_type</span>: The rideable type was transformed from snake-case to proper name (<span class="doc-tag-1">Electric Bike</span>, <span class="doc-tag-1">Classic Bike</span>, <span class="doc-tag-1">Electric Scooter</span> and <span class="doc-tag-1">Scooter</span>).</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/02_rideable_type/rideable_type_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  rn,
+  CASE
+      WHEN TRIM(rideable_type) = "electric_bike" THEN "Electric Bike"
+      WHEN TRIM(rideable_type) = "classic_bike" THEN "Classic Bike"
+      WHEN TRIM(rideable_type) = "scooter" THEN "scooter"
+      WHEN TRIM(rideable_type) = "electric_scooter" THEN "Electric Scooter"
+      ELSE "Unknown Rideable"
+  END AS rideable_type
+FROM
+    {{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mt-10">
+                      <div>
+                        <p><span class="doc-tag-1">member_casual</span>: It was only capitalized.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/03_member_casual/member_casual_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                            <code class="language-sql">
+SELECT
+  rn,
+  INITCAP(TRIM(member_casual)) AS member_casual
+  FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mt-10">
+                      <div>
+                        <p><span class="doc-tag-1">start_station_name</span>, <span class="doc-tag-1">end_station_name</span>: Both were trimmed and any empty value was coalesced into <span class="doc-tag-1">Unkwown Station</span>.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/04_start_station_name/start_station_name_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                            <code class="language-sql">
+SELECT
+  rn,
+  COALESCE(TRIM(BOTH '*' FROM TRIM(start_station_name)), "Unknown Station") AS start_station_name
+FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                        </div>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/05_end_station_name/end_station_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  rn,
+  COALESCE(TRIM(BOTH '*' FROM TRIM(end_station_name)), "Unknown Station") AS end_station_name
+  FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+</code>
+</pre>
+</div>
+                      </div>
+                    </li>
+                    <li class="mt-10">
+                      <div>
+                        <p><span class="doc-tag-1">start_station_id</span>, <span class="doc-tag-1">end_station_id</span>: Both were trimmed and any empty value was coalesced into <span class="doc-tag-1">Unkwown ID</span>.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/07_end_station_id/end_station_id_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                          <pre>
+                            <code class="language-sql">
+SELECT
+  rn,
+  COALESCE(TRIM(end_station_id), "Unknown ID") AS end_station_id
+FROM
+{{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                        </div>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/06_start_station_id/start_station_id_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                            <code class="language-sql">
+SELECT
+  rn,
+  COALESCE(TRIM(start_station_id), "Unknown ID") AS start_station_id
+FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
+                      </li>
+                    <li class="mt-10">
+                      <div>
+                        <p><span class="doc-tag-1">end_lat</span>, <span class="doc-tag-1">end_lng</span> <span class="doc-tag-1">start_lat</span>, <span class="doc-tag-1">start_lng</span>: They were rounded into <b>five decimal places</b></p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_cleaning/08_end_lat/end_lat_cleaned.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                          <pre>
+                            <code class="language-sql">
+SELECT
+  rn,
+  ROUND(end_lat, 5) AS end_lat
+FROM
+  {{ ref('stag_divvy_tripdata_2024') }}
+                              </code>
+                            </pre>
+                          </div>
+                        </div>
+                      </li>
+                  </ul>
+                </div>
+                </li>
+                <li class="grid-cell-inline grid-cell-bottom">
+                  <div>
+                    <p>Each field was then filtered according to abnomalies and rules defined by the Marketing department.
+                      Each cleaned field was joined together into one cleaned table <span class="doc-tag-1">merged_cleaned_fields_divvy_tripdata_2024</span>.</p>
+                    <div class="code-block mt-3">
+                      <div class="top-block flex gap-[20px] justify-between items-center">
+                        <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/merge_cleaned_fields_divvy_tripdata_2024.sql</span>
+                        <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                          <div icon class="icon-smm" aria-hidden="true"></div>
+                        </button>
+                      </div>
+                      <hr>
+                        <pre>
+                          <code class="language-sql">
+SELECT *
+FROM {{ ref('ride_id_cleaned') }}
+INNER JOIN {{ ref('rideable_type_cleaned') }} USING (rn)
+INNER JOIN {{ ref('member_casual_cleaned') }} USING (rn)
+INNER JOIN {{ ref('start_station_name_cleaned') }} USING (rn)
+INNER JOIN {{ ref('end_station_name_cleaned') }} USING (rn)
+INNER JOIN {{ ref('end_station_id_cleaned') }} USING (rn)
+INNER JOIN {{ ref('start_station_id_cleaned') }} USING (rn)
+INNER JOIN {{ ref('end_lat_cleaned') }} USING (rn)
+INNER JOIN {{ ref('end_lng_cleaned') }} USING (rn)
+INNER JOIN {{ ref('start_lat_cleaned') }} USING (rn)
+INNER JOIN {{ ref('start_lng_cleaned') }} USING (rn)
+INNER JOIN {{ ref('started_at_cleaned') }} USING (rn)
+INNER JOIN {{ ref('ended_at_cleaned') }} USING (rn)
+                    ORDER BY rn
+                          </code>
+                        </pre>
+                    </div>
+                    <ul>
+                      <li class="mt-10">
+                        <p><span class="doc-tag-1">ride_id</span>:  Any <b>duplicate ride</b> was <b>removed</b> from the dataset.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/01_ride_id_filtered.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+{%- set fields = dbt_utils.get_filtered_columns_in_relation(from=ref("divvy_tripdata_2024"), except=["ride_id_rn", "rn"]) -%}
+SELECT
+    {% for field in fields %}
+        {{ field }}
+        {%- if not loop.last -%}
+            ,
+        {% endif %}
+    {% endfor %}
+FROM (
+    SELECT
+        *,
+        ROW_NUMBER() OVER(PARTITION BY ride_id ORDER BY started_at) AS ride_id_rn
+    FROM
+        {{ ref('merge_cleaned_fields_divvy_tripdata_2024') }}
+    ORDER BY ride_id
+)
+WHERE ride_id_rn = 1
+                              </code>
+                            </pre>
+                        </div>
+                      </li>
+                      <li class="mt-10">
+                        <p><span class="doc-tag-1">started_at</span>, <span class="doc-tag-1">ended_at</span>:  Any ride with the <span class="doc-tag-1">started_at</span> time greater than the <span class="doc-tag-1">ended_at</span> was also removed.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/02_started_at_filtered.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  *
+FROM
+    {{ ref('01_ride_id_filtered') }}
+WHERE started_at &lt; ended_at
+                              </code>
+                            </pre>
+                        </div>
+                        <p class="mt-2">Also, any trip with duration less than <b>60 seconds</b> and greater than <b>1 hour</b> was removed.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/03_duration_filtered.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  *
+FROM
+    {{ ref('02_started_at_filtered') }}
+WHERE TIMESTAMPDIFF(Minute, started_at, ended_at) BETWEEN 1 AND 60
+          </code>
+                            </pre>
+                        </div>
+                      </li>
+                      <li class="mt-10">
+                        <p><span class="doc-tag-1">start_lng</span>, <span class="doc-tag-1">end_lng</span>:  Any trip with longitude outside the boundaries of <b>Chicago (-87.9, -87.5)</b> was removed.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/07_end_lng_filtered.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  *
+FROM
+    {{ ref('06_end_lat_filtered') }}
+WHERE end_lng &geq; -87.9 AND end_lng &leq; -87.5
+                              </code>
+                            </pre>
+                        </div>
+                      </li>
+                      <li class="mt-10">
+                        <p><span class="doc-tag-1">start_lat</span>, <span class="doc-tag-1">end_lat</span>:  Any trip with latitude outside the boundaries of <b>Chicago (41.6, 42.1)</b> was removed.</p>
+                        <div class="code-block mt-3">
+                          <div class="top-block flex gap-[20px] justify-between items-center">
+                            <span class="language">sql</span> <span class="code-file-name">divvy-trips/models/staging/field_filtering/07_end_lng_filtered.sql</span>
+                            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+                              <div icon class="icon-smm" aria-hidden="true"></div>
+                            </button>
+                          </div>
+                          <hr>
+                            <pre>
+                              <code class="language-sql">
+SELECT
+  *
+FROM
+    {{ ref('05_start_lng_filtered') }}
+WHERE
+    end_lat &geq; AND end_lat &leq; 42.1
+                              </code>
+                            </pre>
+                        </div>
+                      </li>
+                      <li class="mt-10">
+                        The final cleaned, filtered dataset was stored in <b>Databricks</b> as <span class="doc-tag-1">cleaned_tripdata_2024</span> under the catalog <span class="doc-tag-1">divvy_trip</span> and the schema <span class="doc-tag-1">default</span>.
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </section>
+          <section id="additional-data-tables" technical>
+            <h3 class="grid-cell border-top border-bottom">Additional Data Tables</h3>
+            <ol class="grid-cell">
+              <li>
+                <div>
+                  <p><span class="doc-tag-1">Ride Date Table</span>: This table provides time-based attributes derived from each ride's timestamp (ride_datetime). It is designed to support detailed temporal analysis of ride behavior, trends, and patterns such as demand by <b>day</b>, <b>month</b>, <b>hour</b>, or <b>weekday</b>.</p>
+                  <figure class="mt-5">
+                    <figcaption>Table: Ride Date fields with description</figcaption>
+                    <div class="doc-table-container">
+                      <table class="doc-table w-full">
+                        <thead>
+                          <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td><span class="doc-tag-1">ride_datetime</span></td><td><span class="doc-tag-2">datetime</span></td><td>The exact date and time when the ride event occurred. This is the raw timestamp from which other time attributes are derived</td></tr>
+                          <tr><td><span class="doc-tag-1">ride_date</span></td><td><span class="doc-tag-2">date</span></td><td>The calendar date (without time) extracted from <span class="doc-tag-1">ride_datetime</span>. Useful for grouping or filtering rides by date.</td></tr>
+                          <tr><td><span class="doc-tag-1">year</span></td><td><span class="doc-tag-2">int</span></td><td>The four-digit year in which the ride took place (eg. 2024)</td></tr>
+                          <tr><td><span class="doc-tag-1">month_num</span></td><td><span class="doc-tag-2">int</span></td><td>The numeric value of the month (1-12) corresponding to <span class="doc-tag-1">ride_datetime</span></td></tr>
+                          <tr><td><span class="doc-tag-1">month</span></td><td><span class="doc-tag-2">string</span></td><td>The full month name (eg. January)</td></tr>
+                          <tr><td><span class="doc-tag-1">week_of_year</span></td><td><span class="doc-tag-2">int</span></td><td>The week number of the year (1-52) when the ride occurred.</td></tr>
+                          <tr><td><span class="doc-tag-1">day_of_week_num</span></td><td><span class="doc-tag-2">int</span></td><td>Numeric representation of the day of the week (eg. 1 = Monday, 7 = Sunday).</td></tr>
+                          <tr><td><span class="doc-tag-1">day_of_week</span></td><td><span class="doc-tag-2">string</span></td><td>Textual representation of the day of the week (eg. Monday, Tuesday)</td></tr>
+                          <tr><td><span class="doc-tag-1">hour_am_pm</span></td><td><span class="doc-tag-2">string</span></td><td>The hour of the ride with AM/PM designation (eg. "8 AM")</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </figure>
+                  <section class="mt-6">
+                    <h4>Purpose and Usage</h4>
+                    <ol class="mt-2">
+                      <li><div>This table serves as a <b>time dimension</b> for ride data analysis. It allows data analysts and engineers to:</div></li>
+                      <li>Aggregate rides by date, day, or hour for trend analysis.</li>
+                      <li>Identify peak riding hours and weekday vs weekend demand.</li>
+                      <li>Perform seasonal, monthly, and yearly comparisons.</li>
+                      <li>Simplify joins with ride fact tables in analytics pipelines.</li>
+                    </ol>
+                  </section>
+                </div>
+              </li>
+            </ol>
+          </section>
+          <section id="data-analysis-visualization" technical>
+            <h3 class="grid-cell border-top border-bottom">Data Analysis and Visualization</h3>
+            <p class="grid-cell">
+              All exploratory analyses were done under the dbt folder <span class="doc-tag-1">analyses</span>. Selected analyses for the stakeholders were then visualized using <b>Altair-Vega</b> Python library under the folder <span class="doc-tag-1">visualizations</span>.
+            </p>
+          </section>
+        </section>
+        
+        <section id="project-structure" technical>
+          <h2 class="grid-cell mt-6">Project Structure</h2>
+          <div class="grid-cell">
+            <div class="code-block">
+          <div class="top-block flex gap-[20px] justify-between items-center">
+            <span class="language">bash</span>
+            <button copy-code-button type="button" tooltip="Copy" class="btn-nothing-primary icon bp-s-2" aria-label="copy code">
+              <div icon class="icon-smm" aria-hidden="true"></div>
+            </button>
+          </div>
+          <hr>
+            <pre>
+              <code class="language-bash">
+├── .vscode/    # VS Code workspace settings and editor configuration
+├── assets/     # Static resources (images, videos) for README.md
+├── divvy_trips/    # Main dbt project
+├── logs/   # Runtime log files generated from the dbt project
+├── .gitignore    # Git rules for ignoring files and    directories
+├── .python-version   # Specifies the Python version for environment consistency
+├── pyproject.toml    # Project metadata, dependencies, and build configuration
+├── README.md   # Project overview, setup instructions, and usage notes
+└── uv.lock   # Locked dependency versions for reproducible installs
+              </code>
+            </pre>
+          </div>
+          </div>
+        </section>
+      </div>
+      <footer class="col-[2/-1] flex justify-between items-center gap-5 mt-[60px] mb-[20px] @max-[950px]:col-auto">
+        <div class="flex gap-2">
+          <a
+            class="btn-outlined-secondary rounded bp-s-1"
+            href="https://x.com/emman_fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="X (formerly Twitter)"
+          >
+            <div class="x icon-sm" mask-icon></div>
+          </a>
+          <a
+            class="btn-outlined-secondary rounded bp-s-1"
+            href="https://www.linkedin.com/in/emma-fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <div class="icon-sm linkedin" mask-icon></div>
+          </a>
+          <a
+            href="https://github.com/emma-fosu"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            class="btn-outlined-secondary rounded bp-s-1"
+          >
+            <div class="icon-sm github" mask-icon></div>
+          </a>
+        </div>
+        <p class="copyright ml-auto self-end">
+          &copy;<span id="current-year"></span>
+          Emmanuel Fosu
+        </p>
+      </footer>
+    </div>
+  </main>
+  <script type="text/javascript">
+      const currentYearDisplay = document.getElementById("current-year");
+      if (currentYearDisplay) {
+        currentYearDisplay.textContent = new Date().getFullYear();
+      } else {
+        console.warn(
+          "Current year display missing: It is used with the copyright mark to show current year."
+        );
+      }
+
+      hideAllTechnicalDocumentation();
+
+      function hideAllTechnicalDocumentation() {
+        const technicalSections = document.querySelectorAll('section[technical]');
+        technicalSections.forEach(section => section.classList.add("hidden"));
+      }
+    </script>
+    <script type="module" src="/src/scripts/pages/projects/divvy_lyft_customer_riding_behaviour_analysis.ts"></script>  
+</body>
+</html>

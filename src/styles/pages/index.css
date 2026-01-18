@@ -280,7 +280,7 @@ section#tools {
 }
 
 @container style(--grid-n: 1) {
-  .grid-list > *:not(:last-child) {
+  .grid-list > *:not(:last-of-type) {
     border-bottom: var(--border);
   }
 }
@@ -288,6 +288,22 @@ section#tools {
 @container style(--grid-n: 2) {
   .grid-list > *:nth-child(2n + 1) {
     border-right: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 3) {
+    border-top: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 4) {
+    border-top: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 5) {
+    border-top: var(--border);
+  }
+
+  .grid-list > *:nth-child(4n + 6) {
+    border-top: var(--border);
   }
 }
 
@@ -316,7 +332,8 @@ section#tools {
   .grid-list > *:nth-child(8n + 6),
   .grid-list > *:nth-child(8n + 7),
   .grid-list > *:nth-child(8n + 8) {
-    border-block: var(--border);
+    border-top: var(--border);
+
   }
 
   .grid-list > *:nth-child(4n + 2) {
